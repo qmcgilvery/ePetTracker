@@ -1,0 +1,364 @@
+<!doctype html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en-GB">
+<head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Add device</title>
+</head>
+
+<body onload="disableFields()">
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/about">About</a>
+        <a class="navbar-brand" href="#">Add</a>
+        <a class="navbar-brand" href="/status">Status</a>
+        <a class="navbar-brand" href="/update">Update</a>
+        <a class="navbar-brand" href="/delete">Delete</a>
+    </nav>
+
+    <div class="mb-3 container">
+
+        <h1> This is the add device page </h1>
+        <ul id="existing_devices" style="display:none;">
+            <% devices.forEach(function(device){ %>
+            <li class="in_db" id="<%= device.name %>" ><%= device.name %></li>
+            <% }) %>
+        </ul>
+
+        <div class="form-check">
+            <input class="form-check-input" name="flexRadioDefault" type="radio" value="" onclick="option1();" id="curtains">
+            <label class="form-check-label" for="curtains">
+                Curtains
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="flexRadioDefault" type="radio" value="" onclick="option2();" id="security">
+            <label class="form-check-label" for="security">
+                Security
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="flexRadioDefault" type="radio" value="" onclick="option3();" id="lights">
+            <label class="form-check-label" for="lights">
+                Lights
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="flexRadioDefault" type="radio" value="" onclick="option4();" id="temp">
+            <label class="form-check-label" for="temp">
+                Temperature
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="flexRadioDefault" type="radio" value="" onclick="option5();" id="music">
+            <label class="form-check-label" for="music">
+                Music
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 container" id="submissions">
+
+        <form name="curtainsForm" style="display:none;" id="crtns" method="POST" action="/add" onsubmit="return validateCurtainsForm()">
+        <div class="form-check">
+            <input class="form-check-input" name="front_crt" type="checkbox" value="front_crt" onclick="option5();" id="front_crt">
+            <label class="form-check-label" for="front_crt">
+                Front window
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="front_crt" type="radio" value="1" id="front_crt_open">
+            <label class="form-check-label" for="front_crt_open">
+                Open
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="front_crt" type="radio" value="0" id="front_crt_close">
+            <label class="form-check-label" for="front_crt_close">
+                Close
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="back_crt" type="checkbox" value="back_crt" onclick="option5();" id="back_crt">
+            <label class="form-check-label" for="back_crt">
+                Back doors
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="back_crt" type="radio" value="1" id="back_crt_open">
+            <label class="form-check-label" for="back_crt_open">
+                Open
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="back_crt" type="radio" value="0" id="back_crt_close">
+            <label class="form-check-label" for="back_crt_close">
+                Close
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br1_crt" type="checkbox" value="br1_crt" onclick="option5();" id="br1_crt">
+            <label class="form-check-label" for="br1_crt">
+                Bedroom 1 window
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br1_crt" type="radio" value="1" id="br1_crt_open">
+            <label class="form-check-label" for="br1_crt_open">
+                Open
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br1_crt" type="radio" value="0" id="br1_crt_close">
+            <label class="form-check-label" for="br1_crt_close">
+                Close
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br2_crt" type="checkbox" value="br2_crt" onclick="option5();" id="br2_crt">
+            <label class="form-check-label" for="br2_crt">
+                Bedroom 2 window
+            </label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br2_crt" type="radio" value="1" id="br2_crt_open">
+            <label class="form-check-label" for="br2_crt_open">
+                Open
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br2_crt" type="radio" value="0" id="br2_crt_close">
+            <label class="form-check-label" for="br2_crt_close">
+                Close
+            </label>
+        </div>
+        <input type="submit" value="Submit"/>
+        </form>
+
+        <form name="securityForm" style="display:none;" id="locks" method="POST" action="/add" onsubmit="return validateSecurityForm()">
+            <div class="form-check">
+                <input class="form-check-input" name="front_lock" type="checkbox" value="front_lock" onclick="option5();" id="front">
+                <label class="form-check-label" for="front">
+                    Front door
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" name="front_lock" type="radio" value="1" id="front_lock_open">
+            <label class="form-check-label" for="front_lock_open">
+                Lock
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="front_lock" type="radio" value="0" id="front_lock_close">
+            <label class="form-check-label" for="front_lock_close">
+                Unlock
+            </label>
+        </div>
+            <div class="form-check">
+                <input class="form-check-input" name="back_lock" type="checkbox" value="back_lock" onclick="option5();" id="back">
+                <label class="form-check-label" for="back">
+                    Back door
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" name="back_lock" type="radio" value="1" id="back_lock_open">
+            <label class="form-check-label" for="back_lock_open">
+                Lock
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="back_lock" type="radio" value="0" id="back_lock_close">
+            <label class="form-check-label" for="back_lock_close">
+                Unlock
+            </label>
+        </div>
+            <div class="form-check">
+                <input class="form-check-input" name="br1_lock" type="checkbox" value="br1_lock" onclick="option5();" id="br1">
+                <label class="form-check-label" for="br1">
+                    Bedroom 1
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br1_lock" type="radio" value="1" id="br1_lock_open">
+            <label class="form-check-label" for="br1_lock_open">
+                Lock
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br1_lock" type="radio" value="0" id="br1_lock_close">
+            <label class="form-check-label" for="br1_lock_close">
+                Unlock
+            </label>
+        </div>
+            <div class="form-check">
+                <input class="form-check-input" name="br2_lock" type="checkbox" value="br2_lock" onclick="option5();" id="br2">
+                <label class="form-check-label" for="br2">
+                    Bedroom 2
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br2_lock" type="radio" value="1" id="br2_lock_open">
+            <label class="form-check-label" for="br2_lock_open">
+                Open
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" name="br2_lock" type="radio" value="0" id="br2_lock_close">
+            <label class="form-check-label" for="br2_lock_close">
+                Close
+            </label>
+        </div>
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <form name="lightsForm" style="display:none;" id="lts" method="POST" action="/add" onsubmit="return validateLightsForm()">
+        <div class="form-check">
+            <input class="form-check-input" name="front_lts" type="checkbox" value="front_lts"  id="front_lts">
+            <label class="form-check-label" for="front_lts">
+                Front lights
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" name="front_lts" type="radio" value="1" id="front_lts_on">
+        <label class="form-check-label" for="front_lts_on">
+            On
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="front_lts" type="radio" value="0" id="front_lts_off">
+        <label class="form-check-label" for="front_lts_off">
+            Off
+        </label>
+    </div>
+        <div class="form-check">
+            <input class="form-check-input" name="back_lts" type="checkbox" value="back_lts"  id="back_lts">
+            <label class="form-check-label" for="back_lts">
+                Back lights
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" name="back_lts" type="radio" value="1" id="back_lts_on">
+        <label class="form-check-label" for="back_lts_on">
+            On
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="back_lts" type="radio" value="0" id="back_lts_off">
+        <label class="form-check-label" for="back_lts_off">
+            Off
+        </label>
+    </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br1_lts" type="checkbox" value="br1_lts"  id="br1_lts">
+            <label class="form-check-label" for="br1_lts">
+                Bedroom 1 lights
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" name="br1_lts" type="radio" value="1" id="br1_lts_on">
+        <label class="form-check-label" for="br1_lts_on">
+            On
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="br1_lts" type="radio" value="0" id="br1_lts_off">
+        <label class="form-check-label" for="br1_lts_off">
+            Off
+        </label>
+    </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br2_lts" type="checkbox" value="br2_lts"  id="br2_lts">
+            <label class="form-check-label" for="br2_lts">
+                Bedroom 2 lights
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" name="br2_lts" type="radio" value="1" id="br2_lts_on">
+        <label class="form-check-label" for="br2_lts_on">
+            On
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="br2_lts" type="radio" value="0" id="br2_lts_off">
+        <label class="form-check-label" for="br2_lts_off">
+            Off
+        </label>
+    </div>
+        <input type="submit" value="Submit"/>
+        </form>
+
+        <form name="tempForm" style="display:none;" id="tmp" method="POST" action="/add" onsubmit="return validateTempForm()">
+        <div class="form-check">
+            <input class="form-check-input" name="front_tmp" type="checkbox" value="front_tmp"  id="front_tmp">
+            <label class="form-check-label" for="front_tmp">
+                House temp
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="front_tmp_degrees">Example Range input</label>
+            <input type="range" class="form-control-range" name="front_tmp" id="front_tmp_degrees">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br1_tmp" type="checkbox" value="br1_tmp"  id="br1_tmp">
+            <label class="form-check-label" for="br1_tmp">
+                Bedroom 1 temp
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="br1_tmp_degrees">Example Range input</label>
+            <input type="range" class="form-control-range" name="br1_tmp" id="br1_tmp_degrees">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br2_tmp" type="checkbox" value="br2_tmp"  id="br2_tmp">
+            <label class="form-check-label" for="br2_tmp">
+                Bedroom 2 temp
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="br2_tmp_degrees">Example Range input</label>
+            <input type="range" class="form-control-range" name="br2_tmp" id="br2_tmp_degrees">
+        </div>
+        <input type="submit" value="Submit"/>
+        </form>
+
+        <form name="musicForm" style="display:none;" id="musics" method="POST" action="/add" onsubmit="return validateMusicForm()">
+        <div class="form-check">
+            <input class="form-check-input" name="front_music" type="checkbox" value="front_music"  id="front_music">
+            <label class="form-check-label" for="front_music">
+                House music
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="front_music_station">Station</label>
+            <input type="number" class="form-control" name="front_music" id="front_music_station" placeholder="Station">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br1_music" type="checkbox" value="br1_music"  id="br1_music">
+            <label class="form-check-label" for="br1_music">
+                Bedroom 1 music
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="br1_music_station">Station</label>
+            <input type="number" class="form-control" name="br1_music" id="br1_music_station" placeholder="Station">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="br2_music" type="checkbox" value="br2_music"  id="br2_music">
+            <label class="form-check-label" for="br2_music">
+                Bedroom 2 music
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="br2_music_station">Station</label>
+            <input type="number" class="form-control" name="br2_music" id="br2_music_station" placeholder="Station">
+        </div>
+        <input type="submit" value="Submit"/>
+        </form>
+
+        <a href="/status"> See all devices</a>
+        </div>
+<script src="add.js"></script>
+</body>
+
+</html>

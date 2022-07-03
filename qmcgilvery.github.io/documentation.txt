@@ -1,0 +1,82 @@
+C2: Each route in main.js has comments describing purpose, inputs, and outputs
+• C3: Code is laid out clearly with consistent indenting
+• C4: Each database interaction has comments describing the purpose, inputs, and outputs
+• C5: Functions and variables have meaningful names, with a consistent naming style
+
+
+List of requirements
+
+R1 Home page:
+
+    R1A: Application name of the web application is displayed under navigation bar
+
+    R1B: Navigation bar is displayed at top of all pages
+
+    The code is located in views/index.html and routes/main.js
+
+
+R2 About page:
+
+    R2A: My name and a short description are displayed under navigation bar.
+         Navigation bar displays links to other pages.
+
+    The code is located in views/about.html and routes/main.js
+
+
+R3 Add device page:
+
+    R3A: A form utilizing radio buttons displays devices to add to database.
+         Each device can be added to multiple rooms/areas of the house.
+         When the radio button is selected the matching form is displayed with options that are already in the database disabled.
+
+    R3B: Data is collected from forms and passed into main.js file via post method.
+         Main.js file inserts data into relevant columns in mysql database
+
+    R3C: Only relevant fields/forms are displayed.
+         Radio buttons are used to display the relevant options for a given selected form.
+
+    R3D: Forms are validated that something is submitted.
+         Due to the design of the forms incorrect values, or values out of range, are mostly not an option.
+
+    The code is located in views/add.html, views/add.js and routes/main.js
+
+
+R4 Show device status page:
+
+    R4A: A list of devices that have been added to the database is shown
+
+    R4B: Relevant information is displayed for the device
+
+    R4C: Since the list is populated directly from the database only data relevant to the device is shown
+
+    The code is located in views/status.html and routes/main.js
+
+
+R5 Update device status page:
+
+    R5A: A list of devices that have been added to the database is shown in a form. Selecting the checkbox allows the user to turn off the device.
+
+    R5B: The names of the devices in the database are displayed
+
+    The code is located in views/update.html and routes/main.js
+
+
+R6  Delete device page:
+
+    R6A: A list of devices that have been added to the database is shown in a form. Selecting the checkbox allows the user to remove the item.
+
+
+Database structure
+
+    There is one table that stores all the data.
+
+    The columns are:
+    FIELD       TYPE          NULL   KEY  EXTRA
+    id,         int,          NO,    PRI  auto_increment
+    name,       varchar(50),  YES,   UNI  ""
+    is_open,    tinyint(1),   YES,   ""   ""
+    is_on,      tinyint(1),   YES,   ""   ""
+    is_locked,  tinyint(1),   YES,   ""   ""
+    degrees,    smallint,     YES,   ""   ""
+    percent,    tinyint,      YES,   ""   ""
+    station,    smallint,     YES,   ""   ""
