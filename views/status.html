@@ -1,0 +1,41 @@
+<!doctype html>
+<!--suppress ALL -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Status webpage</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/about">About</a>
+        <a class="navbar-brand" href="/add">Add</a>
+        <a class="navbar-brand" href="#">Status</a>
+        <a class="navbar-brand" href="/update">Update</a>
+        <a class="navbar-brand" href="/delete">Delete</a>
+    </nav>
+    <h1>You can see the status of your devices here</h1>
+    <ul class="list-group">
+        <% devices.forEach(function(device){ %>
+            <% if (device.is_open){ %>
+                <li class="in_db list-group-item"><%= device.name %>, Open</li>
+            <% } %>
+            <% if (device.is_locked){ %>
+                <li class="in_db list-group-item"><%= device.name %>, Locked</li>
+            <% } %>
+            <% if (device.degrees){ %>
+                <li class="in_db list-group-item"><%= device.name %>, On, <%= device.degrees %> Degrees</li>
+            <% } %>
+            <% if (device.station){ %>
+                <li class="in_db list-group-item"><%= device.name %>, On, Station <%= device.station %></li>
+            <% } %>
+            <% if (device.is_on && !device.station && !device.degrees){ %>
+                <li class="in_db list-group-item"><%= device.name %>, On</li>
+            <% } %>
+        <% }) %>
+    </ul>
+</body>
+
+</html>
