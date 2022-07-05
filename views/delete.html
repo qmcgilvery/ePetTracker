@@ -20,11 +20,11 @@
         <h3>You can delete devices here:</h3>
 
         <form name="deleteForm" method="POST" action="/delete" onsubmit="return validateDeleteForm()">
-            <% devices.forEach(function(device){ %>
+            <% epettracker.forEach(function(pets){ %>
             <div class="form-check">
-                <input class="form-check-input" name="<%= device.name %>" type="checkbox" value="<%= device.name %>" id="<%= device.name %>">
-                <label class="form-check-label" for="<%= device.name %>">
-                    <%= device.name %>
+                <input class="form-check-input" name="<%= pets.name %>" type="checkbox" value="<%= pets.name %>" id="<%= pets.name %>">
+                <label class="form-check-label" for="<%= pets.name %>">
+                    <%= pets.name %>
                 </label>
             </div>
             <% }) %>

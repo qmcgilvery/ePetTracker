@@ -49,10 +49,28 @@ module.exports = function (app) {
 
     // render about page
     app.get("/about", function (req, res) {
-        res.render("about.html", {
-            title: "About"
-        });
+        res.render("list.html", {availablePets: result});
+
     });
+
+    
+        app.get("/new_status", function (req, res) {
+            // query database to get all the books
+            // query database to get all the books
+            let sqlquery = "SELECT * FROM pets";
+            // execute sql query
+            db.query(sqlquery, (err, result) => {
+                if (err) {
+                    res.redirect("/");
+                }
+                res.render("new_status.html", { pets: result });
+            });
+        });
+
+    
+
+
+
 
     // render status page with all devices in database
     app.get("/status", function (req, res) {
@@ -70,7 +88,7 @@ module.exports = function (app) {
     // render delete page with all devices in database
     app.get("/delete", function (req, res) {
         // query database to get all the devices
-        let sqlquery = "SELECT * FROM devices";
+        let sqlquery = "SELECT * FROM pets";
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
@@ -196,5 +214,9 @@ module.exports = function (app) {
                 });
             }
         }
+
+
+        
+
     })
 }
