@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title>List webpage!</title>
+</head>
+<body>
+<h1> This is List Page </h1>
+<h3>You can see names and prices of all available books at our book shop here:</h3>
+
+<table>
+    <tr>
+        <th>Pet ID |</th>
+        <th>Pet name |</th>
+        <th>Pet type |</th>
+
+    </tr>
+    <% pets.forEach(function(pets){%>
+    <tr>
+        <td><%=pets.id %></td>
+        <td><%=pets.name %></td>
+        <td><%=pets.type %></td>
+    </tr>
+    <%}) %>
+</table>
+</body>
+</html>
