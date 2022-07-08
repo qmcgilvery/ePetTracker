@@ -36,4 +36,25 @@ module.exports = function (app) {
   app.get("/add", function (req, res) {
     res.render("add.html");
   });
+
+
+  app.post("/add", function (req, res) {
+      // handle form data from curtainsForm submission
+      if (req.body.add_pet) {
+          let sqlquery = "INSERT INTO pets (name, type) VALUES (?, ?)";
+
+          for (const key in req.body) {
+              let new_records = req.body[key];
+              res.write(" This pet has been added to database, name: " + req.body[key]);
+              // execute sql query
+              db.query(sqlquery, new_records, (err, result) => {
+                  if (err) {
+                      return console.error(err.message);
+                  } else {
+                      res.send()
+                  }
+              });
+          }
+      }
+    })
 };
