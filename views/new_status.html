@@ -1,26 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>List webpage!</title>
-</head>
-<body>
-<h1> This is List Page </h1>
-<h3>You can see names and prices of all available books at our book shop here:</h3>
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>List webpage!</title>
+  </head>
 
-<table>
-    <tr>
+  <body>
+    <!-- blue nav bar at top -->
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/about">About</a>
+      <a class="navbar-brand" href="/add">Add</a>
+      <a class="navbar-brand" href="/new_status">Status</a>
+      <a class="navbar-brand" href="/update">Update</a>
+      <a class="navbar-brand" href="/delete">Delete</a>
+    </nav>
+    <h1>MySmartHome</h1>
+
+    <h3>
+      You can see all the pets here:
+    </h3>
+
+    <table>
+      <tr>
         <th>Pet ID |</th>
         <th>Pet name |</th>
         <th>Pet type |</th>
-
-    </tr>
-    <% pets.forEach(function(pets){%>
-    <tr>
+      </tr>
+      <% pets.forEach(function(pets){%>
+      <tr>
         <td><%=pets.id %></td>
         <td><%=pets.name %></td>
         <td><%=pets.type %></td>
-    </tr>
-    <%}) %>
-</table>
-</body>
+      </tr>
+      <%}) %>
+    </table>
+  </body>
 </html>

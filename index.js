@@ -1,23 +1,33 @@
-const path = require('path');
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const mysql = require("mysql");
 const port = 8088;
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use(
   "/css",
   express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
-)
-app.use(express.static('views'))
+);
+app.use(express.static("views"));
 
-app.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")))
-app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")))
+app.use(
+  "/js",
+  express.static(path.join(__dirname, "node_modules/jquery/dist"))
+);
+app.use(
+  "/js",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
+);
 const db = mysql.createConnection({
   host: "137.184.191.242",
   user: "sammy2",
   password: "Asahi186!",
-  database: "epettracker"
+  database: "epettracker",
 });
 // connect to database
 
@@ -27,7 +37,6 @@ db.connect((err) => {
   }
   console.log("Connected to database");
 });
-
 
 global.db = db;
 require("./routes/main")(app);
