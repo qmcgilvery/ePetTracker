@@ -16,7 +16,7 @@
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
 
-    <div><p>placeholder here</p></div>
+    <div><h1>Add pets page</h1></div>
 
     <form name="addPet" id="pets" method="POST" action="/add">
         <div class="form-check">
@@ -28,6 +28,16 @@
                 Add pet type here
             </label>
             <input class="form-control" name="add_pet" type="text" id="pet_type">
+
+            <label class="form-check-label" for="pet_mood">
+              Add pet mood here
+          </label>
+          <input class="form-control" name="add_pet" type="text" id="pet_mood">
+
+          <label class="form-check-label" for="pet_health">
+            Add pet health here
+        </label>
+        <input class="form-control" name="add_pet" type="text" id="pet_health">
         </div>
             <input type="submit" value="Submit"/>
         </form>

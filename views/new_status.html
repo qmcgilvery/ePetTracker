@@ -15,22 +15,26 @@
       <a class="navbar-brand" href="/update">Update</a>
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
-    <h1>MySmartHome</h1>
+    <h1>ePetTracker</h1>
 
     <h3>
       You can see all the pets here:
     </h3>
 
-    <table>
+    <table class="table table-striped">
       <tr>
-        <th>Pet ID |</th>
-        <th>Pet name |</th>
-        <th>Pet type |</th>
+        <th>Pet ID</th>
+        <th>Pet name</th>
+        <th>Pet type</th>
+        <th>Pet Mood</th>
+        <th>Pet Health</th>
       </tr>
       <% pets.forEach(function(pets){%>
       <tr>
-        <td><%=pets.id %></td>
+        <td><%=pets.pet_id %></td>
         <td><%=pets.name %></td>
+        <td><%=pets.type %></td>
+        <td><%=pets.mood %></td>
         <td><%=pets.type %></td>
       </tr>
       <%}) %>
