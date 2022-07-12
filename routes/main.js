@@ -13,9 +13,10 @@ module.exports = function (app) {
     res.render("about.html");
   });
 
+  // for new_status page
   app.get("/new_status", function (req, res) {
     // query database to get all the pets
-    let sqlquery = "SELECT * FROM pets";
+    let sqlquery = "SELECT * FROM pet_test1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
@@ -41,7 +42,7 @@ module.exports = function (app) {
   app.post("/add", function (req, res) {
       // handle form data from curtainsForm submission
       if (req.body.add_pet) {
-          let sqlquery = "INSERT INTO pets (name, type) VALUES (?, ?)";
+          let sqlquery = "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
 
           for (const key in req.body) {
               let new_records = req.body[key];
