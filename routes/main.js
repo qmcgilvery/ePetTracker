@@ -1,6 +1,4 @@
-const upload = require("../uploadMiddleware");
 const path = require("path");
-const Resize = require("../Resize");
 const multer = require("multer");
 const express = require("express");
 module.exports = function (app) {
@@ -66,23 +64,24 @@ module.exports = function (app) {
   });
 
   const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './uploads')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname)
-  }
-});
-const upload = multer({ storage: storage })
+      destination: function (req, file, cb) {
+        cb(null, './uploads')
+      },
+      filename: function (req, file, cb) {
+          // console.log(path.extname(file.originalname))
+        cb(null, "profile-pic"+path.extname(file.originalname))
+      }
+    });
+  const upload = multer({ storage: storage })
 
-app.use('/uploads', express.static('uploads'));
+  app.use('/uploads', express.static('uploads'));
   app.post('/profile-upload-single', upload.single('image'), function (req, res, next) {
-  // req.file is the `profile-file` file
-  // req.body will hold the text fields, if there were any
-  console.log(JSON.stringify(req.file))
-  var response = '<a href="/">Home</a><br>'
-  response += "Files uploaded successfully.<br>"
-  response += `<img src="${req.file.path}" /><br>`
-  return res.send(response)
-})
+      // req.file is the `profile-file` file
+      // req.body will hold the text fields, if there were any
+      console.log(JSON.stringify(req.file))
+      var response = '<a href="/">Home</a><br>'
+      response += "Files uploaded successfully.<br>"
+      response += `<img src="${req.file.path}" /><br>`
+      return res.send(response)
+    })
 };
