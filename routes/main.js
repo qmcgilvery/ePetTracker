@@ -1,3 +1,8 @@
+const upload = require("../uploadMiddleware");
+const path = require("path");
+const Resize = require("../Resize");
+const multer = require("multer");
+const express = require("express");
 module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index.html");
@@ -42,6 +47,7 @@ module.exports = function (app) {
   app.post("/add", function (req, res) {
       // handle form data from curtainsForm submission
       if (req.body.add_pet) {
+          console.log(req.body)
           let sqlquery = "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
 
           for (const key in req.body) {
@@ -57,5 +63,26 @@ module.exports = function (app) {
               });
           }
       }
-    })
+  });
+
+  const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+});
+const upload = multer({ storage: storage })
+
+app.use('/uploads', express.static('uploads'));
+  app.post('/profile-upload-single', upload.single('image'), function (req, res, next) {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  console.log(JSON.stringify(req.file))
+  var response = '<a href="/">Home</a><br>'
+  response += "Files uploaded successfully.<br>"
+  response += `<img src="${req.file.path}" /><br>`
+  return res.send(response)
+})
 };

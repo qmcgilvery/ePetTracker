@@ -2,8 +2,21 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const multer  = require('multer');
 const mysql = require("mysql");
 const port = 8088;
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, './uploads')
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname)
+//   }
+// });
+// const upload = multer({ storage: storage })
+//
+// app.use('/uploads', express.static('uploads'));
 app.use(
   bodyParser.urlencoded({
     extended: true,
