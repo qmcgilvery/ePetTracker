@@ -2,9 +2,35 @@ const path = require("path");
 const multer = require("multer");
 const express = require("express");
 module.exports = function (app) {
+
+
+
+
   app.get("/", function (req, res) {
     res.render("index.html");
   });
+
+   // duplicated add.post
+  app.post("/", function (req, res) {
+    // handle form data from curtainsForm submission
+    if (req.body.add_pet) {
+        console.log(req.body)
+        let sqlquery = "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
+
+        for (const key in req.body) {
+            let new_records = req.body[key];
+            res.write(" This pet has been added to database, name: " + req.body[key]);
+            // execute sql query
+            db.query(sqlquery, new_records, (err, result) => {
+                if (err) {
+                    return console.error(err.message);
+                } else {
+                    res.send()
+                }
+            });
+        }
+    }
+});
 
   // render update page with all devices in database
   app.get("/update", function (req, res) {
@@ -41,27 +67,27 @@ module.exports = function (app) {
     res.render("add.html");
   });
 
+ // remove later
+  // app.post("/add", function (req, res) {
+  //     // handle form data from curtainsForm submission
+  //     if (req.body.add_pet) {
+  //         console.log(req.body)
+  //         let sqlquery = "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
 
-  app.post("/add", function (req, res) {
-      // handle form data from curtainsForm submission
-      if (req.body.add_pet) {
-          console.log(req.body)
-          let sqlquery = "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
-
-          for (const key in req.body) {
-              let new_records = req.body[key];
-              res.write(" This pet has been added to database, name: " + req.body[key]);
-              // execute sql query
-              db.query(sqlquery, new_records, (err, result) => {
-                  if (err) {
-                      return console.error(err.message);
-                  } else {
-                      res.send()
-                  }
-              });
-          }
-      }
-  });
+  //         for (const key in req.body) {
+  //             let new_records = req.body[key];
+  //             res.write(" This pet has been added to database, name: " + req.body[key]);
+  //             // execute sql query
+  //             db.query(sqlquery, new_records, (err, result) => {
+  //                 if (err) {
+  //                     return console.error(err.message);
+  //                 } else {
+  //                     res.send()
+  //                 }
+  //             });
+  //         }
+  //     }
+  // });
 
   const storage = multer.diskStorage({
       destination: function (req, file, cb) {

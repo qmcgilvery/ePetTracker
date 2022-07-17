@@ -17,6 +17,42 @@
     <h1>ePetTracker</h1>
     <div class="container">
       <img src="../uploads/profile-pic.png" class="img-fluid" alt="Responsive image">
-    </div>
+      </div>
+      <div><h3>Image upload</h3></div>
+      <p>Image Upload</p>
+        <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+
+
+        <h3>Add pet here</h3>
+        <form name="addPet" id="pets" method="POST" action="/add">
+          <div class="form-check">
+              <label class="form-check-label" for="pet_name">
+                  Add pet name here
+              </label>
+              <input class="form-control" name="add_pet" type="text" id="pet_name">
+              <label class="form-check-label" for="pet_type">
+                  Add pet type here
+              </label>
+              <input class="form-control" name="add_pet" type="text" id="pet_type">
+  
+              <label class="form-check-label" for="pet_mood">
+                Add pet mood here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_mood">
+  
+            <label class="form-check-label" for="pet_health">
+              Add pet health here
+          </label>
+          <input class="form-control" name="add_pet" type="text" id="pet_health">
+          </div>
+              <input type="submit" value="Submit"/>
+          </form>
+      
+
+
+
   </body>
 </html>
