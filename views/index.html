@@ -19,7 +19,6 @@
       <img src="../uploads/profile-pic.png" class="img-fluid" alt="Responsive image">
       </div>
       <div><h3>Image upload</h3></div>
-      <p>Image Upload</p>
         <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
           <input type="file" name="image" /><br /><br />
           <button type="submit" name="upload">Upload</button>
@@ -51,7 +50,22 @@
               <input type="submit" value="Submit"/>
           </form>
       
-
+        <h3>Pet 1 Image Upload</h3>
+        <form method="POST" action="/pet1-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+        <h3>Pet 2 Image Upload</h3>
+        <form method="POST" action="/pet2-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+        <h3>Pet 3 Image Upload</h3>
+        <img src="../uploads/pets/pet3/pet3-pic.png" class="img-thumbnail" alt="Responsive image">
+        <form method="POST" action="/pet3-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
 
 
   </body>

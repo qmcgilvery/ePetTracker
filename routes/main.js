@@ -95,13 +95,84 @@ module.exports = function (app) {
       },
       filename: function (req, file, cb) {
           // console.log(path.extname(file.originalname))
-        cb(null, "profile-pic"+path.extname(file.originalname))
+        cb(null, "profile-pic.png")
       }
     });
   const upload = multer({ storage: storage })
 
   app.use('/uploads', express.static('uploads'));
   app.post('/profile-upload-single', upload.single('image'), function (req, res, next) {
+      // req.file is the `profile-file` file
+      // req.body will hold the text fields, if there were any
+      console.log(JSON.stringify(req.file))
+      var response = '<a href="/">Home</a><br>'
+      response += "Files uploaded successfully.<br>"
+      response += `<img src="${req.file.path}" /><br>`
+      return res.send(response)
+    })
+
+
+    //Pet1
+    const pet1storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        cb(null, './uploads/pets/pet1')
+      },
+      filename: function (req, file, cb) {
+          // console.log(path.extname(file.originalname))
+        cb(null, "pet1-pic.png")
+      }
+    });
+  const pet1upload = multer({ storage: pet1storage })
+
+  app.use('/uploads/pets/pet1', express.static('uploads'));
+  app.post('/pet1-upload-single', pet1upload.single('image'), function (req, res, next) {
+      // req.file is the `profile-file` file
+      // req.body will hold the text fields, if there were any
+      console.log(JSON.stringify(req.file))
+      var response = '<a href="/">Home</a><br>'
+      response += "Files uploaded successfully.<br>"
+      response += `<img src="${req.file.path}" /><br>`
+      return res.send(response)
+    })
+
+    //Pet2
+    const pet2storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        cb(null, './uploads/pets/pet2')
+      },
+      filename: function (req, file, cb) {
+          // console.log(path.extname(file.originalname))
+        cb(null, "pet2-pic.png")
+      }
+    });
+  const pet2upload = multer({ storage: pet2storage })
+
+  app.use('/uploads/pets/pet2', express.static('uploads'));
+  app.post('/pet2-upload-single', pet2upload.single('image'), function (req, res, next) {
+      // req.file is the `profile-file` file
+      // req.body will hold the text fields, if there were any
+      console.log(JSON.stringify(req.file))
+      var response = '<a href="/">Home</a><br>'
+      response += "Files uploaded successfully.<br>"
+      response += `<img src="${req.file.path}" /><br>`
+      return res.send(response)
+    })
+
+    //Pet3
+    const pet3storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        cb(null, './uploads/pets/pet3')
+      },
+      filename: function (req, file, cb) {
+          // console.log(path.extname(file.originalname))
+        // cb(null, "pet3-pic"+path.extname(file.originalname))
+          cb(null, "pet3-pic.png")
+      }
+    });
+  const pet3upload = multer({ storage: pet3storage })
+
+  app.use('/uploads/pets/pet3', express.static('uploads'));
+  app.post('/pet3-upload-single', pet3upload.single('image'), function (req, res, next) {
       // req.file is the `profile-file` file
       // req.body will hold the text fields, if there were any
       console.log(JSON.stringify(req.file))
