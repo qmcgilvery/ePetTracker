@@ -1,24 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>About Page</title>
-</head>
+  </head>
 
-<body>
-        <nav class="navbar navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/about">About</a>
-            <a class="navbar-brand" href="/add">Add</a>
-            <a class="navbar-brand" href="/new_status">Status</a>
-            <a class="navbar-brand" href="/update">Update</a>
-            <a class="navbar-brand" href="/delete">Delete</a>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/about">About</a>
+      <a class="navbar-brand" href="/add">Add</a>
+      <a class="navbar-brand" href="/new_status">Status</a>
+      <a class="navbar-brand" href="/update">Update</a>
+      <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
-    <div class="container">
-        <h1> This is the about page</h1>
+    <h1>This is the about page</h1>
+    <h3>You can see all the walks here:</h3>
 
-    </div>
-</body>
-
+    <table class="table table-striped">
+        <div>
+     <tr>
+       <th>Walk ID</th>
+       <th>Walk name</th>
+       <th>Walk distance</th>
+       <th>Walk datetime</th>
+       <th>Pet Id</th>
+     </tr>
+     <% walks.forEach(function(walks){%>
+     <tr>
+       <td><%=walks.walk_id %></td>
+       <td><%=walks.walk_name %></td>
+       <td><%=walks.walk_distance %></td>
+       <td><%=walks.walk_datetime %></td>
+       <td><%=walks.pet_id%></td>
+     </tr>
+     <%}) %>
+   </table>
+     </div>
+  </body>
 </html>
