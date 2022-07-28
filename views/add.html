@@ -48,7 +48,34 @@
       <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
+      </div>
       </form>
+
+      <div><h1>Add walk here</h1></div>
+      <form name="addWalk" id="walks" method="POST" action="/add">
+        <div class="form-check">
+            <label class="form-check-label" for="walk_name">
+                Add walk name here
+            </label>
+            <input class="form-control" name="add_walk" type="text" id="walk_name">
+            
+            <label class="form-check-label" for="walk_distance">
+                Add walk distance here
+            </label>
+            <input class="form-control" name="add_walk" type="text" id="walk_distance">
+
+            <label class="form-check-label" for="walk_datetime">
+              Add datetime here (format must be: YYYY-MM-DD HH:MM:SS)
+          </label>
+          <input class="form-control" name="add_walk" type="text" id="walk_datetime">
+
+          <label class="form-check-label" for="pet_id">
+            Add pet ID here
+        </label>
+        <input class="form-control" name="add_walk" type="text" id="pet_id">
+        </div>
+            <input type="submit" value="Submit"/>
+        </form>
 
   </body>
 </html>
