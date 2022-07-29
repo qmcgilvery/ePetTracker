@@ -2,9 +2,20 @@ const path = require("path");
 const multer = require("multer");
 const express = require("express");
 module.exports = function (app) {
-
-  app.get("/", function (req, res) {
-    res.render("index.html");
+  app.get('/', function (req, res) {
+    // res.render("index.html");
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1";
+    // let sqlquery_2 = "SELECT * FROM walk_1";
+    // execute sql query
+    db.query(sqlquery, (err, result) => {
+      if (err) {
+        res.redirect("/");
+      }
+      res.render("index.html", {
+        walks: result[1],
+        pets: result[0],
+      });
+    });
   });
 
   // duplicated add.post
