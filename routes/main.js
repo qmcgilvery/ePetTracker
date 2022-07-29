@@ -52,14 +52,16 @@ module.exports = function (app) {
   // for new_status page -- show pets 
   app.get("/new_status", function (req, res) {
     // query database to get all the pets
-    let sqlquery = "SELECT * FROM pet_test1";
+    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1";
+    // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
         res.redirect("/");
       }
       res.render("new_status.html", {
-        pets: result,
+        walks: result[1],
+        pets: result[0],
       });
     });
   });

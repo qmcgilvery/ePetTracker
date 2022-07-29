@@ -30,6 +30,7 @@ const db = mysql.createConnection({
   user: "sammy2",
   password: "Asahi186!",
   database: "epettracker",
+  multipleStatements: true,
 });
 // connect to database
 
