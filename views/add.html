@@ -65,7 +65,7 @@
             <input class="form-control" name="add_walk" type="text" id="walk_distance">
 
             <label class="form-check-label" for="walk_datetime">
-              Add datetime here (format must be: YYYY-MM-DD HH:MM:SS)
+              Add date and time here (format must be: YYYY-MM-DD HH:MM:SS)
           </label>
           <input class="form-control" name="add_walk" type="text" id="walk_datetime">
 
@@ -76,6 +76,37 @@
         </div>
             <input type="submit" value="Submit"/>
         </form>
+
+        <div><h1>Add feed schedule here</h1></div>
+        <form name="add_feed" id="walks" method="POST" action="/add">
+          <div class="form-check">
+              <label class="form-check-label" for="feed_name">
+                  Add food name here
+              </label>
+              <input class="form-control" name="add_feed" type="text" id="feed_name">
+
+              <label class="form-check-label" for="feed_type">
+                Add food type here
+            </label>
+            <input class="form-control" name="add_feed" type="text" id="feed_type">
+              
+              <label class="form-check-label" for="feed_amount">
+                  Add amount here (in grams)
+              </label>
+              <input class="form-control" name="add_feed" type="text" id="feed_amount">
+  
+              <label class="form-check-label" for="feed_datetime">
+                Add date and time here (format must be: YYYY-MM-DD HH:MM:SS)
+            </label>
+            <input class="form-control" name="add_feed" type="text" id="feed_datetime">
+  
+            <label class="form-check-label" for="pet_id">
+              Add pet ID here
+          </label>
+          <input class="form-control" name="add_feed" type="text" id="pet_id">
+          </div>
+              <input type="submit" value="Submit"/>
+          </form>
 
   </body>
 </html>
