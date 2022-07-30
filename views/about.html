@@ -15,27 +15,6 @@
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
     <h1>This is the about page</h1>
-    <h3>You can see all the walks here:</h3>
-
-    <table class="table table-striped">
-        <div>
-     <tr>
-       <th>Walk ID</th>
-       <th>Walk name</th>
-       <th>Walk distance</th>
-       <th>Walk datetime</th>
-       <th>Pet Id</th>
-     </tr>
-     <% walks.forEach(function(walks){%>
-     <tr>
-       <td><%=walks.walk_id %></td>
-       <td><%=walks.walk_name %></td>
-       <td><%=walks.walk_distance %></td>
-       <td><%=walks.walk_datetime %></td>
-       <td><%=walks.pet_id%></td>
-     </tr>
-     <%}) %>
-   </table>
-     </div>
+ 
   </body>
 </html>
