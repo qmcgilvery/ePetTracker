@@ -4,7 +4,7 @@ const express = require("express");
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // res.render("index.html");
-    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1";
+    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; ";
     // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
@@ -44,8 +44,8 @@ module.exports = function (app) {
   });
 
   // render update page with all devices in database
-  app.get("/update", function (req, res) {
-    res.render("update.html");
+  app.get("/pet", function (req, res) {
+    res.render("pet.html");
   });
 
   //
@@ -115,7 +115,7 @@ module.exports = function (app) {
       for (const key in req.body) {
         let new_records = req.body[key];
         res.write(
-          " This pet has been added to database, name: " + req.body[key]
+          " This walk has been added to database, name: " + req.body[key]
         );
         // execute sql query
         db.query(sqlquery2, new_records, (err, result) => {
@@ -137,7 +137,7 @@ module.exports = function (app) {
       for (const key in req.body) {
         let new_records = req.body[key];
         res.write(
-          " This pet has been added to database, name: " + req.body[key]
+          " This feeding schedule has been added to database, name: " + req.body[key]
         );
         // execute sql query
         db.query(sqlquery2, new_records, (err, result) => {
