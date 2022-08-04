@@ -57,7 +57,7 @@ module.exports = function (app) {
   app.get("/new_status", function (req, res) {
     // query database to get all the pets
     let sqlquery =
-      "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
+      "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2;SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3";
     // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
@@ -65,6 +65,9 @@ module.exports = function (app) {
         res.redirect("/");
       }
       res.render("new_status.html", {
+        walks_p_id3: result[5],
+        walks_p_id2: result[4],
+        walks_p_id1: result[3],
         feeds: result[2],
         walks: result[1],
         pets: result[0],
