@@ -79,6 +79,70 @@
     </div>
   </table>
 
+  <h3>Walks for pet_id 1 here:</h3>
+  <table class="table table-striped">
+    <div>
+      <tr>
+        <th>Walk ID</th>
+        <th>Walk name</th>
+        <th>Distance</th>
+        <th>Date & time</th>
+        <th>Pet id</th>
+      </tr>
+      <% walks_p_id1.forEach(function(walks_p_id1){%>
+      <tr>
+        <td><%=walks_p_id1.walk_id %></td>
+        <td><%=walks_p_id1.walk_name %></td>
+        <td><%=walks_p_id1.walk_distance %></td>
+        <td><%=walks_p_id1.walk_datetime %></td>
+        <td><%=walks_p_id1.pet_id%></td>
+      </tr>
+      <%}) %>
+    </div>
+  </table>
+
+  <h3>Walks for pet_id 2 here:</h3>
+  <table class="table table-striped">
+    <div>
+      <tr>
+        <th>Walk ID</th>
+        <th>Walk name</th>
+        <th>Distance</th>
+        <th>Date & time</th>
+        <th>Pet id</th>
+      </tr>
+      <% walks_p_id2.forEach(function(walks_p_id2){%>
+      <tr>
+        <td><%=walks_p_id2.walk_id %></td>
+        <td><%=walks_p_id2.walk_name %></td>
+        <td><%=walks_p_id2.walk_distance %></td>
+        <td><%=walks_p_id2.walk_datetime %></td>
+        <td><%=walks_p_id2.pet_id%></td>
+      </tr>
+      <%}) %>
+    </div>
+  </table>
+  <h3>Walks for pet_id 3 here:</h3>
+  <table class="table table-striped">
+    <div>
+      <tr>
+        <th>Walk ID</th>
+        <th>Walk name</th>
+        <th>Distance</th>
+        <th>Date & time</th>
+        <th>Pet id</th>
+      </tr>
+      <% walks_p_id3.forEach(function(walks_p_id3){%>
+      <tr>
+        <td><%=walks_p_id3.walk_id %></td>
+        <td><%=walks_p_id3.walk_name %></td>
+        <td><%=walks_p_id3.walk_distance %></td>
+        <td><%=walks_p_id3.walk_datetime %></td>
+        <td><%=walks_p_id3.pet_id%></td>
+      </tr>
+      <%}) %>
+    </div>
+  </table>
 </body>
 
 </html>
