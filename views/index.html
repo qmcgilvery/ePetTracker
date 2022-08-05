@@ -11,7 +11,7 @@
       <a class="navbar-brand" href="/about">About</a>
       <a class="navbar-brand" href="/add">Add</a>
       <a class="navbar-brand" href="/new_status">Status</a>
-      <a class="navbar-brand" href="/update">Update</a>
+      <a class="navbar-brand" href="/pet">Pet</a>
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
     
@@ -53,6 +53,95 @@
     <h1>ePetTracker</h1>
     <div class="container">
       <img src="../uploads/profile-pic.png" class="img-fluid" alt="Responsive image">
-    </div>
+      </div>
+      <div><h3>Image upload</h3></div>
+        <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+
+
+        <h3>Add pet here</h3>
+        <form name="addPet" id="pets" method="POST" action="/add">
+          <div class="form-check">
+              <label class="form-check-label" for="pet_name">
+                  Add pet name here
+              </label>
+              <input class="form-control" name="add_pet" type="text" id="pet_name">
+              <label class="form-check-label" for="pet_type">
+                  Add pet type here
+              </label>
+              <input class="form-control" name="add_pet" type="text" id="pet_type">
+  
+              <label class="form-check-label" for="pet_mood">
+                Add pet mood here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_mood">
+  
+            <label class="form-check-label" for="pet_health">
+              Add pet health here
+          </label>
+          <input class="form-control" name="add_pet" type="text" id="pet_health">
+          </div>
+              <input type="submit" value="Submit"/>
+          </form>
+      
+        <h3>Pet 1 Image Upload</h3>
+        <form method="POST" action="/pet1-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+        <h3>Pet 2 Image Upload</h3>
+        <form method="POST" action="/pet2-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+        <h3>Pet 3 Image Upload</h3>
+        <img src="../uploads/pets/pet3/pet3-pic.png" class="img-thumbnail" alt="Responsive image">
+        <form method="POST" action="/pet3-upload-single" enctype="multipart/form-data">
+          <input type="file" name="image" /><br /><br />
+          <button type="submit" name="upload">Upload</button>
+        </form>
+
+
+
+
+  <table class="table table-striped">
+         <div>
+      <tr>
+        <th>Pet ID</th>
+        <th>Pet name</th>
+        <th>Pet type</th>
+        <th>Pet Mood</th>
+        <th>Pet Health</th>
+      </tr>
+      <% pets.forEach(function(pets){%>
+      <tr>
+        <td><%=pets.pet_id %></td>
+        <td><%=pets.name %></td>
+        <td><%=pets.type %></td>
+        <td><%=pets.mood %></td>
+        <td><%=pets.type %></td>
+      </tr>
+      <%}) %>
+           </div>
+      <tr>
+        <th>Walk ID</th>
+        <th>Walk name</th>
+        <th>Distance</th>
+        <th>Date</th>
+        <th>Pet id</th>
+      </tr>
+      <% walks.forEach(function(walks){%>
+     <tr>
+       <td><%=walks.walk_id %></td>
+       <td><%=walks.walk_name %></td>
+       <td><%=walks.walk_distance %></td>
+       <td><%=walks.walk_datetime %></td>
+       <td><%=walks.pet_id%></td>
+     </tr>
+     <%}) %>
+    </table>
+
   </body>
 </html>

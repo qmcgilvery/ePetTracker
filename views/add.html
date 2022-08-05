@@ -12,7 +12,7 @@
       <a class="navbar-brand" href="/about">About</a>
       <a class="navbar-brand" href="/add">Add</a>
       <a class="navbar-brand" href="/new_status">Status</a>
-      <a class="navbar-brand" href="/update">Update</a>
+      <a class="navbar-brand" href="/pet">Pet</a>
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
 
@@ -30,9 +30,9 @@
             <input class="form-control" name="add_pet" type="text" id="pet_type">
 
             <label class="form-check-label" for="pet_mood">
-              Add pet mood here
+              Add pet mood here (from 1-5)
           </label>
-          <input class="form-control" name="add_pet" type="text" id="pet_mood">
+          <input class="form-control" name="add_pet" type="number" id="pet_mood">
 
           <label class="form-check-label" for="pet_health">
             Add pet health here
@@ -48,7 +48,70 @@
       <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
+      </div>
       </form>
+
+      <div><h1>Add walk here</h1></div>
+      <form name="addWalk" id="walks" method="POST" action="/add">
+        <div class="form-check">
+            <label class="form-check-label" for="walk_name">
+                Add walk name here
+            </label>
+            <input class="form-control" name="add_walk" type="text" id="walk_name">
+            
+            <label class="form-check-label" for="walk_distance">
+                Add walk distance here (in KMs, eg. "2.4")
+            </label>
+            <input class="form-control" name="add_walk" type="number" id="walk_distance", step=".01", min="0" max="99">
+
+            <label class="form-check-label" for="walk_datetime">
+              Add walk date and time here
+          </label>
+          <div>
+            <!-- Date time picker, leave value="" empty for to show current datetime as default-->
+            <input type="datetime-local" id="walk_datetime" name="add_walk" value="" min="2021-09-07T00:00" max="2023-09-14T00:00">
+          </div>
+
+          <label class="form-check-label" for="pet_id">
+            Add pet ID here
+        </label>
+        <input class="form-control" name="add_walk" type="number" id="pet_id">
+        </div>
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <div><h1>Add feed schedule here</h1></div>
+        <form name="add_feed" id="walks" method="POST" action="/add">
+          <div class="form-check">
+              <label class="form-check-label" for="feed_name">
+                  Add food name here
+              </label>
+              <input class="form-control" name="add_feed" type="text" id="feed_name">
+
+              <label class="form-check-label" for="feed_type">
+                Add food type here
+            </label>
+            <input class="form-control" name="add_feed" type="text" id="feed_type">
+              
+              <label class="form-check-label" for="feed_amount">
+                  Add amount here (in grams)
+              </label>
+              <input class="form-control" name="add_feed" type="number" id="feed_amount">
+  
+              <label class="form-check-label" for="feed_datetime">
+                Select date and time
+            </label>
+            <div>
+            <!-- Date time picker, leave value="" empty for to show current datetime as default-->
+            <input type="datetime-local" id="feed_datetime" name="add_feed" value="" min="2021-09-07T00:00" max="2023-09-14T00:00">
+          </div>
+            <label class="form-check-label" for="pet_id">
+              Add pet ID here
+          </label>
+          <input class="form-control" name="add_feed" type="number" id="pet_id">
+          </div>
+              <input type="submit" value="Submit"/>
+          </form>
 
   </body>
 </html>
