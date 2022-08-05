@@ -3,17 +3,18 @@ const multer = require("multer");
 const express = require("express");
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    // res.render("index.html");
-    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; ";
+    // let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; ";
+    let sqlquery = "SELECT * FROM walk_1 WHERE walk_datetime >= NOW() ORDER BY walk_datetime ASC LIMIT 1; SELECT * FROM feed_1 WHERE feed_datetime >= NOW() ORDER BY feed_datetime ASC LIMIT 1;";
     // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
         res.redirect("/");
       }
+      console.log(result[1])
       res.render("index.html", {
-        walks: result[1],
-        pets: result[0],
+        walks: result[0],
+        feeds: result[1],
       });
     });
   });
