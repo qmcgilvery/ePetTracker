@@ -3,15 +3,14 @@ const multer = require("multer");
 const express = require("express");
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    // let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; ";
-    let sqlquery = "SELECT * FROM walk_1 WHERE walk_datetime >= NOW() ORDER BY walk_datetime ASC LIMIT 1; SELECT * FROM feed_1 WHERE feed_datetime >= NOW() ORDER BY feed_datetime ASC LIMIT 1;";
-    // let sqlquery_2 = "SELECT * FROM walk_1";
+    let sqlquery =
+      "SELECT * FROM walk_1 WHERE walk_datetime >= NOW() ORDER BY walk_datetime ASC LIMIT 1; SELECT * FROM feed_1 WHERE feed_datetime >= NOW() ORDER BY feed_datetime ASC LIMIT 1;";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
         res.redirect("/");
       }
-      console.log(result[1])
+      console.log(result[1]);
       res.render("index.html", {
         walks: result[0],
         feeds: result[1],
@@ -50,22 +49,24 @@ module.exports = function (app) {
   });
 
   //
-  app.get("/about", function (req, res) {
-    res.render("about.html");
+  app.get("/todo", function (req, res) {
+    res.render("todo.html");
   });
 
-  // for new_status page -- show pets
+  // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
     // query database to get all the pets
     let sqlquery =
-      "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2;SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3";
-    // let sqlquery_2 = "SELECT * FROM walk_1";
+      "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
         res.redirect("/");
       }
       res.render("new_status.html", {
+        feed_p_id3: result[8],
+        feed_p_id2: result[7],
+        feed_p_id1: result[6],
         walks_p_id3: result[5],
         walks_p_id2: result[4],
         walks_p_id1: result[3],
@@ -73,6 +74,19 @@ module.exports = function (app) {
         walks: result[1],
         pets: result[0],
       });
+    });
+  });
+
+  // post for removewalk button in new_status page
+  app.post("/removewalk", function (req, res) {
+    // saving data in database
+    let sqlquery = "DELETE from walk_1 where walk_id = (?)";
+    // execute sql query
+    let updaterecord = [req.body.id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.send("This walk has been removed, Walk ID: " + req.body.id);
     });
   });
 
@@ -141,7 +155,8 @@ module.exports = function (app) {
       for (const key in req.body) {
         let new_records = req.body[key];
         res.write(
-          " This feeding schedule has been added to database, name: " + req.body[key]
+          " This feeding schedule has been added to database, name: " +
+          req.body[key]
         );
         // execute sql query
         db.query(sqlquery2, new_records, (err, result) => {
