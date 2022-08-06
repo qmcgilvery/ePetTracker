@@ -1,62 +1,171 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>List webpage!</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="./css/bootstrap.min.css" />
-  <title>List webpage!</title>
-</head>
+  <body>
+    <!-- blue nav bar at top -->
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/todo">To-do</a>
+      <a class="navbar-brand" href="/add">Add</a>
+      <a class="navbar-brand" href="/new_status">Status</a>
+      <a class="navbar-brand" href="/pet">Pet</a>
+      <a class="navbar-brand" href="/delete">Delete</a>
+    </nav>
+    <h1>ePetTracker status page</h1>
 
-<body>
-  <!-- blue nav bar at top -->
-  <nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">Home</a>
-    <a class="navbar-brand" href="/about">About</a>
-    <a class="navbar-brand" href="/add">Add</a>
-    <a class="navbar-brand" href="/new_status">Status</a>
-    <a class="navbar-brand" href="/pet">Pet</a>
-    <a class="navbar-brand" href="/delete">Delete</a>
-  </nav>
-  <h1>ePetTracker status page</h1>
+    <h3>You can see all the pets here:</h3>
 
-  <h3>You can see all the pets here:</h3>
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Pet ID</th>
+          <th>Pet name</th>
+          <th>Pet type</th>
+          <th>Pet Mood</th>
+          <th>Pet Health</th>
+        </tr>
+        <% pets.forEach(function(pets){%>
+        <tr>
+          <td><%=pets.pet_id %></td>
+          <td><%=pets.name %></td>
+          <td><%=pets.type %></td>
+          <td><%=pets.mood %></td>
+          <td><%=pets.health %></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
 
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Walk ID</th>
+          <th>Walk name</th>
+          <th>Distance</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% walks.forEach(function(walks){%>
+        <tr>
+          <td><%=walks.walk_id %></td>
+          <td><%=walks.walk_name %></td>
+          <td><%=walks.walk_distance %></td>
+          <td><%=walks.walk_datetime %></td>
+          <td><%=walks.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <div>
+      <h3 style="color: red">Remove a walk from the list</h3>
+      <form
+        method="POST"
+        action="/removewalk"
+        onsubmit="return confirm('Are you sure you want to remove walk?');"
+      >
+        <p><strong>Insert Walk ID (from the table above) to remove</strong></p>
+        <div>
+          <input id="id" type="number" name="id" min="1" />
+          <label for="id">Walk ID</label>
+        </div>
+        <p><input type="submit" value="OK" /></p>
+      </form>
+    </div>
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Feed ID</th>
+          <th>Food name</th>
+          <th>Food type</th>
+          <th>Amount</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% feeds.forEach(function(feeds){%>
+        <tr>
+          <td><%=feeds.feed_id %></td>
+          <td><%=feeds.feed_name %></td>
+          <td><%=feeds.feed_type %></td>
+          <td><%=feeds.feed_amount %></td>
+          <td><%=feeds.feed_datetime %></td>
+          <td><%=feeds.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+
+    <h3>Walks for pet_id 1 here:</h3>
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Walk ID</th>
+          <th>Walk name</th>
+          <th>Distance</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% walks_p_id1.forEach(function(walks_p_id1){%>
+        <tr>
+          <td><%=walks_p_id1.walk_id %></td>
+          <td><%=walks_p_id1.walk_name %></td>
+          <td><%=walks_p_id1.walk_distance %></td>
+          <td><%=walks_p_id1.walk_datetime %></td>
+          <td><%=walks_p_id1.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+
+    <h3>Walks for pet_id 2 here:</h3>
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Walk ID</th>
+          <th>Walk name</th>
+          <th>Distance</th>
+          <th>Date & time</th>
+          <th>Pet ID</th>
+        </tr>
+        <% walks_p_id2.forEach(function(walks_p_id2){%>
+        <tr>
+          <td><%=walks_p_id2.walk_id %></td>
+          <td><%=walks_p_id2.walk_name %></td>
+          <td><%=walks_p_id2.walk_distance %></td>
+          <td><%=walks_p_id2.walk_datetime %></td>
+          <td><%=walks_p_id2.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <h3>Walks for pet_id 3 here:</h3>
+    <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Walk ID</th>
+          <th>Walk name</th>
+          <th>Distance</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% walks_p_id3.forEach(function(walks_p_id3){%>
+        <tr>
+          <td><%=walks_p_id3.walk_id %></td>
+          <td><%=walks_p_id3.walk_name %></td>
+          <td><%=walks_p_id3.walk_distance %></td>
+          <td><%=walks_p_id3.walk_datetime %></td>
+          <td><%=walks_p_id3.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+  </body>
+
+  <h3>Feeding for pet_id 1 here:</h3>
   <table class="table table-striped">
-    <div>
-      <tr>
-        <th>Pet ID</th>
-        <th>Pet name</th>
-        <th>Pet type</th>
-        <th>Pet Mood</th>
-        <th>Pet Health</th>
-      </tr>
-      <% pets.forEach(function(pets){%>
-      <tr>
-        <td><%=pets.pet_id %></td>
-        <td><%=pets.name %></td>
-        <td><%=pets.type %></td>
-        <td><%=pets.mood %></td>
-        <td><%=pets.type %></td>
-      </tr>
-      <%}) %>
-    </div>
-    <div>
-      <tr>
-        <th>Walk ID</th>
-        <th>Walk name</th>
-        <th>Distance</th>
-        <th>Date & time</th>
-        <th>Pet id</th>
-      </tr>
-      <% walks.forEach(function(walks){%>
-      <tr>
-        <td><%=walks.walk_id %></td>
-        <td><%=walks.walk_name %></td>
-        <td><%=walks.walk_distance %></td>
-        <td><%=walks.walk_datetime %></td>
-        <td><%=walks.pet_id%></td>
-      </tr>
-      <%}) %>
-    </div>
     <div>
       <tr>
         <th>Feed ID</th>
@@ -64,85 +173,66 @@
         <th>Food type</th>
         <th>Amount</th>
         <th>Date & time</th>
-        <th>Pet id</th>
+        <th>Pet ID</th>
       </tr>
-      <% feeds.forEach(function(feeds){%>
+      <% feed_p_id1.forEach(function(feed_p_id1){%>
       <tr>
-        <td><%=feeds.feed_id %></td>
-        <td><%=feeds.feed_name %></td>
-        <td><%=feeds.feed_type %></td>
-        <td><%=feeds.feed_amount %></td>
-        <td><%=feeds.feed_datetime %></td>
-        <td><%=feeds.pet_id%></td>
+        <td><%=feed_p_id1.feed_id %></td>
+        <td><%=feed_p_id1.feed_name %></td>
+        <td><%=feed_p_id1.feed_type %></td>
+        <td><%=feed_p_id1.feed_amount %></td>
+        <td><%=feed_p_id1.feed_datetime %></td>
+        <td><%=feed_p_id1.pet_id%></td>
       </tr>
       <%}) %>
     </div>
   </table>
 
-  <h3>Walks for pet_id 1 here:</h3>
+  <h3>Feeding for pet_id 2 here:</h3>
   <table class="table table-striped">
     <div>
       <tr>
-        <th>Walk ID</th>
-        <th>Walk name</th>
-        <th>Distance</th>
+        <th>Feed ID</th>
+        <th>Food name</th>
+        <th>Food type</th>
+        <th>Amount</th>
         <th>Date & time</th>
-        <th>Pet id</th>
+        <th>Pet ID</th>
       </tr>
-      <% walks_p_id1.forEach(function(walks_p_id1){%>
+      <% feed_p_id2.forEach(function(feed_p_id2){%>
       <tr>
-        <td><%=walks_p_id1.walk_id %></td>
-        <td><%=walks_p_id1.walk_name %></td>
-        <td><%=walks_p_id1.walk_distance %></td>
-        <td><%=walks_p_id1.walk_datetime %></td>
-        <td><%=walks_p_id1.pet_id%></td>
+        <td><%=feed_p_id2.feed_id %></td>
+        <td><%=feed_p_id2.feed_name %></td>
+        <td><%=feed_p_id2.feed_type %></td>
+        <td><%=feed_p_id2.feed_amount %></td>
+        <td><%=feed_p_id2.feed_datetime %></td>
+        <td><%=feed_p_id2.pet_id%></td>
       </tr>
       <%}) %>
     </div>
   </table>
 
-  <h3>Walks for pet_id 2 here:</h3>
+  <h3>Feeding for pet_id 3 here:</h3>
   <table class="table table-striped">
     <div>
       <tr>
-        <th>Walk ID</th>
-        <th>Walk name</th>
-        <th>Distance</th>
+        <th>Feed ID</th>
+        <th>Food name</th>
+        <th>Food type</th>
+        <th>Amount</th>
         <th>Date & time</th>
-        <th>Pet id</th>
+        <th>Pet ID</th>
       </tr>
-      <% walks_p_id2.forEach(function(walks_p_id2){%>
+      <% feed_p_id3.forEach(function(feed_p_id3){%>
       <tr>
-        <td><%=walks_p_id2.walk_id %></td>
-        <td><%=walks_p_id2.walk_name %></td>
-        <td><%=walks_p_id2.walk_distance %></td>
-        <td><%=walks_p_id2.walk_datetime %></td>
-        <td><%=walks_p_id2.pet_id%></td>
+        <td><%=feed_p_id3.feed_id %></td>
+        <td><%=feed_p_id3.feed_name %></td>
+        <td><%=feed_p_id3.feed_type %></td>
+        <td><%=feed_p_id3.feed_amount %></td>
+        <td><%=feed_p_id3.feed_datetime %></td>
+        <td><%=feed_p_id3.pet_id%></td>
       </tr>
       <%}) %>
     </div>
   </table>
-  <h3>Walks for pet_id 3 here:</h3>
-  <table class="table table-striped">
-    <div>
-      <tr>
-        <th>Walk ID</th>
-        <th>Walk name</th>
-        <th>Distance</th>
-        <th>Date & time</th>
-        <th>Pet id</th>
-      </tr>
-      <% walks_p_id3.forEach(function(walks_p_id3){%>
-      <tr>
-        <td><%=walks_p_id3.walk_id %></td>
-        <td><%=walks_p_id3.walk_name %></td>
-        <td><%=walks_p_id3.walk_distance %></td>
-        <td><%=walks_p_id3.walk_datetime %></td>
-        <td><%=walks_p_id3.pet_id%></td>
-      </tr>
-      <%}) %>
-    </div>
-  </table>
-</body>
-
 </html>
