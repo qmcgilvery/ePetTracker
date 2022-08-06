@@ -3,17 +3,129 @@
 
 <head>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <style>
+        /*        COLOR SETTING=====================================*/
+        .textBlue {
+            color: blue;
+        }
+
+        .textBlack {
+            color: black;
+        }
+
+        .textWhite {
+            color: white;
+        }
+
+        .bgBlue {
+            background-color: blue;
+        }
+
+        .bgBlack {
+            background-color: black;
+        }
+
+        .bgWhite {
+            background-color: white;
+        }
+
+        /*        COLOR SETTING=====================================*/
+
+
+        /*THIS IS USER PROFILE STYLING====================================================*/
+
+
+        /*THIS IS USER PROFILE STYLING====================================================*/
+
+
+        /*THIS IS PET SECTION======================================================================        */
+
+        /*THIS IS TABLE SETTING====================================================================*/
+        .h1-table {
+            /*            background-color: red;*/
+            /*            margin: 500px;*/
+            padding: 20px;
+        }
+
+        /*
+        .tableWalk {
+            background-color: red;
+            height: 50px;
+        }
+
+        .tableFeed {
+            background-color: blue;
+            height: 50px;
+        }
+*/
+
+        /*THIS IS TABLE SETTING====================================================================*/
+
+
+        /*THIS IS PET SECTION======================================================================        */
+        .addImage {
+            padding-top: 230px;
+        }
+
+        .userImage img {
+            height: 250px;
+
+            width: auto;
+        }
+
+        .profileSection {
+            height: 360px;
+        }
+
+        .profileSection h3 {
+            padding-top: 120px;
+        }
+
+        .profileButton {
+            padding-top: 120px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 40px;
+        }
+
+        .petImage img {
+            width: 60%;
+        }
+
+        .petSection {
+            clear: both;
+            /*            margin-top: 300px;*/
+            margin-bottom: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .petRepetition1 {
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        .myPetData {
+            clear: both;
+            display: inline-block;
+            width: 30%;
+            height: 50px;
+            font-size: 18px;
+        }
 
     </style>
+
     <title>ePetTracker</title>
 </head>
 
 <body>
 
-    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
-    <nav class="navbar navbar-expand-md navbar-light bgWhite">
+    <!--   THIS IS NAVIGATION MENU SECTION==============================================================-->
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-between">
         <div class="container">
             <a href="#" class="navbar-brand fw-bold">
                 <span class="textBlue">e</span><span class="textBlack">PetTracker</span>
@@ -30,13 +142,14 @@
                     <a class="navbar-brand" href="/todo">To-do</a>
                     <a class="nav-item nav-link" href="/add">Add</a>
                     <a class="nav-item nav-link" href="/new_status">Status</a>
-                    <a class="nav-item nav-link active" href="/pet">Pet</a>
+                    <a class="nav-item nav-link active" href="/pet">Pet <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="/delete">Delete</a>
                 </div>
             </div>
         </div>
     </nav>
-    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+
+    <!--   THIS IS NAVIGATION MENU SECTION==============================================================-->
 
 
 
@@ -75,15 +188,8 @@
 
 
 
-
-
-
-
-
-
-
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
-    <div class="container text-center petSection bgBlue">
+    <div class="container text-center petSection bg-primary">
         <h1 class="text-white">Pet</h1>
         <!--        THIS WILL BE A BUTTON OR ACCORDION-->
         <div class="petRepetition1">
@@ -95,37 +201,32 @@
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<%=pets.name %>" aria-expanded="true" aria-controls="collapseOne">
                             <div class="petRepetition1">
-                                <div class="row  align-items-center  bgBlack shadow rounded">
+                                <div class="row  align-items-center  my-5 py-5 shadow bg-secondary rounded">
                                     <div class="petImage col-4 circularImage  my-2 py-2">
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Pitsch-Dog.jpg" class="image-fluid" alt="this is pet image">
                                     </div>
                                     <div class="petProfile col-8 text-white pt-2">
-                                        <div class="myPetData">Name : <%=pets.name %></div>
-                                        <div class="myPetData">Mood : <%=pets.mood %></div>
-                                        <div class="myPetData">Type : <%=pets.type %></div>
+                                        <div class="myPetData"><%=pets.name %></div>
+                                        <div class="myPetData"><%=pets.mood %></div>
+                                        <div class="myPetData"><%=pets.type %></div>
                                     </div>
                                 </div>
                             </div>
                         </button>
                     </h2>
                     <div id="<%=pets.name %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <!--                        <h1 class="h1-table">THIS IS WALKING TABLE</h1>-->
+                        <h1 class="h1-table">THIS IS WALKING TABLE</h1>
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
-                            <!--                            <div class="tableWalk">-->
-                            <caption class="h3">This is walking schedule</caption>
-                            <thead>
-
+                            <div class="tableWalk">
                                 <tr>
-                                    <th scope="col">Walk ID</th>
-                                    <th scope="col">Walk name</th>
-                                    <th scope="col">Distance</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Pet id</th>
+                                    <th>Walk ID</th>
+                                    <th>Walk name</th>
+                                    <th>Distance</th>
+                                    <th>Date</th>
+                                    <th>Pet id</th>
                                 </tr>
-                            </thead>
-                            <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
-                            <tbody>
+                                <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
                                 <% walks.forEach(function(walks){%>
                                 <tr>
                                     <td><%=walks.walk_id %></td>
@@ -136,30 +237,26 @@
                                 </tr>
                                 <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
                                 <%}) %>
-                            </tbody>
-                            <!--                            </div>-->
+
+                            </div>
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
                         <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup">Add</button>
                         <!--                        <input type="submit" value="Remove" />-->
-                        <!--                        <h1 class="h1-table">THIS IS FEEDING TABLE</h1>-->
+                        <h1 class="h1-table">THIS IS FEEDING TABLE</h1>
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
                             <div class="tableFeed">
                                 <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
-
-                                <caption class="h3">This is feeding schedule</caption>
-                                <thead>
+                                <div>
                                     <tr>
-                                        <th scope="col">Feed ID</th>
-                                        <th scope="col">Food name</th>
-                                        <th scope="col">Food type</th>
-                                        <th scope="col">Amount</th>
-                                        <th scope="col">Date &amp; time</th>
-                                        <th scope="col">Pet id</th>
+                                        <th>Feed ID</th>
+                                        <th>Food name</th>
+                                        <th>Food type</th>
+                                        <th>Amount</th>
+                                        <th>Date &amp; time</th>
+                                        <th>Pet id</th>
                                     </tr>
-                                </thead>
-                                <tbody>
                                     <% feeds.forEach(function(feeds){%>
                                     <tr>
                                         <td><%=feeds.feed_id %></td>
@@ -170,8 +267,8 @@
                                         <td><%=feeds.pet_id%></td>
                                     </tr>
                                     <%}) %>
-                                </tbody>
 
+                                </div>
                                 <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
 
                             </div>
@@ -190,7 +287,7 @@
 
             </div>
         </div>
-        <button class="btn bgWhite " data-bs-toggle="modal" data-bs-target="#newPetPopup">Add</button>
+        <button class="btn bg-white " data-bs-toggle="modal" data-bs-target="#newPetPopup">Add</button>
 
     </div>
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
@@ -200,12 +297,12 @@
 
 
 
-    <!-- THIS IS POP UP MENU NEW PET PROFILE==================================================================================== -->
+    <!-- THIS IS POP UP MENU NEW PET PROFILE -->
     <div class="modal fade" id="newPetPopup" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">Add new pet</h5>
+                    <h5 class="modal-title" id="modal-title">Add new pet profiles</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -213,74 +310,35 @@
                     <form name="addPet" id="pets" method="POST" action="/">
                         <div class="form-check">
                             <div>
-
                                 <label class="form-check-label" for="pet_name">
                                     Name
                                 </label>
                                 <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie">
-
-
                                 <label class="form-check-label" for="pet_type">
                                     Type
                                 </label>
                                 <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Dog">
-
-
                                 <label class="form-check-label" for="pet_mood">
                                     Mood
-                                </label><br>
-                                <!--
-                                <div class="form-control slidecontainer">
-                                    <input class="slider" name="add_pet" type="range" id="pet_mood" value="4" min="1" step="1" max="5">
-                                    <p><span id="demo"></span></p>
-                                </div>
--->
-
-                                <div class="form-control slidecontainer">
-                                    <input class="slider" name="add_pet" type="range" id="pet_mood" value="3" min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
-                                    <input id="sliderText" type="number" value="3" min="1" max="5" oninput="pet_mood.value=sliderText.value" />
-                                </div>
-
-
-
-
-
-<!--
-                                <div>
-                                    <input id="pet_mood" type="range" min="1" max="5" oninput="sliderText.value=pet_mood.value" />
-                                </div>
--->
-
-
-
-
-
-
-
-
-
-
-                                <!--                                <input class="form-control myform-control" name="add_pet" type="range" id="pet_mood" min="1" step="1" max="5" placeholder="">-->
-
-                                <!--                                <br>-->
+                                </label>
+                                <input class="form-control" name="add_pet" type="text" id="pet_mood" placeholder="e.g. 1-5">
                                 <label class="form-check-label" for="pet_health">
                                     Health
                                 </label>
-                                <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong">
-
-
-
+                                <input class="form-control" name="add_pet" type="text" id="pet_health">
                             </div>
                         </div>
                         <div class="text-center">
                             <input type="submit" value="Submit" />
                         </div>
+
                     </form>
+
                 </div>
+
             </div>
         </div>
     </div>
-    <!-- THIS IS POP UP MENU NEW PET PROFILE==================================================================================== -->
 
 
     <!-- THIS IS POP UP MENU NEW WALK SCHEDULE================================================================================== -->
@@ -293,54 +351,45 @@
                 </div>
                 <div class="modal-body">
                     <p>Please fill all the fields below</p>
-                    <form name="addWalk" id="walks" method="POST" action="/add">
+                    <form name="addPet" id="pets" method="POST" action="/">
                         <div class="form-check">
                             <div>
+<!--
+                                <label class="form-check-label" for="walk_id">
+                                    ID
+                                </label>
+                                <input class="form-control" name="add_walk" type="text" id="walk_id" aria-describedby="nameHelp" placeholder="e.g. 1">
+-->
+
+
                                 <label class="form-check-label" for="walk_name">
                                     Walk Name
                                 </label>
-                                <input class="form-control" name="add_walk" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. long walk">
+                                <input class="form-control" name="add_walk" type="text" id="walk_name" placeholder="e.g. Easy Walk">
 
 
                                 <label class="form-check-label" for="walk_distance">
-                                    Distance (in KMs)
+                                    Distance (in KM)
                                 </label>
-                                <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01" placeholder="e.g. 1.5">
+                                <input class="form-control" name="add_walk" type="number" id="walk_distance" placeholder="e.g. 1">
 
 
-                                <label class="form-check-label" for="walk_datetime">
-                                    Date &amp; Time
-                                </label>
-                                <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime" placeholder="">
+
+                                <label class="form-check-label" for="walk_datetime">Date &amp; Time</label>
+                                <input class="form-control" id="walk_datetime" type="datetime-local" name="add_walk" min="2022-06-01T08:30" max="2027-06-30T16:30">
+
+
+
 
 
                                 <label class="form-check-label" for="pet_id">
-                                    Pet ID
+                                    Pet Id
                                 </label>
+                                <input class="form-control" name="add_walk" type="text" id="pet_id">
 
-                                <select class="form-check-label" name="add_walk" id="pet_id">
-                                    <% walks.forEach(function(walks){%>
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <option value="<%=walks.pet_id%>"><%=walks.pet_id%></option>
-                                    <!--                                    <td><%=walks.pet_id%></td>-->
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <%}) %>
-                                </select>
-                                <!-- <input class="form-control" name="add_pet" type="text" id="pet_id">-->
+
                             </div>
                         </div>
-
-
-
-
-                        <!--
-                        <td><%=feeds.feed_id %></td>
-                        <td><%=feeds.feed_name %></td>
-                        <td><%=feeds.feed_type %></td>
-                        <td><%=feeds.feed_amount %></td>
-                        <td><%=feeds.feed_datetime %></td>
-                        <td><%=feeds.pet_id%></td>-->
-
                         <div class="text-center">
                             <input type="submit" value="Submit" />
                         </div>
@@ -364,36 +413,30 @@
                 </div>
                 <div class="modal-body">
                     <p>Please fill all the fields below</p>
-                    <form name="addFeed" id="feeds" method="POST" action="/add">
+                    <form name="addPet" id="pets" method="POST" action="/">
                         <div class="form-check">
                             <div>
                                 <label class="form-check-label" for="feed_name">
                                     Food Name
                                 </label>
-                                <input class="form-control" name="add_feed" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. Snack">
+                                <input class="form-control" name="add_feed" type="text" id="feed_name" aria-describedby="nameHelp" placeholder="e.g. Sausage">
                                 <label class="form-check-label" for="feed_type">
                                     Food Type
                                 </label>
-                                <input class="form-control" name="add_feed" type="text" id="feed_type" placeholder="e.g. kibbles">
+                                <input class="form-control" name="add_feed" type="text" id="feed_type" placeholder="e.g. Dog">
                                 <label class="form-check-label" for="feed_amount">
-                                    Amount (in grams)
+                                    Amount
                                 </label>
-                                <input class="form-control" name="add_feed" type="number" id="feed_amount" step="0.001" placeholder="e.g. 10">
+                                <input class="form-control" name="add_feed" type="text" id="feed_amount" placeholder="e.g. 1-5">
                                 <label class="form-check-label" for="feed_datetime">
                                     Date &amp; Time
                                 </label>
-                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime">
-                                <label class="form-check-label" for="pet_id">
-                                    Pet ID
+                                <input class="form-control" name="add_feed" type="text" id="feed_datetime">
+                                <label class="form-check-label" for="pet_id), ">
+                                    Pet Id
                                 </label>
-                                <select class="form-check-label" name="add_feed" id="pet_id">
-                                    <% feeds.forEach(function(feeds){%>
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <option value="<%=feeds.pet_id%>"><%=feeds.pet_id%></option>
-                                    <!--                                    <td><%=walks.pet_id%></td>-->
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <%}) %>
-                                </select>
+                                <input class="form-control" name="add_feed" type="text" id="pet_id), ">
+                                
                             </div>
                         </div>
                         <div class="text-center">
@@ -410,7 +453,7 @@
     <!-- THIS IS POP UP MENU NEW FEED SCHEDULE================================================================================== -->
 
 
-    <!--UPLOAD IMAGE TO USER PROFILE PICS-->
+
     <h1>ePetTracker</h1>
     <div class="container">
         <img src="../uploads/profile-pic.png" class="img-fluid" alt="Responsive image">
@@ -422,33 +465,49 @@
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
     </form>
-    <!--UPLOAD IMAGE TO USER PROFILE PICS-->
 
 
+    <h3>Add pet here</h3>
+    <form name="addPet" id="pets" method="POST" action="/add">
+        <div class="form-check">
+            <label class="form-check-label" for="pet_name">
+                Add pet name here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_name">
+            <label class="form-check-label" for="pet_type">
+                Add pet type here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_type">
 
+            <label class="form-check-label" for="pet_mood">
+                Add pet mood here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_mood">
 
+            <label class="form-check-label" for="pet_health">
+                Add pet health here
+            </label>
+            <input class="form-control" name="add_pet" type="text" id="pet_health">
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
 
-
-    <!--UPLOAD IMAGE TO PETS   ==========================================================-->
     <h3>Pet 1 Image Upload</h3>
     <form method="POST" action="/pet1-upload-single" enctype="multipart/form-data">
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
     </form>
-
     <h3>Pet 2 Image Upload</h3>
     <form method="POST" action="/pet2-upload-single" enctype="multipart/form-data">
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
     </form>
-
     <h3>Pet 3 Image Upload</h3>
     <img src="../uploads/pets/pet3/pet3-pic.png" class="img-thumbnail" alt="Responsive image">
     <form method="POST" action="/pet3-upload-single" enctype="multipart/form-data">
         <input type="file" name="image" /><br /><br />
         <button type="submit" name="upload">Upload</button>
     </form>
-    <!--UPLOAD IMAGE TO PETS   ==========================================================-->
 
 
 
@@ -496,75 +555,39 @@
     <!--THIS IS LINK TO BOOTSTRAP JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script>
-        //THIS IS JAVASCRIPT CODE FOR TOOLTIPS==================================
         const tooltips = document.querySelectorAll('.tt')
         tooltips.forEach(t => {
             new bootstrap.Tooltip(t)
         })
-        //THIS IS JAVASCRIPT CODE FOR TOOLTIPS==================================
-
-        //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
-        var slider = document.getElementById("pet_mood");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
-
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-
-
-
-
-
-        //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
-
-        //GET ALL SELECT OPTION VALUE=========================================        
-        var options = document.getElementById('pet_id').options;
-        for (let i = 0; i < options.length; i++) {
-            console.log(options[i].value); //log the value
-        }
-        //GET ALL SELECT OPTION VALUE=========================================        
-
-        //INSERT DATA TO SELECT OPTION========================================   
-        function myFunction() {
-            var x = document.getElementById("mySelect");
-            var option = document.createElement("option");
-            option.text = "Kiwi";
-            x.add(option);
-        }
-        //INSERT DATA TO SELECT OPTION========================================        
-
-
-
-        //CREATE TABLE FOR ACCORDION=====================================
-        function tableCreate() {
-            var body = document.getElementsByTagName('body')[0];
-            var tbl = document.createElement('table');
-            tbl.style.width = '100%';
-            tbl.setAttribute('border', '1');
-            var tbdy = document.createElement('tbody');
-            for (var i = 0; i < 3; i++) {
-                var tr = document.createElement('tr');
-                for (var j = 0; j < 2; j++) {
-                    if (i == 2 && j == 1) {
-                        break
-                    } else {
-                        var td = document.createElement('td');
-                        td.appendChild(document.createTextNode('\u0020'))
-                        i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-                        tr.appendChild(td)
-                    }
-                }
-                tbdy.appendChild(tr);
-
-                tbl.appendChild(tbdy);
-                body.appendChild(tbl)
-            }
-            tableCreate();
-
-            //CREATE TABLE FOR ACCORDION=====================================        
 
     </script>
+</body>
+
+</html>
+=======
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>List webpage!</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/about">About</a>
+        <a class="navbar-brand" href="/add">Add</a>
+        <a class="navbar-brand" href="/new_status">Status</a>
+        <a class="navbar-brand" href="/pet">Pet</a>
+        <a class="navbar-brand" href="/delete">Delete</a>
+    </nav>
+</nav>
+
+<h1>Pet page</h1>
+<div><p>pets here:</p>
+
+</div>
 </body>
 
 </html>
