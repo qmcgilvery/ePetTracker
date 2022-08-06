@@ -43,10 +43,34 @@ module.exports = function (app) {
     }
   });
 
-  // render update page with all devices in database
+  // render pet page in database
   app.get("/pet", function (req, res) {
-    res.render("pet.html");
-  });
+    // res.render("index.html");
+    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
+    //        let sqlquery = "SELECT * FROM pet_test1; SELECT walk_datetime FROM walk_1; SELECT * FROM feed_1";
+
+
+
+
+    //date_format(datecol, '%H:%i:%s') as 'time' FROM table;
+
+
+
+
+    // let sqlquery_2 = "SELECT * FROM walk_1";
+    // execute sql query
+    db.query(sqlquery, (err, result) => {
+        if (err) {
+            res.redirect("/");
+        }
+        res.render("pet.html", {
+            feeds: result[2],
+            walks: result[1],
+            pets: result[0],
+        });
+    });
+    //        res.render("pet.html");
+});
 
   //
   app.get("/todo", function (req, res) {

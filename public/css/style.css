@@ -1,3 +1,187 @@
+/*        COLOR SETTING=====================================*/
+.textBlue {
+    color: #319ed7;
+}
+
+.textBlack {
+    color: #545353;
+}
+
+.textWhite {
+    color: #f9f7f7;
+}
+
+.bgBlue {
+    background-color: #319ed7;
+}
+
+.bgBlack {
+    background-color: #545353;
+}
+
+.bgWhite {
+    background-color: #f9f7f7;
+}
+
+/*        COLOR SETTING=====================================*/
+
+
+/*GENERAL SETTING*/
+caption {
+    caption-side: top;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+/*THIS IS NAVIGATION STYLING======================================================*/
+.active {
+    font-weight: bold;
+}
+
+/*THIS IS NAVIGATION STYLING======================================================*/
+
+
+
+/*THIS IS USER PROFILE STYLING====================================================*/
+
+
+/*THIS IS USER PROFILE STYLING====================================================*/
+
+
+/*THIS IS PET SECTION======================================================================        */
+
+/*THIS IS TABLE SETTING====================================================================*/
+.h1-table {
+    /*            background-color: red;*/
+    /*            margin: 500px;*/
+    padding: 20px;
+}
+
+/*
+        .tableWalk {
+            background-color: red;
+            height: 50px;
+        }
+
+        .tableFeed {
+            background-color: blue;
+            height: 50px;
+        }
+*/
+
+/*THIS IS TABLE SETTING====================================================================*/
+
+
+/*THIS IS PET SECTION======================================================================        */
+.addImage {
+    padding-top: 230px;
+}
+
+.userImage img {
+    height: 250px;
+
+    width: auto;
+}
+
+.profileSection {
+    height: 360px;
+}
+
+.profileSection h3 {
+    padding-top: 120px;
+}
+
+.profileButton {
+    padding-top: 120px;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+}
+
+.petImage img {
+    width: 60%;
+}
+
+.petSection {
+    clear: both;
+    /*            margin-top: 300px;*/
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.petRepetition1 {
+    width: 92%;
+    margin: auto;
+    /*    margin-top: 30px;*/
+}
+
+.myPetData {
+    clear: both;
+    display: inline-block;
+    width: 30%;
+    height: 50px;
+    font-size: 18px;
+}
+
+/*edit bootstrap form control*/
+.myform-control {
+    width: 75%;
+}
+
+
+/*THIS IS STYLING FOR SLIDER==========================================*/
+.slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+#sliderText {
+    display: inline;
+/*    border: 0px hidden;*/
+    margin-left: 5px;
+
+}
+
+/*THIS IS STYLING FOR SLIDER==========================================*/
+
+
+
+
 .top-margin {
     margin-top: 100px;
 }
