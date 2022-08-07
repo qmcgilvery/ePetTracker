@@ -15,7 +15,7 @@
     <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
     <nav class="navbar navbar-expand-md navbar-light bgWhite">
         <div class="container">
-            <a href="#" class="navbar-brand fw-bold">
+            <a href="/" class="navbar-brand fw-bold">
                 <span class="textBlue">e</span><span class="textBlack">PetTracker</span>
             </a>
             <!--            toggle button for mobile screen=========================================================================-->
@@ -23,11 +23,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--            toggle button for mobile screen=========================================================================-->
-
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Home </a>
-                    <a class="navbar-brand" href="/todo">To-do</a>
+                    <a class="nav-item nav-link" href="/">Home </a>
+                    <a class="nav-item nav-link" href="/about">About</a>
                     <a class="nav-item nav-link" href="/add">Add</a>
                     <a class="nav-item nav-link" href="/new_status">Status</a>
                     <a class="nav-item nav-link active" href="/pet">Pet</a>
@@ -37,50 +36,6 @@
         </div>
     </nav>
     <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
-
-
-
-
-
-
-
-
-
-
-    <!--THIS IS USER PROFILE SECTION---------------------------------------->
-    <!--
-    <div class="container mt-2 pt-2 mb-2">
-        <div class="userSection">
-            <div class="imageSection image-fluid">
-                <div class="userImage  ">
-
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Michael_Jordan_in_2014.jpg" class="rounded float-start img-fluid" alt="this is user image">
-
-                </div>
-            </div>
-            <div class="profileSection shadow">
-                <div class="text-center ">
-                    <h3 class="align-middle">Michael Jordan</h3>
-                    <h5>Age: 50</h5>
-                </div>
-                <div class="profileButton text-center">
-                    <button class="btn text-white bg-primary" data-bs-toggle="modal" data-bs-target="#newUserPopup">Edit</button>
-                    <button class="btn text-white bg-primary">Remove</button>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-    <!--THIS IS USER PROFILE SECTION---------------------------------------->
-
-
-
-
-
-
-
-
-
 
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
     <div class="container text-center petSection bgBlue">
@@ -109,13 +64,10 @@
                         </button>
                     </h2>
                     <div id="<%=pets.name %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <!--                        <h1 class="h1-table">THIS IS WALKING TABLE</h1>-->
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
-                            <!--                            <div class="tableWalk">-->
                             <caption class="h3">This is walking schedule</caption>
                             <thead>
-
                                 <tr>
                                     <th scope="col">Walk ID</th>
                                     <th scope="col">Walk name</th>
@@ -127,6 +79,7 @@
                             <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
                             <tbody>
                                 <% walks.forEach(function(walks){%>
+                                <% if(walks.pet_id == pets.pet_id){%>
                                 <tr>
                                     <td><%=walks.walk_id %></td>
                                     <td><%=walks.walk_name %></td>
@@ -135,63 +88,55 @@
                                     <td><%=walks.pet_id%></td>
                                 </tr>
                                 <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
+                                <%} %>
                                 <%}) %>
+                            </tbody>
+                            <!--THIS IS WALKING TABLE==================-->
+                        </table>
+                        <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup">Add</button>
+                        <table class="table table-striped">
+                            <!--THIS IS WALKING TABLE==================-->
+                            <!--                            <div class="tableFeed">-->
+                            <caption class="h3">This is feeding schedule</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Feed ID</th>
+                                    <th scope="col">Food name</th>
+                                    <th scope="col">Food type</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Date &amp; time</th>
+                                    <th scope="col">Pet id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
+
+                                <% feeds.forEach(function(feeds){%>
+                                <% if(feeds.pet_id == pets.pet_id){%>
+                                <tr>
+                                    <td><%=feeds.feed_id %></td>
+                                    <td><%=feeds.feed_name %></td>
+                                    <td><%=feeds.feed_type %></td>
+                                    <td><%=feeds.feed_amount %></td>
+                                    <td><%=feeds.feed_datetime %></td>
+                                    <td><%=feeds.pet_id%></td>
+                                </tr>
+                                <%} %>
+                                <%}) %>
+                                <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
                             </tbody>
                             <!--                            </div>-->
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
-                        <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup">Add</button>
-                        <!--                        <input type="submit" value="Remove" />-->
-                        <!--                        <h1 class="h1-table">THIS IS FEEDING TABLE</h1>-->
-                        <table class="table table-striped">
-                            <!--THIS IS WALKING TABLE==================-->
-                            <div class="tableFeed">
-                                <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
-
-                                <caption class="h3">This is feeding schedule</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Feed ID</th>
-                                        <th scope="col">Food name</th>
-                                        <th scope="col">Food type</th>
-                                        <th scope="col">Amount</th>
-                                        <th scope="col">Date &amp; time</th>
-                                        <th scope="col">Pet id</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% feeds.forEach(function(feeds){%>
-                                    <tr>
-                                        <td><%=feeds.feed_id %></td>
-                                        <td><%=feeds.feed_name %></td>
-                                        <td><%=feeds.feed_type %></td>
-                                        <td><%=feeds.feed_amount %></td>
-                                        <td><%=feeds.feed_datetime %></td>
-                                        <td><%=feeds.pet_id%></td>
-                                    </tr>
-                                    <%}) %>
-                                </tbody>
-
-                                <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
-
-                            </div>
-                            <!--THIS IS WALKING TABLE==================-->
-                        </table>
                         <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newFeedSchedulePopup">Add</button>
-                        <!--                        <input type="submit" value="Remove" />-->
-
                     </div>
                 </div>
                 <!--ACCORDION ITEM 1        -->
-
                 <%}) %>
                 <!--THIS IS LOOPING DATA FOR ALL PET-->
-
-
             </div>
         </div>
         <button class="btn bgWhite " data-bs-toggle="modal" data-bs-target="#newPetPopup">Add</button>
-
     </div>
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
 
@@ -213,63 +158,25 @@
                     <form name="addPet" id="pets" method="POST" action="/">
                         <div class="form-check">
                             <div>
-
                                 <label class="form-check-label" for="pet_name">
                                     Name
                                 </label>
                                 <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie">
-
-
                                 <label class="form-check-label" for="pet_type">
                                     Type
                                 </label>
                                 <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Dog">
-
-
                                 <label class="form-check-label" for="pet_mood">
                                     Mood
                                 </label><br>
-                                <!--
-                                <div class="form-control slidecontainer">
-                                    <input class="slider" name="add_pet" type="range" id="pet_mood" value="4" min="1" step="1" max="5">
-                                    <p><span id="demo"></span></p>
-                                </div>
--->
-
                                 <div class="form-control slidecontainer">
                                     <input class="slider" name="add_pet" type="range" id="pet_mood" value="3" min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
                                     <input id="sliderText" type="number" value="3" min="1" max="5" oninput="pet_mood.value=sliderText.value" />
                                 </div>
-
-
-
-
-
-<!--
-                                <div>
-                                    <input id="pet_mood" type="range" min="1" max="5" oninput="sliderText.value=pet_mood.value" />
-                                </div>
--->
-
-
-
-
-
-
-
-
-
-
-                                <!--                                <input class="form-control myform-control" name="add_pet" type="range" id="pet_mood" min="1" step="1" max="5" placeholder="">-->
-
-                                <!--                                <br>-->
                                 <label class="form-check-label" for="pet_health">
                                     Health
                                 </label>
                                 <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong">
-
-
-
                             </div>
                         </div>
                         <div class="text-center">
@@ -300,20 +207,14 @@
                                     Walk Name
                                 </label>
                                 <input class="form-control" name="add_walk" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. long walk">
-
-
                                 <label class="form-check-label" for="walk_distance">
                                     Distance (in KMs)
                                 </label>
                                 <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01" placeholder="e.g. 1.5">
-
-
                                 <label class="form-check-label" for="walk_datetime">
                                     Date &amp; Time
                                 </label>
                                 <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime" placeholder="">
-
-
                                 <label class="form-check-label" for="pet_id">
                                     Pet ID
                                 </label>
@@ -329,26 +230,11 @@
                                 <!-- <input class="form-control" name="add_pet" type="text" id="pet_id">-->
                             </div>
                         </div>
-
-
-
-
-                        <!--
-                        <td><%=feeds.feed_id %></td>
-                        <td><%=feeds.feed_name %></td>
-                        <td><%=feeds.feed_type %></td>
-                        <td><%=feeds.feed_amount %></td>
-                        <td><%=feeds.feed_datetime %></td>
-                        <td><%=feeds.pet_id%></td>-->
-
                         <div class="text-center">
                             <input type="submit" value="Submit" />
                         </div>
-
                     </form>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -399,11 +285,8 @@
                         <div class="text-center">
                             <input type="submit" value="Submit" />
                         </div>
-
                     </form>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -452,47 +335,6 @@
 
 
 
-
-    <table class="table table-striped">
-        <div>
-            <tr>
-                <th>Pet ID</th>
-                <th>Pet name</th>
-                <th>Pet type</th>
-                <th>Pet Mood</th>
-                <th>Pet Health</th>
-            </tr>
-            <% pets.forEach(function(pets){%>
-            <tr>
-                <td><%=pets.pet_id %></td>
-                <td><%=pets.name %></td>
-                <td><%=pets.type %></td>
-                <td><%=pets.mood %></td>
-                <td><%=pets.type %></td>
-            </tr>
-            <%}) %>
-        </div>
-        <tr>
-            <th>Walk ID</th>
-            <th>Walk name</th>
-            <th>Distance</th>
-            <th>Date</th>
-            <th>Pet id</th>
-        </tr>
-        <% walks.forEach(function(walks){%>
-        <tr>
-            <td><%=walks.walk_id %></td>
-            <td><%=walks.walk_name %></td>
-            <td><%=walks.walk_distance %></td>
-            <td><%=walks.walk_datetime %></td>
-            <td><%=walks.pet_id%></td>
-        </tr>
-        <%}) %>
-    </table>
-
-
-
-
     <!--THIS IS LINK TO BOOTSTRAP JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script>
@@ -511,11 +353,6 @@
         slider.oninput = function() {
             output.innerHTML = this.value;
         }
-
-
-
-
-
         //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
 
         //GET ALL SELECT OPTION VALUE=========================================        
@@ -533,8 +370,6 @@
             x.add(option);
         }
         //INSERT DATA TO SELECT OPTION========================================        
-
-
 
         //CREATE TABLE FOR ACCORDION=====================================
         function tableCreate() {
@@ -556,13 +391,12 @@
                     }
                 }
                 tbdy.appendChild(tr);
-
                 tbl.appendChild(tbdy);
                 body.appendChild(tbl);
             }
-            tableCreate();
-
-            //CREATE TABLE FOR ACCORDION=====================================        
+        }
+        tableCreate();
+        //CREATE TABLE FOR ACCORDION=====================================        
 
     </script>
 </body>
