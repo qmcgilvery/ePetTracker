@@ -21,7 +21,8 @@
          <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_name %></li>
          <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_distance %> Kilometers</li>
          <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_datetime %></li>
-         <li class="list-group-item list-group-item-primary"><%=walks.pet_id %></li>
+         <!-- make this grab pet name via pet_id -->
+         <li class="list-group-item list-group-item-primary"><%=walks.name %></li>
          <% }) %>
        </ul>
     </div>
@@ -33,7 +34,8 @@
          <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_type %></li>
          <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_amount %> Grams</li>
          <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_datetime %></li>
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.pet_id%></li>
+         <!-- make this show pet name via pet_id -->
+         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.name%></li>
          <% }) %>
        </ul>
     </div>

@@ -4,7 +4,7 @@ const express = require("express");
 module.exports = function (app) {
   app.get("/", function (req, res) {
     let sqlquery =
-      "SELECT * FROM walk_1 WHERE walk_datetime >= NOW() ORDER BY walk_datetime ASC LIMIT 1; SELECT * FROM feed_1 WHERE feed_datetime >= NOW() ORDER BY feed_datetime ASC LIMIT 1;";
+      "SELECT * FROM walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= NOW() ORDER BY walk_datetime ASC LIMIT 1; SELECT * FROM feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE feed_datetime >= NOW() ORDER BY feed_datetime ASC LIMIT 1;";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
