@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>To-do Page</title>
   </head>
 
@@ -15,6 +16,91 @@
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
     <h1>This is the To-do page</h1>
- 
+    <div class="col-6 mx-auto top-margin text-center">
+      <ul class="list-group primary">
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+          <h3>Today</h3>
+        </li>
+        <% walks_today.forEach(function(walks_today){%>
+        <li class="list-group-item list-group-item-primary border-bottom-0">
+          <%=walks_today.walk_name %>
+        </li>
+        <li class="list-group-item list-group-item-primary border-bottom-0">
+          <%=walks_today.walk_distance %> Kilometers
+        </li>
+        <li class="list-group-item list-group-item-primary border-bottom-0">
+          <%=walks_today.walk_datetime %>
+        </li>
+        <!-- is complete boolean -->
+        <li class="list-group-item list-group-item-primary border-bottom-0">
+          <%=walks_today.walk_complete %>
+        </li>
+        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+        <strong>
+          <li class="list-group-item list-group-item-primary">
+            <%=walks_today.name %>
+          </li>
+        </strong>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="col-6 mx-auto top-margin text-center">
+      <ul class="list-group primary">
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+          <h3>Tomorrow</h3>
+        </li>
+        <% walks_tomorrow.forEach(function(walks_tomorrow){%>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=walks_tomorrow.walk_name %>
+        </li>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=walks_tomorrow.walk_distance %> Kilometers
+        </li>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=walks_tomorrow.walk_datetime %>
+        </li>
+        <!-- is complete boolean -->
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=walks_tomorrow.walk_complete %>
+        </li>
+        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+        <strong>
+          <li class="list-group-item list-group-item-info">
+            <%=walks_tomorrow.name %>
+          </li>
+        </strong>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="col-6 mx-auto top-margin text-center">
+      <ul class="list-group primary">
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+          <h3>Upcoming</h3>
+        </li>
+        <% walks_upcoming.forEach(function(walks_upcoming){%>
+        <li class="list-group-item list-group-item-light border-bottom-0">
+          <%=walks_upcoming.walk_name %>
+        </li>
+        <li class="list-group-item list-group-item-light border-bottom-0">
+          <%=walks_upcoming.walk_distance %> Kilometers
+        </li>
+        <li class="list-group-item list-group-item-light border-bottom-0">
+          <%=walks_upcoming.walk_datetime %>
+        </li>
+        <!-- is complete boolean -->
+        <li class="list-group-item list-group-item-light border-bottom-0">
+          <%=walks_upcoming.walk_complete %>
+        </li>
+        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+        <strong>
+          <li class="list-group-item list-group-item-light">
+            <%=walks_upcoming.name %>
+          </li>
+        </strong>
+        <% }) %>
+      </ul>
+    </div>
   </body>
 </html>

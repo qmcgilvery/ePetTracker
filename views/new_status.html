@@ -48,6 +48,7 @@
           <th>Distance</th>
           <th>Date & time</th>
           <th>Pet id</th>
+          <th>Walk complete</th>
         </tr>
         <% walks.forEach(function(walks){%>
         <tr>
@@ -55,7 +56,8 @@
           <td><%=walks.walk_name %></td>
           <td><%=walks.walk_distance %></td>
           <td><%=walks.walk_datetime %></td>
-          <td><%=walks.pet_id%></td>
+          <td><%=walks.pet_id %></td>
+          <td><%=walks.walk_complete %></td>
         </tr>
         <%}) %>
       </div>
