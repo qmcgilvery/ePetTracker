@@ -73,9 +73,30 @@ module.exports = function (app) {
 });
 
   //
+  // app.get("/todo", function (req, res) {
+  //   res.render("todo.html");
+  // });
+
   app.get("/todo", function (req, res) {
-    res.render("todo.html");
+    let sqlquery =
+    // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; 
+      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY;";
+    // execute sql query
+    db.query(sqlquery, (err, result) => {
+      if (err) {
+        res.redirect("/");
+      }
+      // console.log(result[1]);
+      res.render("todo.html", {
+        walks_upcoming: result[2],
+        walks_tomorrow: result[1],
+        walks_today: result[0],
+      });
+    });
   });
+
+
+
 
   // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
