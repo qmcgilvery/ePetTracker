@@ -33,7 +33,24 @@
           <td><%=pets.pet_id %></td>
           <td><%=pets.name %></td>
           <td><%=pets.type %></td>
-          <td><%=pets.mood %></td>
+          <td>
+            <% if (pets.mood == 1) {%>
+                  &#128546
+             <%}
+            else if (pets.mood == 2) {%>
+                  $#128542
+            <%}
+            else if (pets.mood == 3) {%>
+                  &#128529
+            <%}
+            else if (pets.mood == 4) {%>
+                  &#128512
+            <%}
+            else if (pets.mood == 5) {%>
+                  &#128513
+            <%}
+        %>
+          </td>
           <td><%=pets.health %></td>
         </tr>
         <%}) %>
