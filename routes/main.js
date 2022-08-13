@@ -43,32 +43,126 @@ module.exports = function (app) {
     }
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // render pet page in database
   app.get("/pet", function (req, res) {
     // res.render("index.html");
     let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
     //        let sqlquery = "SELECT * FROM pet_test1; SELECT walk_datetime FROM walk_1; SELECT * FROM feed_1";
-
-
-
-
     //date_format(datecol, '%H:%i:%s') as 'time' FROM table;
-
-
-
-
     // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
-        if (err) {
-            res.redirect("/");
-        }
-        res.render("pet.html", {
-            feeds: result[2],
-            walks: result[1],
-            pets: result[0],
-        });
+      if (err) {
+        res.redirect("/");
+      }
+      res.render("pet.html", {
+        feeds: result[2],
+        walks: result[1],
+        pets: result[0],
+      });
     });
+  });
+
+
+
+  //add walk schedule by id
+  app.post('/add_walk', (req, res) => {
+    let data = {
+      walk_name: req.body.walk_name,
+      walk_distance: req.body.walk_distance,
+      walk_datetime: req.body.walk_datetime,
+      pet_id: req.body.pet_id
+    };
+    let sql = "INSERT INTO users SET ?";
+    let query = db.query(sql, data, (err, results) => {
+      if (err) throw err;
+      res.redirect('/');
+    });
+  });
+
+
+  //add feed schedule by id
+
+
+
+
+  // delete walk by id
+  app.get("/delete_walk/:id", (req, res) => {
+    const walkId = req.params.id;
+    let sql = `DELETE from walk_1 where walk_id = ${walkId}`;
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.redirect('/pet');
+    });
+  });
+
+  // delete feed by id
+  app.get("/delete_feed/:id", (req, res) => {
+    const feedId = req.params.id;
+    let sql = `DELETE from feed_1 where feed_id = ${feedId}`;
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.redirect('/pet');
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  app.get("/todo", function (req, res) {
+    let sqlquery =
+      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; 
+      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY;";
+    // execute sql query
+    db.query(sqlquery, (err, result) => {
+      if (err) {
+        res.redirect("/");
+      }
+      // console.log(result[1]);
+      res.render("todo.html", {
+        walks_upcoming: result[2],
+        walks_tomorrow: result[1],
+        walks_today: result[0],
+      });
+    });
+<<<<<<< Updated upstream
     //        res.render("pet.html");
 });
 
@@ -93,6 +187,8 @@ module.exports = function (app) {
         walks_today: result[0],
       });
     });
+=======
+>>>>>>> Stashed changes
   });
 
 

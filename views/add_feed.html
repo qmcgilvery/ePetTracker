@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>
+
+    </style>
+    <title>ePetTracker</title>
+</head>
+
+<body>
+
+    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+    <nav class="navbar navbar-expand-md navbar-light bgWhite">
+        <div class="container">
+            <a href="/" class="navbar-brand fw-bold">
+                <span class="textBlue">e</span><span class="textBlack">PetTracker</span>
+            </a>
+            <!--            toggle button for mobile screen=========================================================================-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--            toggle button for mobile screen=========================================================================-->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home </a>
+                    <a class="nav-item nav-link" href="/todo">To-do</a>
+                    <a class="nav-item nav-link" href="/add">Add</a>
+                    <a class="nav-item nav-link" href="/new_status">Status</a>
+                    <a class="nav-item nav-link active" href="/pet">Pet</a>
+                    <a class="nav-item nav-link" href="/delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+
+
+
+    <!-- THIS IS POP UP MENU NEW FEED SCHEDULE================================================================================== -->
+    <div class="modal fade" id="newFeedSchedulePopup" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Add new feed schedule</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please fill all the fields below</p>
+                    <form name="addFeed" id="feeds" method="POST" action="/add">
+                        <div class="form-check">
+                            <div>
+                                <label class="form-check-label" for="feed_name">
+                                    Food Name
+                                </label>
+                                <input class="form-control" name="add_feed" type="text" id="walk_name"
+                                    aria-describedby="nameHelp" placeholder="e.g. Snack">
+                                <label class="form-check-label" for="feed_type">
+                                    Food Type
+                                </label>
+                                <input class="form-control" name="add_feed" type="text" id="feed_type"
+                                    placeholder="e.g. kibbles">
+                                <label class="form-check-label" for="feed_amount">
+                                    Amount (in grams)
+                                </label>
+                                <input class="form-control" name="add_feed" type="number" id="feed_amount" step="0.001"
+                                    placeholder="e.g. 10">
+                                <label class="form-check-label" for="feed_datetime">
+                                    Date &amp; Time
+                                </label>
+                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime">
+                                <label class="form-check-label" for="pet_id">
+                                    Pet ID
+                                </label>
+                                <select class="form-check-label" name="add_feed" id="pet_id">
+                                    <% feeds.forEach(function(feeds){%>
+                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
+                                    <option value="<%=feeds.pet_id%>"><%=feeds.pet_id%></option>
+                                    <!--                                    <td><%=walks.pet_id%></td>-->
+                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
+                                    <%}) %>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- THIS IS POP UP MENU NEW FEED SCHEDULE================================================================================== -->
+
+</body>
