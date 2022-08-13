@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>Delete webpage!</title>
 </head>
 
@@ -17,10 +18,113 @@
     </nav>
 
   </nav>
-
+<div class="container col-10 mx-auto">
   <div>
     <h1>This is the Delete page</h1>
   </div>
+  <form name="deleteForm" method="POST" action="/deletePet" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
+      <h3 style="color: red">Remove a Pet</h3>
+  <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Pet ID</th>
+          <th>Pet name</th>
+          <th>Pet type</th>
+          <th>Pet Mood</th>
+          <th>Pet Health</th>
+        </tr>
+        <% pets.forEach(function(pet){%>
+        <tr>
+          <td>
+              <dçiv class="form-check">
+                <input class="form-check-input" name="<%= pet.pet_id %>" type="checkbox" value="<%= pet.pet_id %>" id="<%= pet.pet_id %>">
+                <label class="form-check-label" for="<%= pet.pet_id %>">
+                </label>
+            </dçiv>
+          </td>
+          <td><%=pet.name %></td>
+          <td><%=pet.type %></td>
+          <td>
+            <% if (pet.mood == 1) {%>
+                  &#128546
+             <%}
+            else if (pet.mood == 2) {%>
+                  $#128542
+            <%}
+            else if (pet.mood == 3) {%>
+                  &#128529
+            <%}
+            else if (pet.mood == 4) {%>
+                  &#128512
+            <%}
+            else if (pet.mood == 5) {%>
+                  &#128513
+            <%}
+        %>
+          </td>
+          <td><%=pet.health %></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <input type="submit" class="btn-primary" value="Submit"/>
+        </form>
 
+
+<form name="deleteWalk" method="POST" action="/deleteWalk" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
+    <h3 style="color: red">Remove a walk</h3>
+  <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Walk ID</th>
+          <th>Walk name</th>
+          <th>Distance</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+          <th>Walk complete</th>
+        </tr>
+        <% walks.forEach(function(walk){%>
+        <tr>
+          <td>
+              <div class="form-check">
+                <input class="form-check-input" name="<%= walk.walk_id %>" type="checkbox" value="<%= walk.walk_id %>" id="<%= walk.walk_id %>">
+                <label class="form-check-label" for="<%= walk.walk_id %>">
+                </label>
+            </div>
+          </td>
+          <td><%=walk.walk_name %></td>
+          <td><%=walk.walk_distance %></td>
+          <td><%=walk.walk_datetime %></td>
+          <td><%=walk.pet_id %></td>
+          <td><%=walk.walk_complete %></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <input type="submit" class="btn-primary" value="Submit"/>
+ </form>
+
+<!--        <form name="deleteWalk" method="POST" action="/deleteWalk" onsubmit="return validateDeleteForm()">-->
+<!--            <% walks.forEach(function(walk){ %>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" name="<%= walk.walk_name %>" type="checkbox" value="<%= walk.walk_name %>" id="<%= walk.walk_name %>">-->
+<!--                <label class="form-check-label" for="<%= walk.walk_name %>">-->
+<!--                    <%= walk.walk_name %>-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <% }) %>-->
+<!--            <input type="submit" value="Submit"/>-->
+<!--        </form>-->
+
+<script>
+    function validateDeleteForm(){
+        alert("Are you sure you want to delete?")
+    }
+</script>
+</div>
 </body>
 </html>
+
+
+
+
