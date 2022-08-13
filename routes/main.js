@@ -306,10 +306,6 @@ module.exports = function (app) {
     }
   );
 
-};
-
-
-
    // render delete page with all devices in database
     app.get("/delete", function (req, res) {
         // query database to get all the devices
@@ -367,8 +363,7 @@ module.exports = function (app) {
                         res.send()
                     }
                 });
-            }
-        });
-
+            };
+    });
 };
 
