@@ -2,9 +2,19 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const multer  = require('multer');
+const multer = require("multer");
 const mysql = require("mysql");
 const port = 8088;
+// force all http:// requests to remove www. to become http://edogtracker.com
+function wwwRedirect(req, res, next) {
+  if (req.headers.host.slice(0, 4) === "www.") {
+    var newHost = req.headers.host.slice(4);
+    return res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
+  }
+  next();
+}
+app.set("trust proxy", true);
+app.use(wwwRedirect);
 
 app.use(
   bodyParser.urlencoded({
@@ -23,7 +33,7 @@ app.use(
   "/js",
   express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
 );
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
 const db = mysql.createConnection({
   host: "137.184.191.242",

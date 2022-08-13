@@ -36,11 +36,39 @@
           <%=walks_today.walk_complete %>
         </li>
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
-        <strong>
-          <li class="list-group-item list-group-item-primary">
-            <%=walks_today.name %>
-          </li>
-        </strong>
+
+        <li class="list-group-item list-group-item-primary border-bottom-0">
+          <strong><%=walks_today.name %></strong>
+        </li>
+        <!--        Logic to change the list color according to the booloean value of walk_complete -->
+        <% if (walks_today.walk_complete == 0) {%>
+        <li class="list-group-item list-group-item-primary border-bottom-2">
+          <%}else {%>
+        <li class="list-group-item list-group-item-warning border-bottom-2">
+          <%}%>
+          <form method="POST" action="/update_walk_complete">
+            <div class="mb-3">
+              <input
+                type="range"
+                id="walk_complete"
+                name="walk_complete"
+                min="0"
+                max="1"
+                value="<%=walks_today.walk_complete %>"
+              />
+              <label for="walk_complete">Complete</label>
+              <input
+                type="hidden"
+                id="walk_id"
+                name="walk_id"
+                value="<%=walks_today.walk_id %>"
+              />
+              <button type="submit" class="btn btn-primary" value="OK">
+                Submit
+              </button>
+            </div>
+          </form>
+        </li>
         <% }) %>
       </ul>
     </div>
@@ -65,11 +93,41 @@
           <%=walks_tomorrow.walk_complete %>
         </li>
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
-        <strong>
-          <li class="list-group-item list-group-item-info">
-            <%=walks_tomorrow.name %>
-          </li>
-        </strong>
+
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <strong><%=walks_tomorrow.name %></strong>
+        </li>
+
+      <!-- Logic to change the list color according to the booloean value of walk_complete -->
+      <% if (walks_tomorrow.walk_complete == 0) {%>
+        <li class="list-group-item list-group-item-info border-bottom-2">
+          <%}else {%>
+        <li class="list-group-item list-group-item-warning border-bottom-2">
+          <%}%>
+          <!--Form to update walk_complete boolean to 1 or 0-->
+          <form method="POST" action="/update_walk_complete">
+            <div class="mb-3">
+              <input
+                type="range"
+                id="walk_complete"
+                name="walk_complete"
+                min="0"
+                max="1"
+                value="<%=walks_tomorrow.walk_complete %>"
+              />
+              <label for="walk_complete">Complete</label>
+              <input
+                type="hidden"
+                id="walk_id"
+                name="walk_id"
+                value="<%=walks_tomorrow.walk_id %>"
+              />
+              <button type="submit" class="btn btn-primary" value="OK">
+                Submit
+              </button>
+            </div>
+          </form>
+        </li>
         <% }) %>
       </ul>
     </div>
@@ -94,11 +152,41 @@
           <%=walks_upcoming.walk_complete %>
         </li>
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
-        <strong>
-          <li class="list-group-item list-group-item-light">
-            <%=walks_upcoming.name %>
-          </li>
-        </strong>
+
+        <li class="list-group-item list-group-item-light border-bottom-0">
+          <strong><%=walks_upcoming.name %></strong>
+        </li>
+
+        <!--        Logic to change the list color according to the booloean value of walk_complete -->
+        <% if (walks_upcoming.walk_complete == 0) {%>
+        <li class="list-group-item list-group-item-light border-bottom-2">
+          <%}else {%>
+        <li class="list-group-item list-group-item-warning border-bottom-2">
+          <%}%>
+          <!--Form to update walk_complete boolean to 1 or 0-->
+          <form method="POST" action="/update_walk_complete">
+            <div class="mb-3">
+              <input
+                type="range"
+                id="walk_complete"
+                name="walk_complete"
+                min="0"
+                max="1"
+                value="<%=walks_upcoming.walk_complete %>"
+              />
+              <label for="walk_complete">Complete</label>
+              <input
+                type="hidden"
+                id="walk_id"
+                name="walk_id"
+                value="<%=walks_upcoming.walk_id %>"
+              />
+              <button type="submit" class="btn btn-primary" value="OK">
+                Submit
+              </button>
+            </div>
+          </form>
+        </li>
         <% }) %>
       </ul>
     </div>
