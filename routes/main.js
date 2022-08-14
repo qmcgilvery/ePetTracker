@@ -18,16 +18,12 @@ module.exports = function (app) {
     });
   });
 
+  
+
+// Andy Code==========================================================================
   // render pet page in database
   app.get("/pet", function (req, res) {
-    // res.render("index.html");
-    let sqlquery =
-      "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
-    //        let sqlquery = "SELECT * FROM pet_test1; SELECT walk_datetime FROM walk_1; SELECT * FROM feed_1";
-
-    //date_format(datecol, '%H:%i:%s') as 'time' FROM table;
-
-    // let sqlquery_2 = "SELECT * FROM walk_1";
+    let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
@@ -39,9 +35,125 @@ module.exports = function (app) {
         pets: result[0],
       });
     });
-    //        res.render("pet.html");
   });
 
+  //render walk form by id
+  app.get("/add_walk/:id", (req, res) => {
+    const petId = req.params.id;
+    let sql = `SELECT * from pet_test1; SELECT * FROM walk_1;`
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.render('add_walk.html', {
+        title: 'this is add new walk schedule page',
+        walks: result[1],
+        pets: result[0],
+        petId: petId
+      });
+    });
+  });
+
+  //render feed form by id
+  app.get("/add_feed/:id", (req, res) => {
+    const petId = req.params.id;
+    let sql = `SELECT * from pet_test1; SELECT * FROM feed_1;`
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.render('add_feed.html', {
+        title: 'this is add new feed schedule page',
+        feeds: result[1],
+        pets: result[0],
+        petId: petId
+      });
+    });
+  });
+
+  //save walk schedule by id
+  app.post("/save", function (req, res) {
+    if (req.body.add_pet) {
+      let sql =
+        "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
+
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        console.log(new_records);
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      };
+      console.log(req.body);
+      
+
+
+    };
+    if (req.body.add_walk) {
+      let sql =
+        "INSERT INTO walk_1 (walk_name, walk_distance, walk_datetime, pet_id) VALUES (?, ?, ?, ?)";
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        // res.write(
+        //   " This walk has been added to database, name: " + req.body[key]
+        // );
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      };
+    };
+    if (req.body.add_feed) {
+      console.log(req.body);
+      let sql =
+        "INSERT INTO feed_1 (feed_name, feed_type, feed_amount, feed_datetime, pet_id) VALUES (?, ?, ?, ?, ?)";
+
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        // res.write(
+        //   " This feeding schedule has been added to database, name: " +
+        //   req.body[key]
+        // );
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      }
+    }
+
+  });
+
+  // delete walk by id
+  app.get("/delete_walk/:id", (req, res) => {
+    // res.send('this is delete walk');
+    const walkId = req.params.id;
+    let sql = `DELETE from walk_1 where walk_id = ${walkId}`;
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.redirect('/pet');
+    });
+  });
+
+  // delete feed by id
+  app.get("/delete_feed/:id", (req, res) => {
+    const feedId = req.params.id;
+    let sql = `DELETE from feed_1 where feed_id = ${feedId}`;
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.redirect('/pet');
+    });
+  });
+  // Andy Code==============================================================================
+  
   app.get("/todo", function (req, res) {
     let sqlquery =
       // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp;

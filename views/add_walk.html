@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+    <title>ePetTracker</title>
+</head>
+
+<body>
+
+    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+    <nav class="navbar navbar-expand-md navbar-light bgWhite">
+        <div class="container">
+            <a href="/" class="navbar-brand fw-bold">
+                <span class="textBlue">e</span><span class="textBlack">PetTracker</span>
+            </a>
+            <!--            toggle button for mobile screen=========================================================================-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--            toggle button for mobile screen=========================================================================-->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home </a>
+                    <a class="nav-item nav-link" href="/todo">To-do</a>
+                    <a class="nav-item nav-link" href="/add">Add</a>
+                    <a class="nav-item nav-link" href="/new_status">Status</a>
+                    <a class="nav-item nav-link active" href="/pet">Pet</a>
+                    <a class="nav-item nav-link" href="/delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+
+
+    <!-- THIS IS POP UP MENU NEW WALK SCHEDULE================================================================================== -->
+    <div class="container">
+        <p>Please fill all the fields below</p>
+        <form name="addWalk" id="walks" method="POST" action="/save">
+            <div class="form-check">
+                <div>
+                    <!-- <input type="hidden" value="<%= pets.pet_id %>" name="pet_id"> -->
+
+                    <label class="form-check-label" for="walk_name">
+                        Walk Name
+                    </label>
+                    <input class="form-control" name="add_walk" type="text" id="walk_name" aria-describedby="nameHelp"
+                        placeholder="e.g. long walk">
+                    <label class="form-check-label" for="walk_distance">
+                        Distance (in KMs)
+                    </label>
+                    <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01"
+                        placeholder="e.g. 1.5">
+                    <label class="form-check-label" for="walk_datetime">
+                        Date &amp; Time
+                    </label>
+                    <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime" placeholder="">
+                    <label class="form-check-label" for="pet_id">
+                        Pet ID
+                    </label>
+                    <select class="form-check-label" name="add_walk" id="pet_id">
+                        <option value="<%= petId %>"><%= petId %></option>
+                        </select><input class="form-control" name="add_pet" type="text" id="pet_id">
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+        <!-- THIS IS POP UP MENU NEW WALK SCHEDULE================================================================================== -->
+    </div>
+</body>
