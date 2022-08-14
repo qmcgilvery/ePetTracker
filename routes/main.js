@@ -391,5 +391,22 @@ module.exports = function (app) {
                 });
             }
         });
+    app.post("/deleteFeeding", function (req, res) {
+        // query database to get all the devices
+        let sqlquery = "DELETE FROM `feed_1` WHERE feed_id = (?);"
+        // execute sql query
+        for (const key in req.body) {
+                let new_records = req.body[key];
+                res.write(" This device has been deleted from the database, name: " + req.body[key]);
+                // execute sql query
+                db.query(sqlquery, new_records, (err, result) => {
+                    if (err) {
+                        return console.error(err.message);
+                    } else {
+                        res.send()
+                    }
+                });
+            }
+        });
 
 };

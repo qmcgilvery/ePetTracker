@@ -104,18 +104,39 @@
     <input type="submit" class="btn-primary" value="Submit"/>
  </form>
 
-<!--        <form name="deleteWalk" method="POST" action="/deleteWalk" onsubmit="return validateDeleteForm()">-->
-<!--            <% walks.forEach(function(walk){ %>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" name="<%= walk.walk_name %>" type="checkbox" value="<%= walk.walk_name %>" id="<%= walk.walk_name %>">-->
-<!--                <label class="form-check-label" for="<%= walk.walk_name %>">-->
-<!--                    <%= walk.walk_name %>-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <% }) %>-->
-<!--            <input type="submit" value="Submit"/>-->
-<!--        </form>-->
 
+<form name="deleteFeeding" method="POST" action="/deleteFeeding" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
+    <h3 style="color: red">Remove a feeding</h3>
+  <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Feed ID</th>
+          <th>Food name</th>
+          <th>Food type</th>
+          <th>Amount</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% feeds.forEach(function(feed){%>
+        <tr>
+          <td>
+              <div class="form-check">
+                <input class="form-check-input" name="<%= feed.feed_id %>" type="checkbox" value="<%= feed.feed_id %>" id="<%= feed.feed_id %>">
+                <label class="form-check-label" for="<%= feed.feed_id %>">
+                </label>
+            </div>
+          </td>
+          <td><%=feed.feed_name %></td>
+          <td><%=feed.feed_type %></td>
+          <td><%=feed.feed_amount %></td>
+          <td><%=feed.feed_datetime %></td>
+          <td><%=feed.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <input type="submit" class="btn-primary" value="Submit"/>
+ </form>
 <script>
     function validateDeleteForm(){
         alert("Are you sure you want to delete?")
