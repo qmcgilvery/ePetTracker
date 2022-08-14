@@ -152,9 +152,8 @@ module.exports = function (app) {
       res.redirect('/pet');
     });
   });
-  // Andy Code==========================================================================
-
-
+  // Andy Code==============================================================================
+  
   app.get("/todo", function (req, res) {
     let sqlquery =
       // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp;
