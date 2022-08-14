@@ -18,55 +18,12 @@ module.exports = function (app) {
     });
   });
 
-  // duplicated add.post
-  app.post("/", function (req, res) {
-    // handle form data from curtainsForm submission
-    if (req.body.add_pet) {
-      console.log(req.body);
-      let sqlquery =
-        "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
+  
 
-      for (const key in req.body) {
-        let new_records = req.body[key];
-        res.write(
-          " This pet has been added to database, name: " + req.body[key]
-        );
-        // execute sql query
-        db.query(sqlquery, new_records, (err, result) => {
-          if (err) {
-            return console.error(err.message);
-          } else {
-            res.send();
-          }
-        });
-      }
-    }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Andy Code==========================================================================
   // render pet page in database
   app.get("/pet", function (req, res) {
-    // res.render("index.html");
     let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1";
-    //        let sqlquery = "SELECT * FROM pet_test1; SELECT walk_datetime FROM walk_1; SELECT * FROM feed_1";
-    //date_format(datecol, '%H:%i:%s') as 'time' FROM table;
-    // let sqlquery_2 = "SELECT * FROM walk_1";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
@@ -80,31 +37,104 @@ module.exports = function (app) {
     });
   });
 
-
-
-  //add walk schedule by id
-  app.post('/add_walk', (req, res) => {
-    let data = {
-      walk_name: req.body.walk_name,
-      walk_distance: req.body.walk_distance,
-      walk_datetime: req.body.walk_datetime,
-      pet_id: req.body.pet_id
-    };
-    let sql = "INSERT INTO users SET ?";
-    let query = db.query(sql, data, (err, results) => {
+  //render walk form by id
+  app.get("/add_walk/:id", (req, res) => {
+    const petId = req.params.id;
+    let sql = `SELECT * from pet_test1; SELECT * FROM walk_1;`
+    let query = db.query(sql, (err, result) => {
       if (err) throw err;
-      res.redirect('/');
+      res.render('add_walk.html', {
+        title: 'this is add new walk schedule page',
+        walks: result[1],
+        pets: result[0],
+        petId: petId
+      });
     });
   });
 
+  //render feed form by id
+  app.get("/add_feed/:id", (req, res) => {
+    const petId = req.params.id;
+    let sql = `SELECT * from pet_test1; SELECT * FROM feed_1;`
+    let query = db.query(sql, (err, result) => {
+      if (err) throw err;
+      res.render('add_feed.html', {
+        title: 'this is add new feed schedule page',
+        feeds: result[1],
+        pets: result[0],
+        petId: petId
+      });
+    });
+  });
 
-  //add feed schedule by id
+  //save walk schedule by id
+  app.post("/save", function (req, res) {
+    if (req.body.add_pet) {
+      let sql =
+        "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
+
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        console.log(new_records);
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      };
+      console.log(req.body);
+      
 
 
+    };
+    if (req.body.add_walk) {
+      let sql =
+        "INSERT INTO walk_1 (walk_name, walk_distance, walk_datetime, pet_id) VALUES (?, ?, ?, ?)";
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        // res.write(
+        //   " This walk has been added to database, name: " + req.body[key]
+        // );
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      };
+    };
+    if (req.body.add_feed) {
+      console.log(req.body);
+      let sql =
+        "INSERT INTO feed_1 (feed_name, feed_type, feed_amount, feed_datetime, pet_id) VALUES (?, ?, ?, ?, ?)";
 
+      for (const key in req.body) {
+        let new_records = req.body[key];
+        // res.write(
+        //   " This feeding schedule has been added to database, name: " +
+        //   req.body[key]
+        // );
+        // execute sql query
+        db.query(sql, new_records, (err, result) => {
+          if (err) {
+            return console.error(err.message);
+          } else {
+            res.redirect('/pet');
+          }
+        });
+      }
+    }
+
+  });
 
   // delete walk by id
   app.get("/delete_walk/:id", (req, res) => {
+    // res.send('this is delete walk');
     const walkId = req.params.id;
     let sql = `DELETE from walk_1 where walk_id = ${walkId}`;
     let query = db.query(sql, (err, result) => {
@@ -122,77 +152,39 @@ module.exports = function (app) {
       res.redirect('/pet');
     });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // Andy Code==========================================================================
 
 
   app.get("/todo", function (req, res) {
     let sqlquery =
-      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; 
-      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY;";
+      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp;
+      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY ORDER BY a.walk_datetime;";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
         res.redirect("/");
       }
-      // console.log(result[1]);
+      console.log(result[1]);
       res.render("todo.html", {
         walks_upcoming: result[2],
         walks_tomorrow: result[1],
         walks_today: result[0],
       });
     });
-<<<<<<< Updated upstream
-    //        res.render("pet.html");
-});
-
-  //
-  // app.get("/todo", function (req, res) {
-  //   res.render("todo.html");
-  // });
-
-  app.get("/todo", function (req, res) {
-    let sqlquery =
-    // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; 
-      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY;";
-    // execute sql query
-    db.query(sqlquery, (err, result) => {
-      if (err) {
-        res.redirect("/");
-      }
-      // console.log(result[1]);
-      res.render("todo.html", {
-        walks_upcoming: result[2],
-        walks_tomorrow: result[1],
-        walks_today: result[0],
-      });
-    });
-=======
->>>>>>> Stashed changes
   });
 
-
-
+  // post for updating walk_complete boolean in todo.html
+  app.post("/update_walk_complete", function (req, res) {
+    // saving data in database
+    let sqlquery = "UPDATE walk_1 SET walk_complete = (?) WHERE walk_id = (?);";
+    // execute sql query
+    let updaterecord = [req.body.walk_complete, req.body.walk_id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.send(" This walk is updated " + req.body.walk_id);
+    });
+  });
 
   // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
@@ -232,9 +224,9 @@ module.exports = function (app) {
   });
 
   // render delete page with all devices in database
-  app.get("/delete", function (req, res) {
-    res.render("delete.html");
-  });
+  // app.get("/delete", function (req, res) {
+  //   res.render("delete.html");
+  // });
 
   // render add page with all devices in database
   app.get("/add", function (req, res) {
@@ -297,7 +289,7 @@ module.exports = function (app) {
         let new_records = req.body[key];
         res.write(
           " This feeding schedule has been added to database, name: " +
-          req.body[key]
+            req.body[key]
         );
         // execute sql query
         db.query(sqlquery2, new_records, (err, result) => {
@@ -426,4 +418,64 @@ module.exports = function (app) {
       return res.send(response);
     }
   );
+
+   // render delete page with all devices in database
+    app.get("/delete", function (req, res) {
+        // query database to get all the entries 
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime";
+        // execute sql query
+        db.query(sqlquery, (err, result) => {
+            if (err) {
+                res.redirect("/");
+            }
+            res.render("delete.html", {
+              feed_p_id3: result[8],
+              feed_p_id2: result[7],
+              feed_p_id1: result[6],
+              walks_p_id3: result[5],
+              walks_p_id2: result[4],
+              walks_p_id1: result[3],
+              feeds: result[2],
+              walks: result[1],
+              pets: result[0],
+            });
+        });
+    });
+
+// handle form data from deleteForm submission
+    app.post("/deletePet", function (req, res) {
+        // query database to get all the devices
+        let sqlquery = "SET foreign_key_checks = 0; DELETE FROM `pet_test1` WHERE pet_id = (?); SET foreign_key_checks = 1;"
+        // execute sql query
+        for (const key in req.body) {
+                let new_records = req.body[key];
+                res.write(" This entry has been deleted from the database, name: " + req.body[key]);
+                // execute sql query
+                db.query(sqlquery, new_records, (err, result) => {
+                    if (err) {
+                        return console.error(err.message);
+                    } else {
+                        res.send()
+                    }
+                });
+            }
+        });
+    app.post("/deleteWalk", function (req, res) {
+        // query database to get all the devices
+        let sqlquery = "DELETE FROM `walk_1` WHERE walk_id = (?);"
+        // execute sql query
+        for (const key in req.body) {
+                let new_records = req.body[key];
+                res.write(" This device has been deleted from the database, name: " + req.body[key]);
+                // execute sql query
+                db.query(sqlquery, new_records, (err, result) => {
+                    if (err) {
+                        return console.error(err.message);
+                    } else {
+                        res.send()
+                    }
+                });
+            };
+    });
 };
+

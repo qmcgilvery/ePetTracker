@@ -2,8 +2,16 @@
 <html>
 
 <head>
+    <title><%= title %></title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
 
     </style>
@@ -42,9 +50,11 @@
     <!-- THIS IS POP UP MENU NEW WALK SCHEDULE================================================================================== -->
     <div class="container">
         <p>Please fill all the fields below</p>
-        <form name="addWalk" id="walks" method="POST" action="/add_walk">
+        <form name="addWalk" id="walks" method="POST" action="/save">
             <div class="form-check">
                 <div>
+                    <!-- <input type="hidden" value="<%= pets.pet_id %>" name="pet_id"> -->
+
                     <label class="form-check-label" for="walk_name">
                         Walk Name
                     </label>
@@ -64,12 +74,9 @@
                     </label>
 
                     <select class="form-check-label" name="add_walk" id="pet_id">
-                        <% walks.forEach(function(walks){%>
-                        <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                        <option value="<%=walks.pet_id%>"><%=walks.pet_id%></option>
+                        <option value="<%= petId %>"><%= petId %></option>
                         <!--                                    <td><%=walks.pet_id%></td>-->
                         <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                        <%}) %>
                     </select>
                     <!-- <input class="form-control" name="add_pet" type="text" id="pet_id">-->
                 </div>

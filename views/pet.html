@@ -17,11 +17,7 @@
     <nav class="navbar navbar-expand-md navbar-light bgWhite">
         <div class="container">
             <a href="/" class="navbar-brand fw-bold">
-<<<<<<< Updated upstream
-                <span class="textBlue">e</span><span class="textBlack">PetTracker</span>
-=======
                 <span class="textBlue">e</span><span class="textBlack">DogTracker</span>
->>>>>>> Stashed changes
             </a>
             <!--            toggle button for mobile screen=========================================================================-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -32,11 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="/">Home </a>
-<<<<<<< Updated upstream
-                    <a class="nav-item nav-link" href="/about">About</a>
-=======
                     <a class="nav-item nav-link" href="/todo">To-do</a>
->>>>>>> Stashed changes
                     <a class="nav-item nav-link" href="/add">Add</a>
                     <a class="nav-item nav-link" href="/new_status">Status</a>
                     <a class="nav-item nav-link active" href="/pet">Pet</a>
@@ -92,12 +84,8 @@
                             </div>
                         </button>
                     </h2>
-<<<<<<< Updated upstream
-                    <div id="<%=pets.name %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-=======
                     <div id="<%=pets.type+pets.pet_id %>" class="accordion-collapse collapse"
                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
->>>>>>> Stashed changes
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
                             <caption class="h3">This is walking schedule</caption>
@@ -114,54 +102,26 @@
                             <tbody>
                                 <% walks.forEach(function(walks){%>
                                 <% if(walks.pet_id == pets.pet_id){%>
-<<<<<<< Updated upstream
-                                <tr>
-=======
                                 <tr class="align-middle">
->>>>>>> Stashed changes
                                     <td><%=walks.walk_id %></td>
                                     <td class="text-capitalize"><%=walks.walk_name %></td>
                                     <td><%=walks.walk_distance %></td>
                                     <td><%=walks.walk_datetime.toLocaleString() %></td>
                                     <td><%=walks.pet_id%></td>
                                     <td>
-                                        <a href="/add_walk/<%= walks.walk_id %>" class="btn bg-success">Edit</a>
-
-
+                                        <a href="/edit_walk/<%= walks.walk_id %>" class="btn bg-success">Edit</a>
                                         <a href="/delete_walk/<%= walks.walk_id %>" class="btn bg-danger">Delete</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     </td>
                                 </tr>
                                 <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
-<<<<<<< Updated upstream
-                                <%} %>
-                                <%}) %>
-                            </tbody>
-                            <!--THIS IS WALKING TABLE==================-->
-                        </table>
-                        <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup">Add</button>
-=======
                                 <% } %>
                                 <% }) %>
                             </tbody>
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
-                        <button class="btn bgBlue " data-bs-toggle="modal"
-                            data-bs-target="#newWalkSchedulePopup">Add</button>
->>>>>>> Stashed changes
+                        <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue">Add</a>
+                        <!-- <a class="btn bgBlue " data-bs-toggle="modal"
+                            data-bs-target="#newWalkSchedulePopup">Add</a> -->
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
                             <!--                            <div class="tableFeed">-->
@@ -181,15 +141,6 @@
 
                                 <% feeds.forEach(function(feeds){%>
                                 <% if(feeds.pet_id == pets.pet_id){%>
-<<<<<<< Updated upstream
-                                <tr>
-                                    <td><%=feeds.feed_id %></td>
-                                    <td><%=feeds.feed_name %></td>
-                                    <td><%=feeds.feed_type %></td>
-                                    <td><%=feeds.feed_amount %></td>
-                                    <td><%=feeds.feed_datetime %></td>
-                                    <td><%=feeds.pet_id%></td>
-=======
                                 <tr class="align-middle">
                                     <td><%=feeds.feed_id %></td>
                                     <td class="text-capitalize"><%=feeds.feed_name %></td>
@@ -198,12 +149,11 @@
                                     <td><%=feeds.feed_datetime.toLocaleString() %></td>
                                     <td><%=feeds.pet_id%></td>
                                     <td>
-                                        <a href="/add_feed/<%= feeds.feed_id %>" class="btn bg-success">Edit</a>
+                                        <a href="/edit_feed/<%= feeds.feed_id %>" class="btn bg-success">Edit</a>
 
 
                                         <a href="/delete_feed/<%= feeds.feed_id %>" class="btn bg-danger">Delete</a>
                                     </td>
->>>>>>> Stashed changes
                                 </tr>
                                 <%} %>
                                 <%}) %>
@@ -212,12 +162,10 @@
                             <!--                            </div>-->
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
-<<<<<<< Updated upstream
-                        <button class="btn bgBlue " data-bs-toggle="modal" data-bs-target="#newFeedSchedulePopup">Add</button>
-=======
-                        <button class="btn bgBlue " data-bs-toggle="modal"
-                            data-bs-target="#newFeedSchedulePopup">Add</button>
->>>>>>> Stashed changes
+
+                        <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue">Add</a>
+                        <!-- <button class="btn bgBlue " data-bs-toggle="modal"
+                            data-bs-target="#newFeedSchedulePopup">Add</button> -->
                     </div>
                 </div>
                 <!--ACCORDION ITEM 1        -->
@@ -244,55 +192,60 @@
                 </div>
                 <div class="modal-body">
                     <p>Please fill all the fields below</p>
-                    <form name="addPet" id="pets" method="POST" action="/">
+                    <form name="addPet" id="pets" method="POST" action="/save">
                         <div class="form-check">
                             <div>
-                                <label class="form-check-label" for="pet_name">
-                                    Name
-                                </label>
-<<<<<<< Updated upstream
-                                <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie">
-                                <label class="form-check-label" for="pet_type">
-                                    Type
-                                </label>
-                                <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Dog">
-=======
-                                <input class="form-control" name="add_pet" type="text" id="pet_name"
-                                    aria-describedby="nameHelp" placeholder="e.g. Blackie">
-                                <label class="form-check-label" for="pet_type">
-                                    Type
-                                </label>
-                                <input class="form-control" name="add_pet" type="text" id="pet_type"
-                                    placeholder="e.g. Dog">
->>>>>>> Stashed changes
-                                <label class="form-check-label" for="pet_mood">
-                                    Mood
-                                </label><br>
-                                <div class="form-control slidecontainer">
-<<<<<<< Updated upstream
-                                    <input class="slider" name="add_pet" type="range" id="pet_mood" value="3" min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
-                                    <input id="sliderText" type="number" value="3" min="1" max="5" oninput="pet_mood.value=sliderText.value" />
-=======
-                                    <input class="slider" name="add_pet" type="range" id="pet_mood" value="3" min="1"
-                                        step="1" max="5" oninput="sliderText.value=pet_mood.value">
-                                    <input id="sliderText" type="number" value="3" min="1" max="5"
-                                        oninput="pet_mood.value=sliderText.value" />
->>>>>>> Stashed changes
+                                <div class="form-group">
+                                    <label class="form-check-label" for="pet_name">
+                                        Name
+                                    </label>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_name"
+                                        aria-describedby="nameHelp" placeholder="e.g. Blackie">
                                 </div>
-                                <label class="form-check-label" for="pet_health">
-                                    Health
-                                </label>
-<<<<<<< Updated upstream
-                                <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong">
-=======
-                                <input class="form-control" name="add_pet" type="text" id="pet_health"
-                                    placeholder="e.g. strong">
->>>>>>> Stashed changes
+                                <div class="form-group">
+
+                                    <label class="form-check-label" for="pet_type">
+                                        Breed
+                                    </label><br>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_type"
+                                            placeholder="e.g. strong">
+                                    
+                                    <!-- <input list="breeds" name="breed" id="breed">
+                                    <datalist id="breeds">
+                                        <option value="Bulldog">
+                                        <option value="Shepherd">
+                                        <option value="Chihuahua">
+                                        <option value="Labrador">
+                                        <option value="Poodle">
+                                    </datalist> -->
+
+
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-check-label" for="pet_mood">
+                                            Mood
+                                        </label><br>
+                                        <div class="form-control slidecontainer">
+                                            <input class="slider" name="add_pet" type="range" id="pet_mood" value="3"
+                                                min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
+                                            <input id="sliderText" type="number" value="3" min="1" max="5"
+                                                oninput="pet_mood.value=sliderText.value" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-check-label" for="pet_health">
+                                            Health
+                                        </label>
+                                        <input class="form-control" name="add_pet" type="text" id="pet_health"
+                                            placeholder="e.g. strong">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-center">
-                            <input type="submit" value="Submit" />
-                        </div>
+                            <div class="text-center">
+                                <input type="submit" value="Submit" />
+                            </div>
                     </form>
                 </div>
             </div>
@@ -317,17 +270,6 @@
                                 <label class="form-check-label" for="walk_name">
                                     Walk Name
                                 </label>
-<<<<<<< Updated upstream
-                                <input class="form-control" name="add_walk" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. long walk">
-                                <label class="form-check-label" for="walk_distance">
-                                    Distance (in KMs)
-                                </label>
-                                <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01" placeholder="e.g. 1.5">
-                                <label class="form-check-label" for="walk_datetime">
-                                    Date &amp; Time
-                                </label>
-                                <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime" placeholder="">
-=======
                                 <input class="form-control" name="add_walk" type="text" id="walk_name"
                                     aria-describedby="nameHelp" placeholder="e.g. long walk">
                                 <label class="form-check-label" for="walk_distance">
@@ -340,7 +282,6 @@
                                 </label>
                                 <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime"
                                     placeholder="">
->>>>>>> Stashed changes
                                 <label class="form-check-label" for="pet_id">
                                     Pet ID
                                 </label>
@@ -523,17 +464,10 @@
                 }
                 tbdy.appendChild(tr);
                 tbl.appendChild(tbdy);
-                body.appendChild(tbl);
+                body.appendChild(tbl)
             }
-<<<<<<< Updated upstream
-        }
-        tableCreate();
-        //CREATE TABLE FOR ACCORDION=====================================        
-
-=======
             tableCreate();
             //CREATE TABLE FOR ACCORDION=====================================        
->>>>>>> Stashed changes
     </script>
 </body>
 
