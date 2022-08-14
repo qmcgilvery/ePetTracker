@@ -49,7 +49,7 @@
                   &#128546
              <%}
             else if (pet.mood == 2) {%>
-                  $#128542
+                  &#128542
             <%}
             else if (pet.mood == 3) {%>
                   &#128529
@@ -94,9 +94,17 @@
           </td>
           <td><%=walk.walk_name %></td>
           <td><%=walk.walk_distance %></td>
-          <td><%=walk.walk_datetime %></td>
+          <td><%=walk.walk_datetime.toLocaleString() %></td>
           <td><%=walk.pet_id %></td>
-          <td><%=walk.walk_complete %></td>
+          <td>
+            <% if (walk.walk_complete == 1) {%>
+                  &#9989
+             <%}
+            else if (walk.walk_complete == 0) {%>
+                  &#10060
+            <%}
+            %>
+          </td>
         </tr>
         <%}) %>
       </div>
@@ -129,7 +137,7 @@
           <td><%=feed.feed_name %></td>
           <td><%=feed.feed_type %></td>
           <td><%=feed.feed_amount %></td>
-          <td><%=feed.feed_datetime %></td>
+          <td><%=feed.feed_datetime.toLocaleString()%></td>
           <td><%=feed.pet_id%></td>
         </tr>
         <%}) %>
@@ -137,6 +145,7 @@
     </table>
     <input type="submit" class="btn-primary" value="Submit"/>
  </form>
+
 <script>
     function validateDeleteForm(){
         alert("Are you sure you want to delete?")

@@ -333,7 +333,7 @@ module.exports = function (app) {
   //Pet1
   const pet1storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet1");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -344,7 +344,7 @@ module.exports = function (app) {
     storage: pet1storage,
   });
 
-  app.use("/uploads/pets/pet1", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet1-upload-single",
     pet1upload.single("image"),
@@ -362,7 +362,7 @@ module.exports = function (app) {
   //Pet2
   const pet2storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet2");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -373,7 +373,7 @@ module.exports = function (app) {
     storage: pet2storage,
   });
 
-  app.use("/uploads/pets/pet2", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet2-upload-single",
     pet2upload.single("image"),
@@ -391,7 +391,7 @@ module.exports = function (app) {
   //Pet3
   const pet3storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet3");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -403,7 +403,7 @@ module.exports = function (app) {
     storage: pet3storage,
   });
 
-  app.use("/uploads/pets/pet3", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet3-upload-single",
     pet3upload.single("image"),
@@ -421,7 +421,7 @@ module.exports = function (app) {
    // render delete page with all devices in database
     app.get("/delete", function (req, res) {
         // query database to get all the entries 
-        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime";
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime; SELECT * FROM feed_1 ORDER BY feed_datetime";
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
@@ -462,6 +462,23 @@ module.exports = function (app) {
     app.post("/deleteWalk", function (req, res) {
         // query database to get all the devices
         let sqlquery = "DELETE FROM `walk_1` WHERE walk_id = (?);"
+        // execute sql query
+        for (const key in req.body) {
+                let new_records = req.body[key];
+                res.write(" This device has been deleted from the database, name: " + req.body[key]);
+                // execute sql query
+                db.query(sqlquery, new_records, (err, result) => {
+                    if (err) {
+                        return console.error(err.message);
+                    } else {
+                        res.send()
+                    }
+                });
+            }
+        });
+    app.post("/deleteFeeding", function (req, res) {
+        // query database to get all the devices
+        let sqlquery = "DELETE FROM `feed_1` WHERE feed_id = (?);"
         // execute sql query
         for (const key in req.body) {
                 let new_records = req.body[key];
