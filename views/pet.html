@@ -2,9 +2,16 @@
 <html>
 
 <head>
+    <title>Pet Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
 
     </style>
@@ -48,11 +55,11 @@
                 <!--THIS IS LOOPING DATA FOR ALL PET-->
                 <% pets.forEach(function(pets){%>
                 <!--ACCORDION ITEM 1        -->
-                <div class="accordion-item">
+                <div href="#<%=pets.type+pets.pet_id %>" class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#<%=pets.type+pets.pet_id %>" aria-expanded="true"
-                            aria-controls="collapseOne">
+                            aria-controls="collapseOne" id="#<%=pets.type+pets.pet_id %>">
                             <div class="petRepetition1">
                                 <div class="row  align-items-center  bgBlack shadow rounded">
                                     <div class="petImage col-4 circularImage  my-2 py-2">
@@ -78,7 +85,6 @@
                                             <%}
                                         %>
                                         </div>
-                                        
                                         <div class="myPetData">Type : <%=pets.type %></div>
                                     </div>
                                 </div>
@@ -89,14 +95,13 @@
                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
-                            <caption class="h3">This is walking schedule</caption>
+                            <caption class="h3">Your dog walking schedule</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Walk ID</th>
                                     <th scope="col">Walk name</th>
                                     <th scope="col">Distance</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Pet id</th>
                                 </tr>
                             </thead>
                             <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
@@ -108,10 +113,11 @@
                                     <td class="text-capitalize"><%=walks.walk_name %></td>
                                     <td><%=walks.walk_distance %></td>
                                     <td><%=walks.walk_datetime.toLocaleString() %></td>
-                                    <td><%=walks.pet_id%></td>
                                     <td>
-                                        <a href="/edit_walk/<%= walks.walk_id %>" class="btn bg-success">Edit</a>
-                                        <a href="/delete_walk/<%= walks.walk_id %>" class="btn bg-danger">Delete</a>
+                                        <form method="GET" action="/delete_walk/<%= walks.walk_id %>"
+                                            onsubmit="return confirm('Are you sure you want to remove walk?');">
+                                            <input class="btn bg-danger textWhite" type="submit" value="Delete" />
+                                        </form>
                                     </td>
                                 </tr>
                                 <!--THIS IS LOOPING DATA FOR ALL WALKS=================================================  -->
@@ -120,13 +126,16 @@
                             </tbody>
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
-                        <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue">Add</a>
-                        <!-- <a class="btn bgBlue " data-bs-toggle="modal"
-                            data-bs-target="#newWalkSchedulePopup">Add</a> -->
+                        <!-- <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
+
+
+                        <a class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup"
+                            onclick="passWalkValue(<%= pets.pet_id %>)">Add</a>
+
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
                             <!--                            <div class="tableFeed">-->
-                            <caption class="h3">This is feeding schedule</caption>
+                            <caption class="h3">Your dog feeding schedule</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Feed ID</th>
@@ -134,7 +143,6 @@
                                     <th scope="col">Food type</th>
                                     <th scope="col">Amount</th>
                                     <th scope="col">Date &amp; time</th>
-                                    <th scope="col">Pet id</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -148,12 +156,11 @@
                                     <td class="text-capitalize"><%=feeds.feed_type %></td>
                                     <td><%=feeds.feed_amount %></td>
                                     <td><%=feeds.feed_datetime.toLocaleString() %></td>
-                                    <td><%=feeds.pet_id%></td>
                                     <td>
-                                        <a href="/edit_feed/<%= feeds.feed_id %>" class="btn bg-success">Edit</a>
-
-
-                                        <a href="/delete_feed/<%= feeds.feed_id %>" class="btn bg-danger">Delete</a>
+                                        <form method="GET" action="/delete_feed/<%= feeds.feed_id %>"
+                                            onsubmit="return confirm('Are you sure you want to remove feed?');">
+                                            <input class="btn bg-danger textWhite" type="submit" value="Delete" />
+                                        </form>
                                     </td>
                                 </tr>
                                 <%} %>
@@ -164,9 +171,9 @@
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
 
-                        <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue">Add</a>
-                        <!-- <button class="btn bgBlue " data-bs-toggle="modal"
-                            data-bs-target="#newFeedSchedulePopup">Add</button> -->
+                        <!-- <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
+                        <a class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newFeedSchedulePopup"
+                            onclick="passFeedValue(<%= pets.pet_id %>)">Add</a>
                     </div>
                 </div>
                 <!--ACCORDION ITEM 1        -->
@@ -204,49 +211,42 @@
                                         aria-describedby="nameHelp" placeholder="e.g. Blackie">
                                 </div>
                                 <div class="form-group">
-
                                     <label class="form-check-label" for="pet_type">
                                         Breed
                                     </label><br>
                                     <input class="form-control" name="add_pet" type="text" id="pet_type"
-                                            placeholder="e.g. strong">
-                                    
-                                    <!-- <input list="breeds" name="breed" id="breed">
-                                    <datalist id="breeds">
-                                        <option value="Bulldog">
-                                        <option value="Shepherd">
-                                        <option value="Chihuahua">
-                                        <option value="Labrador">
-                                        <option value="Poodle">
-                                    </datalist> -->
-
-
-
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-check-label" for="pet_mood">
-                                            Mood
-                                        </label><br>
-                                        <div class="form-control slidecontainer">
-                                            <input class="slider" name="add_pet" type="range" id="pet_mood" value="3"
-                                                min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
-                                            <input id="sliderText" type="number" value="3" min="1" max="5"
-                                                oninput="pet_mood.value=sliderText.value" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-check-label" for="pet_health">
-                                            Health
-                                        </label>
-                                        <input class="form-control" name="add_pet" type="text" id="pet_health"
-                                            placeholder="e.g. strong">
+                                        placeholder="e.g. Bulldog">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-check-label" for="pet_mood">
+                                        Mood
+                                    </label><br>
+                                    <div class="form-control slidecontainer">
+                                        <input class="slider" name="add_pet" type="range" id="pet_mood" value="3"
+                                            min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
+                                        <input id="sliderText" type="number" value="3" min="1" max="5"
+                                            oninput="pet_mood.value=sliderText.value" />
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="form-check-label" for="pet_health">
+                                        Health
+                                    </label>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_health"
+                                        placeholder="e.g. strong">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label class="form-check-label" for="pet_health">
+                                        Health
+                                    </label>
+                                    <input class="form-control" name="add_pet" type="text" id="walkPet_id"
+                                        placeholder="e.g. strong">
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <input type="submit" value="Submit" />
-                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Submit" class="btn bgBlue textWhite" />
+                        </div>
                     </form>
                 </div>
             </div>
@@ -265,41 +265,39 @@
                 </div>
                 <div class="modal-body">
                     <p>Please fill all the fields below</p>
-                    <form name="addWalk" id="walks" method="POST" action="/add">
+                    <form name="addWalk" id="walks" method="POST" action="/save">
                         <div class="form-check">
-                            <div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="walk_name">
                                     Walk Name
                                 </label>
                                 <input class="form-control" name="add_walk" type="text" id="walk_name"
-                                    aria-describedby="nameHelp" placeholder="e.g. long walk">
+                                    aria-describedby="nameHelp" placeholder="e.g. long walk" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="walk_distance">
                                     Distance (in KMs)
                                 </label>
                                 <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01"
-                                    placeholder="e.g. 1.5">
+                                    placeholder="e.g. 1.5" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="walk_datetime">
                                     Date &amp; Time
                                 </label>
                                 <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime"
-                                    placeholder="">
-                                <label class="form-check-label" for="pet_id">
+                                    placeholder="" required>
+                            </div>
+                            <div class="form-group" hidden>
+                                <label class="form-check-label" for="walkPetID">
                                     Pet ID
                                 </label>
-
-                                <select class="form-check-label" name="add_walk" id="pet_id">
-                                    <% walks.forEach(function(walks){%>
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <option value="<%=walks.pet_id%>"><%=walks.pet_id%></option>
-                                    <!--                                    <td><%=walks.pet_id%></td>-->
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <%}) %>
-                                </select>
-                                <!-- <input class="form-control" name="add_pet" type="text" id="pet_id">-->
+                                <input class="form-control" name="add_walk" type="text" id="walkPetID"
+                                    placeholder="this is Pet id">
                             </div>
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="Submit" class="btn bgBlue textWhite" />
                         </div>
                     </form>
                 </div>
@@ -318,43 +316,47 @@
                 </div>
                 <div class="modal-body">
                     <p>Please fill all the fields below</p>
-                    <form name="addFeed" id="feeds" method="POST" action="/add">
+                    <form name="addFeed" id="feeds" method="POST" action="/save">
                         <div class="form-check">
-                            <div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="feed_name">
                                     Food Name
                                 </label>
                                 <input class="form-control" name="add_feed" type="text" id="walk_name"
-                                    aria-describedby="nameHelp" placeholder="e.g. Snack">
+                                    aria-describedby="nameHelp" placeholder="e.g. Snack" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="feed_type">
                                     Food Type
                                 </label>
                                 <input class="form-control" name="add_feed" type="text" id="feed_type"
-                                    placeholder="e.g. kibbles">
+                                    placeholder="e.g. kibbles" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="feed_amount">
                                     Amount (in grams)
                                 </label>
                                 <input class="form-control" name="add_feed" type="number" id="feed_amount" step="0.001"
-                                    placeholder="e.g. 10">
+                                    placeholder="e.g. 10" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-check-label" for="feed_datetime">
                                     Date &amp; Time
                                 </label>
-                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime">
-                                <label class="form-check-label" for="pet_id">
+                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-check-label" for="feedPetID">
                                     Pet ID
                                 </label>
-                                <select class="form-check-label" name="add_feed" id="pet_id">
-                                    <% feeds.forEach(function(feeds){%>
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <option value="<%=feeds.pet_id%>"><%=feeds.pet_id%></option>
-                                    <!--                                    <td><%=walks.pet_id%></td>-->
-                                    <!--NEED TO CHECK PET ID AGAIN, DROP DOWN LIST SHOULD SHOW 1 ITEM FOR SAME ID========================  -->
-                                    <%}) %>
-                                </select>
+                                <input class="form-control" name="add_feed" type="text" id="feedPetID"
+                                    placeholder="this is feed pet id">
+
                             </div>
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="Submit" class="btn bgBlue textWhite" />
                         </div>
                     </form>
                 </div>
@@ -411,20 +413,25 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     <script>
-        //THIS IS JAVASCRIPT CODE FOR TOOLTIPS==================================
-        const tooltips = document.querySelectorAll('.tt')
-        tooltips.forEach(t => {
-            new bootstrap.Tooltip(t)
-        })
-        //THIS IS JAVASCRIPT CODE FOR TOOLTIPS==================================
+        //THIS FUNCTION WILL PASS PET ID ADD SCHEDULE FORM
+        function passWalkValue(id) {
+            document.getElementById("walkPetID").value = id;
+        }
+
+        function passFeedValue(id) {
+            document.getElementById('feedPetID').value = id;
+        }
+
+
+
 
         //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
         var slider = document.getElementById("pet_mood");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+        var myoutput = document.getElementById("demo");
+        myoutput.innerHTML = slider.value;
 
         slider.oninput = function () {
-            output.innerHTML = this.value;
+            myoutput.innerHTML = this.value;
         }
         //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
 
@@ -443,32 +450,6 @@
             x.add(option);
         }
         //INSERT DATA TO SELECT OPTION========================================        
-
-        //CREATE TABLE FOR ACCORDION=====================================
-        function tableCreate() {
-            var body = document.getElementsByTagName('body')[0];
-            var tbl = document.createElement('table');
-            tbl.style.width = '100%';
-            tbl.setAttribute('border', '1');
-            var tbdy = document.createElement('tbody');
-            for (var i = 0; i < 3; i++) {
-                var tr = document.createElement('tr');
-                for (var j = 0; j < 2; j++) {
-                    if (i == 2 && j == 1) {
-                        break
-                    } else {
-                        var td = document.createElement('td');
-                        td.appendChild(document.createTextNode('\u0020'))
-                        i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-                        tr.appendChild(td)
-                    }
-                }
-                tbdy.appendChild(tr);
-                tbl.appendChild(tbdy);
-                body.appendChild(tbl)
-            }
-            tableCreate();
-            //CREATE TABLE FOR ACCORDION=====================================        
     </script>
 </body>
 
