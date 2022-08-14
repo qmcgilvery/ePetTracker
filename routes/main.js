@@ -308,9 +308,8 @@ module.exports = function (app) {
 
    // render delete page with all devices in database
     app.get("/delete", function (req, res) {
-        // query database to get all the devices
-        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1; SELECT * FROM feed_1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2; SELECT * FROM walk_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 1; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 2; SELECT * FROM feed_1 a left JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.pet_id = 3";
-
+        // query database to get all the entries 
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime";
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
@@ -333,11 +332,11 @@ module.exports = function (app) {
 // handle form data from deleteForm submission
     app.post("/deletePet", function (req, res) {
         // query database to get all the devices
-        let sqlquery = "DELETE FROM `pet_test1` WHERE name like ?;"
+        let sqlquery = "SET foreign_key_checks = 0; DELETE FROM `pet_test1` WHERE pet_id = (?); SET foreign_key_checks = 1;"
         // execute sql query
         for (const key in req.body) {
                 let new_records = req.body[key];
-                res.write(" This device has been deleted from the database, name: " + req.body[key]);
+                res.write(" This entry has been deleted from the database, name: " + req.body[key]);
                 // execute sql query
                 db.query(sqlquery, new_records, (err, result) => {
                     if (err) {
