@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Pet Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -13,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
-
     </style>
     <title>ePetTracker</title>
 </head>
@@ -127,11 +124,8 @@
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
                         <!-- <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
-
-
-                        <a class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newWalkSchedulePopup"
-                            onclick="passWalkValue(<%= pets.pet_id %>)">Add</a>
-
+                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newWalkSchedulePopup"
+                            onclick="document.getElementById('walkPetID').value = this.value">Add</button>
                         <table class="table table-striped">
                             <!--THIS IS WALKING TABLE==================-->
                             <!--                            <div class="tableFeed">-->
@@ -147,7 +141,6 @@
                             </thead>
                             <tbody>
                                 <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
-
                                 <% feeds.forEach(function(feeds){%>
                                 <% if(feeds.pet_id == pets.pet_id){%>
                                 <tr class="align-middle">
@@ -167,13 +160,11 @@
                                 <%}) %>
                                 <!--THIS IS LOOPING DATA FOR ALL FEEDS=================================================  -->
                             </tbody>
-                            <!--                            </div>-->
                             <!--THIS IS WALKING TABLE==================-->
                         </table>
-
                         <!-- <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
-                        <a class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newFeedSchedulePopup"
-                            onclick="passFeedValue(<%= pets.pet_id %>)">Add</a>
+                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newFeedSchedulePopup"
+                            onclick="document.getElementById('feedPetID').value = this.value">Add</button>
                     </div>
                 </div>
                 <!--ACCORDION ITEM 1        -->
@@ -185,10 +176,13 @@
     </div>
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
 
+<<<<<<< Updated upstream
 
 
 
 
+=======
+>>>>>>> Stashed changes
     <!-- THIS IS POP UP MENU NEW PET PROFILE==================================================================================== -->
     <div class="modal fade" id="newPetPopup" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog">
@@ -252,7 +246,6 @@
         </div>
     </div>
     <!-- THIS IS POP UP MENU NEW PET PROFILE==================================================================================== -->
-
 
     <!-- THIS IS POP UP MENU NEW WALK SCHEDULE================================================================================== -->
     <div class="modal fade" id="newWalkSchedulePopup" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
@@ -345,7 +338,7 @@
                                 <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime"
                                     required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label class="form-check-label" for="feedPetID">
                                     Pet ID
                                 </label>
@@ -364,7 +357,6 @@
     </div>
     <!-- THIS IS POP UP MENU NEW FEED SCHEDULE================================================================================== -->
 
-
     <!--UPLOAD IMAGE TO USER PROFILE PICS-->
     <h1>ePetTracker</h1>
     <div class="container">
@@ -378,11 +370,6 @@
         <button type="submit" name="upload">Upload</button>
     </form>
     <!--UPLOAD IMAGE TO USER PROFILE PICS-->
-
-
-
-
-
 
     <!--UPLOAD IMAGE TO PETS   ==========================================================-->
     <h3>Pet 1 Image Upload</h3>
@@ -405,50 +392,11 @@
     </form>
     <!--UPLOAD IMAGE TO PETS   ==========================================================-->
 
-
-
     <!--THIS IS LINK TO BOOTSTRAP JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     <script>
-        //THIS FUNCTION WILL PASS PET ID ADD SCHEDULE FORM
-        function passWalkValue(id) {
-            document.getElementById("walkPetID").value = id;
-        }
-
-        function passFeedValue(id) {
-            document.getElementById('feedPetID').value = id;
-        }
-
-
-
-
-        //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
-        var slider = document.getElementById("pet_mood");
-        var myoutput = document.getElementById("demo");
-        myoutput.innerHTML = slider.value;
-
-        slider.oninput = function () {
-            myoutput.innerHTML = this.value;
-        }
-        //THIS IS JAVASCRIPT CODE FOR SLIDER==================================
-
-        //GET ALL SELECT OPTION VALUE=========================================        
-        var options = document.getElementById('pet_id').options;
-        for (let i = 0; i < options.length; i++) {
-            console.log(options[i].value); //log the value
-        }
-        //GET ALL SELECT OPTION VALUE=========================================        
-
-        //INSERT DATA TO SELECT OPTION========================================   
-        function myFunction() {
-            var x = document.getElementById("mySelect");
-            var option = document.createElement("option");
-            option.text = "Kiwi";
-            x.add(option);
-        }
-        //INSERT DATA TO SELECT OPTION========================================        
     </script>
 </body>
 
