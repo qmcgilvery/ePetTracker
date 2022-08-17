@@ -19,27 +19,23 @@
     <div class="col-6 mx-auto top-margin text-center">
       <ul class="list-group primary">
         <li class="list-group-item list-group-item-secondary border-bottom-0">
-          <h3>Today</h3>
+          <h3>Walks for Today</h3>
         </li>
         <% walks_today.forEach(function(walks_today){%>
         <li class="list-group-item list-group-item-primary border-bottom-0">
-          <%=walks_today.walk_name %>
+          <%=walks_today.walk_name %> 
         </li>
         <li class="list-group-item list-group-item-primary border-bottom-0">
           <%=walks_today.walk_distance %> Kilometers
         </li>
         <li class="list-group-item list-group-item-primary border-bottom-0">
-          <%=walks_today.walk_datetime %>
+          <%=walks_today.walk_datetime.toLocaleString() %> with <strong><%=walks_today.name %></strong>
         </li>
-        <!-- is complete boolean -->
-        <li class="list-group-item list-group-item-primary border-bottom-0">
-          <%=walks_today.walk_complete %>
-        </li>
-        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
 
-        <li class="list-group-item list-group-item-primary border-bottom-0">
+        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+<!--         <li class="list-group-item list-group-item-primary border-bottom-0">
           <strong><%=walks_today.name %></strong>
-        </li>
+        </li> -->
         <!--        Logic to change the list color according to the booloean value of walk_complete -->
         <% if (walks_today.walk_complete == 0) {%>
         <li class="list-group-item list-group-item-primary border-bottom-2">
@@ -70,13 +66,68 @@
           </form>
         </li>
         <% }) %>
+
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+          <h3>Feed for Today</h3>
+        </li>
+         <!-- FOR FEEDING loop-->        
+        <% feeds_today.forEach(function(feeds_today){%>
+          <li class="list-group-item list-group-item-primary border-bottom-0">
+            <%=feeds_today.feed_name %>
+          </li>
+          <li class="list-group-item list-group-item-primary border-bottom-0">
+            <%=feeds_today.feed_type %>
+          </li>
+          <li class="list-group-item list-group-item-primary border-bottom-0">
+            <%=feeds_today.feed_amount %> Grams
+          </li>
+          <li class="list-group-item list-group-item-primary border-bottom-0">
+            <%=feeds_today.feed_datetime.toLocaleString() %>
+          </li>
+
+          <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+  
+          <li class="list-group-item list-group-item-primary border-bottom-0">
+            <strong><%=feeds_today.name %></strong>
+          </li>
+          <!--        Logic to change the list color according to the booloean value of walk_complete -->
+          <% if (feeds_today.feed_complete == 0) {%>
+          <li class="list-group-item list-group-item-primary border-bottom-2">
+            <%}else {%>
+          <li class="list-group-item list-group-item-warning border-bottom-2">
+            <%}%>
+            <form method="POST" action="/update_feed_complete">
+              <div class="mb-3">
+                <input
+                  type="range"
+                  id="feed_complete"
+                  name="feed_complete"
+                  min="0"
+                  max="1"
+                  value="<%=feeds_today.feed_complete %>"
+                />
+                <label for="feed_complete">Complete</label>
+                <input
+                  type="hidden"
+                  id="feed_id"
+                  name="feed_id"
+                  value="<%=feeds_today.feed_id %>"
+                />
+                <button type="submit" class="btn btn-primary" value="OK">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </li>
+          <% }) %>
       </ul>
     </div>
+
 
     <div class="col-6 mx-auto top-margin text-center">
       <ul class="list-group primary">
         <li class="list-group-item list-group-item-secondary border-bottom-0">
-          <h3>Tomorrow</h3>
+          <h3>Walks for Tomorrow</h3>
         </li>
         <% walks_tomorrow.forEach(function(walks_tomorrow){%>
         <li class="list-group-item list-group-item-info border-bottom-0">
@@ -86,12 +137,9 @@
           <%=walks_tomorrow.walk_distance %> Kilometers
         </li>
         <li class="list-group-item list-group-item-info border-bottom-0">
-          <%=walks_tomorrow.walk_datetime %>
+          <%=walks_tomorrow.walk_datetime.toLocaleString() %>
         </li>
-        <!-- is complete boolean -->
-        <li class="list-group-item list-group-item-info border-bottom-0">
-          <%=walks_tomorrow.walk_complete %>
-        </li>
+
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
 
         <li class="list-group-item list-group-item-info border-bottom-0">
@@ -129,13 +177,68 @@
           </form>
         </li>
         <% }) %>
+
+
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+        <h3>Feed for Tomorrow</h3>
+      </li>
+       <!-- FOR FEEDING loop-->        
+      <% feeds_tomorrow.forEach(function(feeds_tomorrow){%>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=feeds_tomorrow.feed_name %>
+        </li>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=feeds_tomorrow.feed_type %>
+        </li>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=feeds_tomorrow.feed_amount %> Grams
+        </li>
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <%=feeds_tomorrow.feed_datetime.toLocaleString() %>
+        </li>
+
+        <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+
+        <li class="list-group-item list-group-item-info border-bottom-0">
+          <strong><%=feeds_tomorrow.name %></strong>
+        </li>
+        <!--        Logic to change the list color according to the booloean value of walk_complete -->
+        <% if (feeds_tomorrow.feed_complete == 0) {%>
+        <li class="list-group-item list-group-item-info border-bottom-2">
+          <%}else {%>
+        <li class="list-group-item list-group-item-warning border-bottom-2">
+          <%}%>
+          <form method="POST" action="/update_feed_complete">
+            <div class="mb-3">
+              <input
+                type="range"
+                id="feed_complete"
+                name="feed_complete"
+                min="0"
+                max="1"
+                value="<%=feeds_tomorrow.feed_complete %>"
+              />
+              <label for="feed_complete">Complete</label>
+              <input
+                type="hidden"
+                id="feed_id"
+                name="feed_id"
+                value="<%=feeds_tomorrow.feed_id %>"
+              />
+              <button type="submit" class="btn btn-primary" value="OK">
+                Submit
+              </button>
+            </div>
+          </form>
+        </li>
+        <% }) %>
       </ul>
     </div>
 
     <div class="col-6 mx-auto top-margin text-center">
       <ul class="list-group primary">
         <li class="list-group-item list-group-item-secondary border-bottom-0">
-          <h3>Upcoming</h3>
+          <h3>Upcoming Walks </h3>
         </li>
         <% walks_upcoming.forEach(function(walks_upcoming){%>
         <li class="list-group-item list-group-item-light border-bottom-0">
@@ -145,12 +248,9 @@
           <%=walks_upcoming.walk_distance %> Kilometers
         </li>
         <li class="list-group-item list-group-item-light border-bottom-0">
-          <%=walks_upcoming.walk_datetime %>
+          <%=walks_upcoming.walk_datetime.toLocaleString() %>
         </li>
-        <!-- is complete boolean -->
-        <li class="list-group-item list-group-item-light border-bottom-0">
-          <%=walks_upcoming.walk_complete %>
-        </li>
+
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
 
         <li class="list-group-item list-group-item-light border-bottom-0">
@@ -188,6 +288,60 @@
           </form>
         </li>
         <% }) %>
+        <li class="list-group-item list-group-item-secondary border-bottom-0">
+          <h3>Upcoming Feed</h3>
+        </li>
+         <!-- FOR FEEDING loop-->        
+        <% feeds_upcoming.forEach(function(feeds_upcoming){%>
+          <li class="list-group-item list-group-item-light border-bottom-0">
+            <%=feeds_upcoming.feed_name %>
+          </li>
+          <li class="list-group-item list-group-item-light border-bottom-0">
+            <%=feeds_upcoming.feed_type %>
+          </li>
+          <li class="list-group-item list-group-item-light border-bottom-0">
+            <%=feeds_upcoming.feed_amount %> Grams
+          </li>
+          <li class="list-group-item list-group-item-light border-bottom-0">
+            <%=feeds_upcoming.feed_datetime.toLocaleString() %>
+          </li>
+
+          <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
+  
+          <li class="list-group-item list-group-item-light border-bottom-0">
+            <strong><%=feeds_upcoming.name %></strong>
+          </li>
+          <!--        Logic to change the list color according to the booloean value of walk_complete -->
+          <% if (feeds_upcoming.feed_complete == 0) {%>
+          <li class="list-group-item list-group-item-light border-bottom-2">
+            <%}else {%>
+          <li class="list-group-item list-group-item-warning border-bottom-2">
+            <%}%>
+            <form method="POST" action="/update_feed_complete">
+              <div class="mb-3">
+                <input
+                  type="range"
+                  id="feed_complete"
+                  name="feed_complete"
+                  min="0"
+                  max="1"
+                  value="<%=feeds_upcoming.feed_complete %>"
+                />
+                <label for="feed_complete">Complete</label>
+                <input
+                  type="hidden"
+                  id="feed_id"
+                  name="feed_id"
+                  value="<%=feeds_upcoming.feed_id %>"
+                />
+                <button type="submit" class="btn btn-primary" value="OK">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </li>
+          <% }) %>
+
       </ul>
     </div>
   </body>
