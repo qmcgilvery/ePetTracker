@@ -72,7 +72,7 @@
           <td><%=walks.walk_id %></td>
           <td><%=walks.walk_name %></td>
           <td><%=walks.walk_distance %></td>
-          <td><%=walks.walk_datetime %></td>
+          <td><%=walks.walk_datetime.toLocaleString() %></td>
           <td><%=walks.pet_id %></td>
           <td><%=walks.walk_complete %></td>
         </tr>
@@ -102,7 +102,8 @@
           <th>Food type</th>
           <th>Amount</th>
           <th>Date & time</th>
-          <th>Pet id</th>
+          <th>Pet ID</th>
+          <th>Feed complete </th>
         </tr>
         <% feeds.forEach(function(feeds){%>
         <tr>
@@ -110,8 +111,9 @@
           <td><%=feeds.feed_name %></td>
           <td><%=feeds.feed_type %></td>
           <td><%=feeds.feed_amount %></td>
-          <td><%=feeds.feed_datetime %></td>
+          <td><%=feeds.feed_datetime.toLocaleString() %></td>
           <td><%=feeds.pet_id%></td>
+          <td><%=feeds.feed_complete%></td>
         </tr>
         <%}) %>
       </div>
@@ -132,7 +134,7 @@
           <td><%=walks_p_id1.walk_id %></td>
           <td><%=walks_p_id1.walk_name %></td>
           <td><%=walks_p_id1.walk_distance %></td>
-          <td><%=walks_p_id1.walk_datetime %></td>
+          <td><%=walks_p_id1.walk_datetime.toLocaleString() %></td>
           <td><%=walks_p_id1.pet_id%></td>
         </tr>
         <%}) %>
@@ -154,7 +156,7 @@
           <td><%=walks_p_id2.walk_id %></td>
           <td><%=walks_p_id2.walk_name %></td>
           <td><%=walks_p_id2.walk_distance %></td>
-          <td><%=walks_p_id2.walk_datetime %></td>
+          <td><%=walks_p_id2.walk_datetime.toLocaleString() %></td>
           <td><%=walks_p_id2.pet_id%></td>
         </tr>
         <%}) %>
@@ -175,7 +177,7 @@
           <td><%=walks_p_id3.walk_id %></td>
           <td><%=walks_p_id3.walk_name %></td>
           <td><%=walks_p_id3.walk_distance %></td>
-          <td><%=walks_p_id3.walk_datetime %></td>
+          <td><%=walks_p_id3.walk_datetime.toLocaleString() %></td>
           <td><%=walks_p_id3.pet_id%></td>
         </tr>
         <%}) %>
@@ -200,7 +202,7 @@
         <td><%=feed_p_id1.feed_name %></td>
         <td><%=feed_p_id1.feed_type %></td>
         <td><%=feed_p_id1.feed_amount %></td>
-        <td><%=feed_p_id1.feed_datetime %></td>
+        <td><%=feed_p_id1.feed_datetime.toLocaleString() %></td>
         <td><%=feed_p_id1.pet_id%></td>
       </tr>
       <%}) %>
@@ -224,7 +226,7 @@
         <td><%=feed_p_id2.feed_name %></td>
         <td><%=feed_p_id2.feed_type %></td>
         <td><%=feed_p_id2.feed_amount %></td>
-        <td><%=feed_p_id2.feed_datetime %></td>
+        <td><%=feed_p_id2.feed_datetime.toLocaleString() %></td>
         <td><%=feed_p_id2.pet_id%></td>
       </tr>
       <%}) %>
@@ -248,7 +250,7 @@
         <td><%=feed_p_id3.feed_name %></td>
         <td><%=feed_p_id3.feed_type %></td>
         <td><%=feed_p_id3.feed_amount %></td>
-        <td><%=feed_p_id3.feed_datetime %></td>
+        <td><%=feed_p_id3.feed_datetime.toLocaleString() %></td>
         <td><%=feed_p_id3.pet_id%></td>
       </tr>
       <%}) %>

@@ -152,12 +152,13 @@ module.exports = function (app) {
       res.redirect('/pet');
     });
   });
-  // Andy Code==============================================================================
-  
+  // Andy Code==========================================================================
+
+
   app.get("/todo", function (req, res) {
+     // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; max up to + 365 days 
     let sqlquery =
-      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp;
-      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY ORDER BY a.walk_datetime;";
+      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 365 DAY ORDER BY a.walk_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() AND a.feed_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.feed_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() + INTERVAL 1 DAY AND a.feed_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.feed_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() + INTERVAL 2 DAY AND a.feed_datetime < CURDATE() + INTERVAL 365 DAY ORDER BY a.feed_datetime";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
@@ -165,6 +166,9 @@ module.exports = function (app) {
       }
       console.log(result[1]);
       res.render("todo.html", {
+        feeds_upcoming: result[5],
+        feeds_tomorrow: result[4],
+        feeds_today: result[3],
         walks_upcoming: result[2],
         walks_tomorrow: result[1],
         walks_today: result[0],
@@ -181,9 +185,23 @@ module.exports = function (app) {
     db.query(sqlquery, updaterecord, (err, result) => {
       if (err) {
         return console.error(err.message);
-      } else res.send(" This walk is updated " + req.body.walk_id);
+      } else res.redirect("/todo");
     });
   });
+
+  // post for updating feed_complete boolean in todo.html
+  app.post("/update_feed_complete", function (req, res) {
+    // saving data in database
+    let sqlquery = "UPDATE feed_1 SET feed_complete = (?) WHERE feed_id = (?);";
+    // execute sql query
+    let updaterecord = [req.body.feed_complete, req.body.feed_id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.redirect("/todo");
+    });
+  });
+  
 
   // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
@@ -218,7 +236,7 @@ module.exports = function (app) {
     db.query(sqlquery, updaterecord, (err, result) => {
       if (err) {
         return console.error(err.message);
-      } else res.send("This walk has been removed, Walk ID: " + req.body.id);
+      } else res.redirect("/new_status");
     });
   });
 
