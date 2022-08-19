@@ -8,19 +8,17 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar">
     <a class="navbar-brand" href="/">Home</a>
     <a class="navbar-brand" href="/todo">To-do</a>
-    <a class="navbar-brand" href="/add">Add</a>
-    <a class="navbar-brand" href="/new_status">Status</a>
     <a class="navbar-brand" href="/pet">Pet</a>
     <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
 
   </nav>
 <div class="container col-10 mx-auto">
-  <div>
-    <h1>This is the Delete page</h1>
+  <div class="top-margin">
+    <h1 class="text-center">Remove a pet, walk or feeding</h1>
   </div>
   <form name="deleteForm" method="POST" action="/deletePet" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
       <h3 style="color: red">Remove a Pet</h3>

@@ -23,6 +23,21 @@
     background-color: #f9f7f7;
 }
 
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar{
+    background-color: #559BE0;
+}
+
+.navbar > .navbar-brand {
+    color: cornsilk;
+}
+
+h1 {
+    color:#706576;
+}
 /*        COLOR SETTING=====================================*/
 
 
@@ -38,6 +53,10 @@ caption {
 /*THIS IS NAVIGATION STYLING======================================================*/
 .active {
     font-weight: bold;
+}
+
+.navbar-brand {
+    margin: auto;
 }
 
 /*THIS IS NAVIGATION STYLING======================================================*/
