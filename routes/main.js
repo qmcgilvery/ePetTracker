@@ -37,36 +37,6 @@ module.exports = function (app) {
     });
   });
 
-  //render walk form by id
-  app.get("/add_walk/:id", (req, res) => {
-    const petId = req.params.id;
-    let sql = `SELECT * from pet_test1; SELECT * FROM walk_1;`
-    let query = db.query(sql, (err, result) => {
-      if (err) throw err;
-      res.render('add_walk.html', {
-        title: 'this is add new walk schedule page',
-        walks: result[1],
-        pets: result[0],
-        petId: petId
-      });
-    });
-  });
-
-  //render feed form by id
-  app.get("/add_feed/:id", (req, res) => {
-    const petId = req.params.id;
-    let sql = `SELECT * from pet_test1; SELECT * FROM feed_1;`
-    let query = db.query(sql, (err, result) => {
-      if (err) throw err;
-      res.render('add_feed.html', {
-        title: 'this is add new feed schedule page',
-        feeds: result[1],
-        pets: result[0],
-        petId: petId
-      });
-    });
-  });
-
   //save walk schedule by id
   app.post("/save", function (req, res) {
     if (req.body.add_pet) {
@@ -86,18 +56,12 @@ module.exports = function (app) {
         });
       };
       console.log(req.body);
-      
-
-
     };
     if (req.body.add_walk) {
       let sql =
         "INSERT INTO walk_1 (walk_name, walk_distance, walk_datetime, pet_id) VALUES (?, ?, ?, ?)";
       for (const key in req.body) {
         let new_records = req.body[key];
-        // res.write(
-        //   " This walk has been added to database, name: " + req.body[key]
-        // );
         // execute sql query
         db.query(sql, new_records, (err, result) => {
           if (err) {
@@ -112,13 +76,8 @@ module.exports = function (app) {
       console.log(req.body);
       let sql =
         "INSERT INTO feed_1 (feed_name, feed_type, feed_amount, feed_datetime, pet_id) VALUES (?, ?, ?, ?, ?)";
-
       for (const key in req.body) {
         let new_records = req.body[key];
-        // res.write(
-        //   " This feeding schedule has been added to database, name: " +
-        //   req.body[key]
-        // );
         // execute sql query
         db.query(sql, new_records, (err, result) => {
           if (err) {
@@ -129,7 +88,6 @@ module.exports = function (app) {
         });
       }
     }
-
   });
 
   // delete walk by id
@@ -152,8 +110,35 @@ module.exports = function (app) {
       res.redirect('/pet');
     });
   });
-  // Andy Code==========================================================================
 
+  //Change Pet Inage
+  const petstorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "./uploads/pets");
+    },
+    filename: function (req, file, cb) {
+      // console.log(path.extname(file.originalname))
+      cb(null, "pet" + id + ".jpg");
+    },
+  });
+  const petupload = multer({
+    storage: petstorage,
+  });
+
+  //Change Pet Inage
+  app.post("/updateFileName", (req, res) => {
+    id = req.body.changePetImageId;
+  });
+
+  app.use("/uploads/pets", express.static("uploads"));
+  app.post(
+    "/changePetImage",
+    petupload.single("image"),
+    function (req, res, next) {
+      return res.redirect("/pet");
+    }
+  );
+  // Andy Code==========================================================================
 
   app.get("/todo", function (req, res) {
      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; max up to + 365 days 
@@ -188,6 +173,20 @@ module.exports = function (app) {
       } else res.redirect("/todo");
     });
   });
+
+  // post for updating feed_complete boolean in todo.html
+  app.post("/update_feed_complete", function (req, res) {
+    // saving data in database
+    let sqlquery = "UPDATE feed_1 SET feed_complete = (?) WHERE feed_id = (?);";
+    // execute sql query
+    let updaterecord = [req.body.feed_complete, req.body.feed_id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.redirect("/todo");
+    });
+  });
+  
 
   // post for updating feed_complete boolean in todo.html
   app.post("/update_feed_complete", function (req, res) {

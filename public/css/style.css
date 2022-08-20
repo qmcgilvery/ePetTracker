@@ -27,6 +27,7 @@
     background-color: #f8f9fa;
 } */
 
+.navbar {
 .navbar{
     background-color: #559BE0;
 }
@@ -36,6 +37,9 @@
 }
 
 h1 {
+    color: #706576;
+}
+
     color:#706576;
 }
 /*        COLOR SETTING=====================================*/
@@ -71,27 +75,6 @@ caption {
 
 /*THIS IS PET SECTION======================================================================        */
 
-/*THIS IS TABLE SETTING====================================================================*/
-.h1-table {
-    /*            background-color: red;*/
-    /*            margin: 500px;*/
-    padding: 20px;
-}
-
-/*
-        .tableWalk {
-            background-color: red;
-            height: 50px;
-        }
-
-        .tableFeed {
-            background-color: blue;
-            height: 50px;
-        }
-*/
-
-/*THIS IS TABLE SETTING====================================================================*/
-
 
 /*THIS IS PET SECTION======================================================================        */
 .addImage {
@@ -122,8 +105,16 @@ caption {
     margin: 20px;
 }
 
+.btnChangePetImage {
+    text-align: center;
+}
+
 .petImage img {
     width: 60%;
+}
+
+.imgPet {
+    display: none;
 }
 
 .petSection {
@@ -191,7 +182,7 @@ caption {
 
 #sliderText {
     display: inline;
-/*    border: 0px hidden;*/
+    /*    border: 0px hidden;*/
     margin-left: 5px;
 
 }
@@ -207,6 +198,63 @@ caption {
 
 
 
+/* SETTING WHEN MAX WIDTH 767============================================ */
+@media only screen and (max-width:767px) {
+    .btnDelete {
+        position: block;
+    }
+
+    .petImage {
+        display: none;
+    }
+
+    .imgPet {
+        display: block;
+        position: relative;
+        right: 50%;
+        width: 200%;
+    }
+
+    .no-more-tables tbody,
+    .no-more-tables tr,
+    .no-more-tables td {
+        display: block;
+        text-align: left;
+    }
+
+    .no-more-tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .no-more-tables td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        /* border-bottom: 1px solid #eee; */
+    }
+
+    .btnDeleteWalk {
+        position: relative;
+        right: 30%;
+    }
+
+    .no-more-tables td:before {
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+
+    .no-more-tables tr {
+        /* border-bottom: 1px solid #ccc; */
+    }
+}
+
+/* SETTING WHEN MAX WIDTH 767============================================ */
+=======
+
 /* set global background color for everything in <body></body> */
 body {
     background-color: #f2f3f4;
@@ -221,3 +269,4 @@ iframe {
     display: block;
     border-style:none;
 }
+
