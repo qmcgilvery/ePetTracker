@@ -6,11 +6,9 @@
     <title>ePetTracker</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar">
       <a class="navbar-brand" href="#">Home</a>
       <a class="navbar-brand" href="/todo">To-do</a>
-      <a class="navbar-brand" href="/add">Add</a>
-      <a class="navbar-brand" href="/new_status">Status</a>
       <a class="navbar-brand" href="/pet">Pet</a>
       <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
@@ -18,11 +16,11 @@
        <ul class="list-group primary">
          <li class="list-group-item list-group-item-secondary border-bottom-0"><h3>Next Scheduled Walk</h3></li>
          <% walks.forEach(function(walks){%>
-         <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_name %></li>
-         <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_distance %> Kilometers</li>
-         <li class="list-group-item list-group-item-primary border-bottom-0"><%=walks.walk_datetime %></li>
+         <li class="list-group-item list-group-item-primary border-bottom-0"><b> Name: </b><%=walks.walk_name %></li>
+         <li class="list-group-item list-group-item-primary border-bottom-0"><b>Distance: </b><%=walks.walk_distance %> Kilometers</li>
+         <li class="list-group-item list-group-item-primary border-bottom-0"><b>Date: </b><%=walks.walk_datetime.toLocaleString() %></li>
          <!-- make this grab pet name via pet_id -->
-         <li class="list-group-item list-group-item-primary"><%=walks.name %></li>
+         <li class="list-group-item list-group-item-primary"><b> Pet: </b><%=walks.name %></li>
          <% }) %>
        </ul>
     </div>
@@ -30,14 +28,34 @@
        <ul class="list-group primary">
          <li class="list-group-item list-group-item-secondary border-bottom-0"><h3>Next Scheduled Feeding</h3></li>
          <% feeds.forEach(function(feeds){%>
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_name %></li>
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_type %></li>
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_amount %> Grams</li>
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.feed_datetime %></li>
+         <li class="list-group-item list-group-item-success border-bottom-0"><b>Name: </b><%=feeds.feed_name %></li>
+         <li class="list-group-item list-group-item-success border-bottom-0"><b>Type: </b><%=feeds.feed_type %></li>
+         <li class="list-group-item list-group-item-success border-bottom-0"><b>Amount: </b><%=feeds.feed_amount %> Grams</li>
+         <li class="list-group-item list-group-item-success border-bottom-0"><b>Date: </b><%=feeds.feed_datetime.toLocaleString() %></li>
          <!-- make this show pet name via pet_id -->
-         <li class="list-group-item list-group-item-success border-bottom-0"><%=feeds.name%></li>
+         <li class="list-group-item list-group-item-success border-bottom-0"><b> Pet: </b><%=feeds.name%></li>
          <% }) %>
        </ul>
     </div>
+
+  <!-- Modal window-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Instructions go here
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/modal.js"></script>
   </body>
 </html>

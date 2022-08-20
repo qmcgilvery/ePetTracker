@@ -37,36 +37,6 @@ module.exports = function (app) {
     });
   });
 
-  //render walk form by id
-  app.get("/add_walk/:id", (req, res) => {
-    const petId = req.params.id;
-    let sql = `SELECT * from pet_test1; SELECT * FROM walk_1;`
-    let query = db.query(sql, (err, result) => {
-      if (err) throw err;
-      res.render('add_walk.html', {
-        title: 'this is add new walk schedule page',
-        walks: result[1],
-        pets: result[0],
-        petId: petId
-      });
-    });
-  });
-
-  //render feed form by id
-  app.get("/add_feed/:id", (req, res) => {
-    const petId = req.params.id;
-    let sql = `SELECT * from pet_test1; SELECT * FROM feed_1;`
-    let query = db.query(sql, (err, result) => {
-      if (err) throw err;
-      res.render('add_feed.html', {
-        title: 'this is add new feed schedule page',
-        feeds: result[1],
-        pets: result[0],
-        petId: petId
-      });
-    });
-  });
-
   //save walk schedule by id
   app.post("/save", function (req, res) {
     if (req.body.add_pet) {
@@ -86,18 +56,12 @@ module.exports = function (app) {
         });
       };
       console.log(req.body);
-      
-
-
     };
     if (req.body.add_walk) {
       let sql =
         "INSERT INTO walk_1 (walk_name, walk_distance, walk_datetime, pet_id) VALUES (?, ?, ?, ?)";
       for (const key in req.body) {
         let new_records = req.body[key];
-        // res.write(
-        //   " This walk has been added to database, name: " + req.body[key]
-        // );
         // execute sql query
         db.query(sql, new_records, (err, result) => {
           if (err) {
@@ -112,13 +76,8 @@ module.exports = function (app) {
       console.log(req.body);
       let sql =
         "INSERT INTO feed_1 (feed_name, feed_type, feed_amount, feed_datetime, pet_id) VALUES (?, ?, ?, ?, ?)";
-
       for (const key in req.body) {
         let new_records = req.body[key];
-        // res.write(
-        //   " This feeding schedule has been added to database, name: " +
-        //   req.body[key]
-        // );
         // execute sql query
         db.query(sql, new_records, (err, result) => {
           if (err) {
@@ -129,7 +88,6 @@ module.exports = function (app) {
         });
       }
     }
-
   });
 
   // delete walk by id
@@ -152,13 +110,40 @@ module.exports = function (app) {
       res.redirect('/pet');
     });
   });
+
+  //Change Pet Inage
+  const petstorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "./uploads/pets");
+    },
+    filename: function (req, file, cb) {
+      // console.log(path.extname(file.originalname))
+      cb(null, "pet" + id + ".jpg");
+    },
+  });
+  const petupload = multer({
+    storage: petstorage,
+  });
+
+  //Change Pet Inage
+  app.post("/updateFileName", (req, res) => {
+    id = req.body.changePetImageId;
+  });
+
+  app.use("/uploads/pets", express.static("uploads"));
+  app.post(
+    "/changePetImage",
+    petupload.single("image"),
+    function (req, res, next) {
+      return res.redirect("/pet");
+    }
+  );
   // Andy Code==========================================================================
 
-
   app.get("/todo", function (req, res) {
+     // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp; max up to + 365 days 
     let sqlquery =
-      // get mysql records for [0]today; [1]today +1 and +2; [2]today +2 and today +93 according to xxxx_timestamp;
-      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 93 DAY ORDER BY a.walk_datetime;";
+      "SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() AND a.walk_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 1 DAY AND a.walk_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.walk_datetime; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.walk_datetime >= CURDATE() + INTERVAL 2 DAY AND a.walk_datetime < CURDATE() + INTERVAL 365 DAY ORDER BY a.walk_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() AND a.feed_datetime < CURDATE() + INTERVAL 1 DAY ORDER BY a.feed_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() + INTERVAL 1 DAY AND a.feed_datetime < CURDATE() + INTERVAL 2 DAY ORDER BY a.feed_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id WHERE a.feed_datetime >= CURDATE() + INTERVAL 2 DAY AND a.feed_datetime < CURDATE() + INTERVAL 365 DAY ORDER BY a.feed_datetime";
     // execute sql query
     db.query(sqlquery, (err, result) => {
       if (err) {
@@ -166,6 +151,9 @@ module.exports = function (app) {
       }
       console.log(result[1]);
       res.render("todo.html", {
+        feeds_upcoming: result[5],
+        feeds_tomorrow: result[4],
+        feeds_today: result[3],
         walks_upcoming: result[2],
         walks_tomorrow: result[1],
         walks_today: result[0],
@@ -182,9 +170,23 @@ module.exports = function (app) {
     db.query(sqlquery, updaterecord, (err, result) => {
       if (err) {
         return console.error(err.message);
-      } else res.send(" This walk is updated " + req.body.walk_id);
+      } else res.redirect("/todo");
     });
   });
+
+  // post for updating feed_complete boolean in todo.html
+  app.post("/update_feed_complete", function (req, res) {
+    // saving data in database
+    let sqlquery = "UPDATE feed_1 SET feed_complete = (?) WHERE feed_id = (?);";
+    // execute sql query
+    let updaterecord = [req.body.feed_complete, req.body.feed_id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.redirect("/todo");
+    });
+  });
+  
 
   // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
@@ -219,7 +221,7 @@ module.exports = function (app) {
     db.query(sqlquery, updaterecord, (err, result) => {
       if (err) {
         return console.error(err.message);
-      } else res.send("This walk has been removed, Walk ID: " + req.body.id);
+      } else res.redirect("/new_status");
     });
   });
 
@@ -334,7 +336,7 @@ module.exports = function (app) {
   //Pet1
   const pet1storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet1");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -345,7 +347,7 @@ module.exports = function (app) {
     storage: pet1storage,
   });
 
-  app.use("/uploads/pets/pet1", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet1-upload-single",
     pet1upload.single("image"),
@@ -363,7 +365,7 @@ module.exports = function (app) {
   //Pet2
   const pet2storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet2");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -374,7 +376,7 @@ module.exports = function (app) {
     storage: pet2storage,
   });
 
-  app.use("/uploads/pets/pet2", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet2-upload-single",
     pet2upload.single("image"),
@@ -392,7 +394,7 @@ module.exports = function (app) {
   //Pet3
   const pet3storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads/pets/pet3");
+      cb(null, "./uploads/pets");
     },
     filename: function (req, file, cb) {
       // console.log(path.extname(file.originalname))
@@ -404,7 +406,7 @@ module.exports = function (app) {
     storage: pet3storage,
   });
 
-  app.use("/uploads/pets/pet3", express.static("uploads"));
+  app.use("/uploads/pets", express.static("uploads"));
   app.post(
     "/pet3-upload-single",
     pet3upload.single("image"),
@@ -422,7 +424,7 @@ module.exports = function (app) {
    // render delete page with all devices in database
     app.get("/delete", function (req, res) {
         // query database to get all the entries 
-        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime";
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime; SELECT * FROM feed_1 ORDER BY feed_datetime";
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
@@ -475,7 +477,25 @@ module.exports = function (app) {
                         res.send()
                     }
                 });
-            };
-    });
+            }
+        });
+    app.post("/deleteFeeding", function (req, res) {
+        // query database to get all the devices
+        let sqlquery = "DELETE FROM `feed_1` WHERE feed_id = (?);"
+        // execute sql query
+        for (const key in req.body) {
+                let new_records = req.body[key];
+                res.write(" This device has been deleted from the database, name: " + req.body[key]);
+                // execute sql query
+                db.query(sqlquery, new_records, (err, result) => {
+                    if (err) {
+                        return console.error(err.message);
+                    } else {
+                        res.send()
+                    }
+                });
+            }
+        });
 };
+
 
