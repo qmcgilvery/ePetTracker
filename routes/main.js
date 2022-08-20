@@ -10,7 +10,7 @@ module.exports = function (app) {
       if (err) {
         res.redirect("/");
       }
-      console.log(result[1]);
+      // console.log(result[1]);
       res.render("index.html", {
         walks: result[0],
         feeds: result[1],
@@ -164,7 +164,7 @@ module.exports = function (app) {
       if (err) {
         res.redirect("/");
       }
-      console.log(result[1]);
+      // console.log(result[1]);
       res.render("todo.html", {
         feeds_upcoming: result[5],
         feeds_tomorrow: result[4],
@@ -240,10 +240,10 @@ module.exports = function (app) {
     });
   });
 
-  // render delete page with all devices in database
-  // app.get("/delete", function (req, res) {
-  //   res.render("delete.html");
-  // });
+  // render feedback page
+  app.get("/feedback", function (req, res) {
+    res.render("feedback.html");
+  });
 
   // render add page with all devices in database
   app.get("/add", function (req, res) {
@@ -254,7 +254,7 @@ module.exports = function (app) {
   app.post("/add", function (req, res) {
     // handle form data from curtainsForm submission
     if (req.body.add_pet) {
-      console.log(req.body);
+      // console.log(req.body);
       let sqlquery =
         "INSERT INTO pet_test1 (name, type, mood, health) VALUES (?, ?, ?, ?)";
 
@@ -276,7 +276,7 @@ module.exports = function (app) {
 
     // add walk form
     if (req.body.add_walk) {
-      console.log(req.body);
+      // console.log(req.body);
       let sqlquery2 =
         "INSERT INTO walk_1 (walk_name, walk_distance, walk_datetime, pet_id) VALUES (?, ?, ?, ?)";
 
@@ -298,7 +298,7 @@ module.exports = function (app) {
 
     // add feed schedule form
     if (req.body.add_feed) {
-      console.log(req.body);
+      // console.log(req.body);
       let sqlquery2 =
         "INSERT INTO feed_1 (feed_name, feed_type, feed_amount, feed_datetime, pet_id) VALUES (?, ?, ?, ?, ?)";
 
@@ -512,5 +512,3 @@ module.exports = function (app) {
             }
         });
 };
-
-
