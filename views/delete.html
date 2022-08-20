@@ -8,19 +8,17 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar">
     <a class="navbar-brand" href="/">Home</a>
     <a class="navbar-brand" href="/todo">To-do</a>
-    <a class="navbar-brand" href="/add">Add</a>
-    <a class="navbar-brand" href="/new_status">Status</a>
     <a class="navbar-brand" href="/pet">Pet</a>
     <a class="navbar-brand" href="/delete">Delete</a>
     </nav>
 
   </nav>
 <div class="container col-10 mx-auto">
-  <div>
-    <h1>This is the Delete page</h1>
+  <div class="top-margin">
+    <h1 class="text-center">Remove a pet, walk or feeding</h1>
   </div>
   <form name="deleteForm" method="POST" action="/deletePet" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
       <h3 style="color: red">Remove a Pet</h3>
@@ -49,7 +47,7 @@
                   &#128546
              <%}
             else if (pet.mood == 2) {%>
-                  $#128542
+                  &#128542
             <%}
             else if (pet.mood == 3) {%>
                   &#128529
@@ -94,9 +92,17 @@
           </td>
           <td><%=walk.walk_name %></td>
           <td><%=walk.walk_distance %></td>
-          <td><%=walk.walk_datetime %></td>
+          <td><%=walk.walk_datetime.toLocaleString() %></td>
           <td><%=walk.pet_id %></td>
-          <td><%=walk.walk_complete %></td>
+          <td>
+            <% if (walk.walk_complete == 1) {%>
+                  &#9989
+             <%}
+            else if (walk.walk_complete == 0) {%>
+                  &#10060
+            <%}
+            %>
+          </td>
         </tr>
         <%}) %>
       </div>
@@ -104,17 +110,39 @@
     <input type="submit" class="btn-primary" value="Submit"/>
  </form>
 
-<!--        <form name="deleteWalk" method="POST" action="/deleteWalk" onsubmit="return validateDeleteForm()">-->
-<!--            <% walks.forEach(function(walk){ %>-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" name="<%= walk.walk_name %>" type="checkbox" value="<%= walk.walk_name %>" id="<%= walk.walk_name %>">-->
-<!--                <label class="form-check-label" for="<%= walk.walk_name %>">-->
-<!--                    <%= walk.walk_name %>-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <% }) %>-->
-<!--            <input type="submit" value="Submit"/>-->
-<!--        </form>-->
+
+<form name="deleteFeeding" method="POST" action="/deleteFeeding" onsubmit="return validateDeleteForm()" class="top-margin card card-body">
+    <h3 style="color: red">Remove a feeding</h3>
+  <table class="table table-striped">
+      <div>
+        <tr>
+          <th>Feed ID</th>
+          <th>Food name</th>
+          <th>Food type</th>
+          <th>Amount</th>
+          <th>Date & time</th>
+          <th>Pet id</th>
+        </tr>
+        <% feeds.forEach(function(feed){%>
+        <tr>
+          <td>
+              <div class="form-check">
+                <input class="form-check-input" name="<%= feed.feed_id %>" type="checkbox" value="<%= feed.feed_id %>" id="<%= feed.feed_id %>">
+                <label class="form-check-label" for="<%= feed.feed_id %>">
+                </label>
+            </div>
+          </td>
+          <td><%=feed.feed_name %></td>
+          <td><%=feed.feed_type %></td>
+          <td><%=feed.feed_amount %></td>
+          <td><%=feed.feed_datetime.toLocaleString()%></td>
+          <td><%=feed.pet_id%></td>
+        </tr>
+        <%}) %>
+      </div>
+    </table>
+    <input type="submit" class="btn-primary" value="Submit"/>
+ </form>
 
 <script>
     function validateDeleteForm(){

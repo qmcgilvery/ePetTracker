@@ -188,6 +188,20 @@ module.exports = function (app) {
   });
   
 
+  // post for updating feed_complete boolean in todo.html
+  app.post("/update_feed_complete", function (req, res) {
+    // saving data in database
+    let sqlquery = "UPDATE feed_1 SET feed_complete = (?) WHERE feed_id = (?);";
+    // execute sql query
+    let updaterecord = [req.body.feed_complete, req.body.feed_id];
+    db.query(sqlquery, updaterecord, (err, result) => {
+      if (err) {
+        return console.error(err.message);
+      } else res.redirect("/todo");
+    });
+  });
+  
+
   // for new_status page -- show pet info
   app.get("/new_status", function (req, res) {
     // query database to get all the pets

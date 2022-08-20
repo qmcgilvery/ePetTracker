@@ -28,6 +28,7 @@ body {
 }
 
 .navbar {
+.navbar{
     background-color: #559BE0;
 }
 
@@ -39,6 +40,8 @@ h1 {
     color: #706576;
 }
 
+    color:#706576;
+}
 /*        COLOR SETTING=====================================*/
 
 
