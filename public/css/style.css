@@ -23,9 +23,9 @@
     background-color: #f9f7f7;
 }
 
-body {
+/* body {
     background-color: #f8f9fa;
-}
+} */
 
 .navbar{
     background-color: #559BE0;
@@ -203,4 +203,21 @@ caption {
 
 .top-margin {
     margin-top: 100px;
+}
+
+
+
+/* set global background color for everything in <body></body> */
+body {
+    background-color: #f2f3f4;
+  }
+
+/*   CSS for feedback.html
+ */
+div, iframe {
+    margin: 0 auto;
+}
+iframe {
+    display: block;
+    border-style:none;
 }
