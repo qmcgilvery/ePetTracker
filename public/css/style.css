@@ -23,8 +23,6 @@
     background-color: #f8f9fa;
 }
 
-<<<<<<< Updated upstream
-=======
 body {
     background-color: #f8f9fa;
 }
@@ -42,7 +40,6 @@ h1 {
     color: #706576;
 }
 
->>>>>>> Stashed changes
 /*        COLOR SETTING=====================================*/
 
 
@@ -60,6 +57,10 @@ caption {
     font-weight: bold;
 }
 
+.navbar-brand {
+    margin: auto;
+}
+
 /*THIS IS NAVIGATION STYLING======================================================*/
 
 
@@ -71,27 +72,6 @@ caption {
 
 
 /*THIS IS PET SECTION======================================================================        */
-
-/*THIS IS TABLE SETTING====================================================================*/
-.h1-table {
-    /*            background-color: red;*/
-    /*            margin: 500px;*/
-    padding: 20px;
-}
-
-/*
-        .tableWalk {
-            background-color: red;
-            height: 50px;
-        }
-
-        .tableFeed {
-            background-color: blue;
-            height: 50px;
-        }
-*/
-
-/*THIS IS TABLE SETTING====================================================================*/
 
 
 /*THIS IS PET SECTION======================================================================        */
@@ -123,8 +103,16 @@ caption {
     margin: 20px;
 }
 
+.btnChangePetImage {
+    text-align: center;
+}
+
 .petImage img {
     width: 60%;
+}
+
+.imgPet {
+    display: none;
 }
 
 .petSection {
@@ -192,7 +180,7 @@ caption {
 
 #sliderText {
     display: inline;
-/*    border: 0px hidden;*/
+    /*    border: 0px hidden;*/
     margin-left: 5px;
 
 }
@@ -204,9 +192,6 @@ caption {
 
 .top-margin {
     margin-top: 100px;
-<<<<<<< Updated upstream
-}
-=======
 }
 
 
@@ -283,4 +268,3 @@ iframe {
     border-style:none;
 }
 
->>>>>>> Stashed changes
