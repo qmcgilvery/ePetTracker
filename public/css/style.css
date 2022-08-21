@@ -23,11 +23,11 @@
     background-color: #f9f7f7;
 }
 
-/* body {
+body {
     background-color: #f8f9fa;
-} */
+}
 
-.navbar {
+
 .navbar{
     background-color: #559BE0;
 }
@@ -40,8 +40,6 @@ h1 {
     color: #706576;
 }
 
-    color:#706576;
-}
 /*        COLOR SETTING=====================================*/
 
 
@@ -253,7 +251,7 @@ caption {
 }
 
 /* SETTING WHEN MAX WIDTH 767============================================ */
-=======
+
 
 /* set global background color for everything in <body></body> */
 body {
