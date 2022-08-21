@@ -22,9 +22,9 @@
 
     <!--                <span class="textBlue">e</span><span class="textBlack">DogTracker</span>-->
     <nav class="navbar">
-        <a class="navbar-brand" href="/"><span class="textBlack fw-bold">e</span><span class="textWhite fw-bold">DogTracker</span></a>
+        <a class="navbar-brand" href="#">Home</a>
         <a class="navbar-brand" href="/todo">To-do</a>
-        <a class="navbar-brand fw-bold" href="/pet">Pet</a>
+        <a class="navbar-brand" href="/pet">Pet</a>
         <a class="navbar-brand" href="/delete">Delete</a>
         <a class="navbar-brand" href="/feedback">Feedback</a>
     </nav>
@@ -32,7 +32,7 @@
 
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->
     <div class="container petSection">
-        <h1 class="textBlue text-center">Dog</h1>
+        <h1 class="text-white text-center">Pet</h1>
         <!--        THIS WILL BE A BUTTON OR ACCORDION-->
         <div class="petRepetition1">
             <div class="accordion" id="accordionExample">
@@ -41,6 +41,7 @@
                 <% pets.forEach(function(pets){%>
                 <!--ACCORDION ITEM 1        -->
                 <% idAccordion = "id"+pets.pet_id %>
+                <% console.log(idAccordion) %>
                 <div href="#<%=idAccordion %>" class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<%=idAccordion %>" aria-expanded="true" aria-controls="collapseOne" id="#<%=idAccordion %>">
@@ -185,7 +186,7 @@
             </div>
         </div>
         <div class="text-center">
-            <button class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newPetPopup">Add Dog</button>
+            <button class="btn bgBlue textWhite" data-bs-toggle="modal" data-bs-target="#newPetPopup">Add</button>
         </div>
     </div>
     <!--THIS IS PET ACCORDION SECTION============================================================================    -->

@@ -1,6 +1,6 @@
 /*        COLOR SETTING=====================================*/
 .textBlue {
-    color: #319ed7;
+    color: #559BE0;
 }
 
 .textBlack {
@@ -8,11 +8,11 @@
 }
 
 .textWhite {
-    color: #f9f7f7;
+    color: #f8f9fa;
 }
 
 .bgBlue {
-    background-color: #319ed7;
+    background-color: #559BE0;
 }
 
 .bgBlack {
@@ -20,7 +20,7 @@
 }
 
 .bgWhite {
-    background-color: #f9f7f7;
+    background-color: #f8f9fa;
 }
 
 body {
