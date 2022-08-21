@@ -1,6 +1,6 @@
 /*        COLOR SETTING=====================================*/
 .textBlue {
-    color: #319ed7;
+    color: #559BE0;
 }
 
 .textBlack {
@@ -8,11 +8,11 @@
 }
 
 .textWhite {
-    color: #f9f7f7;
+    color: #f8f9fa;
 }
 
 .bgBlue {
-    background-color: #319ed7;
+    background-color: #559BE0;
 }
 
 .bgBlack {
@@ -20,9 +20,29 @@
 }
 
 .bgWhite {
-    background-color: #f9f7f7;
+    background-color: #f8f9fa;
 }
 
+<<<<<<< Updated upstream
+=======
+body {
+    background-color: #f8f9fa;
+}
+
+
+.navbar{
+    background-color: #559BE0;
+}
+
+.navbar > .navbar-brand {
+    color: cornsilk;
+}
+
+h1 {
+    color: #706576;
+}
+
+>>>>>>> Stashed changes
 /*        COLOR SETTING=====================================*/
 
 
@@ -98,7 +118,7 @@ caption {
 }
 
 .btn {
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     margin: 20px;
 }
@@ -184,4 +204,83 @@ caption {
 
 .top-margin {
     margin-top: 100px;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+
+/* SETTING WHEN MAX WIDTH 767============================================ */
+@media only screen and (max-width:767px) {
+    .btnDelete {
+        position: block;
+    }
+
+    .petImage {
+        display: none;
+    }
+
+    .imgPet {
+        display: block;
+        position: relative;
+        right: 50%;
+        width: 200%;
+    }
+
+    .no-more-tables tbody,
+    .no-more-tables tr,
+    .no-more-tables td {
+        display: block;
+        text-align: left;
+    }
+
+    .no-more-tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .no-more-tables td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        /* border-bottom: 1px solid #eee; */
+    }
+
+    .btnDeleteWalk {
+        position: relative;
+        right: 30%;
+    }
+
+    .no-more-tables td:before {
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+
+    .no-more-tables tr {
+        /* border-bottom: 1px solid #ccc; */
+    }
+}
+
+/* SETTING WHEN MAX WIDTH 767============================================ */
+
+
+/* set global background color for everything in <body></body> */
+body {
+    background-color: #f2f3f4;
+  }
+
+/*   CSS for feedback.html
+ */
+div, iframe {
+    margin: 0 auto;
+}
+iframe {
+    display: block;
+    border-style:none;
+}
+
+>>>>>>> Stashed changes
