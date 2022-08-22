@@ -435,22 +435,16 @@ module.exports = function (app) {
     }
   );
 
-   // render delete page with all devices in database
+   // render delete page 
     app.get("/delete", function (req, res) {
         // query database to get all the entries 
-        let sqlquery = "SELECT * FROM pet_test1; SELECT * FROM walk_1 ORDER BY walk_datetime; SELECT * FROM feed_1 ORDER BY feed_datetime";
+        let sqlquery = "SELECT * FROM pet_test1; SELECT * from walk_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id ORDER BY walk_datetime; SELECT * from feed_1 a LEFT JOIN pet_test1 b ON a.pet_id = b.pet_id ORDER BY feed_datetime";
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
                 res.redirect("/");
             }
             res.render("delete.html", {
-              feed_p_id3: result[8],
-              feed_p_id2: result[7],
-              feed_p_id1: result[6],
-              walks_p_id3: result[5],
-              walks_p_id2: result[4],
-              walks_p_id1: result[3],
               feeds: result[2],
               walks: result[1],
               pets: result[0],
