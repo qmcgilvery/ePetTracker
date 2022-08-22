@@ -9,7 +9,7 @@
 
 <body>
 
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar ">
         <a class="navbar-brand" href="/"><span class="textBlack fw-bold">e</span><span class="textWhite fw-bold">DogTracker</span></a>
         <a class="navbar-brand" href="/todo">To-do</a>
         <a class="navbar-brand" href="/pet">Pet</a>
@@ -25,7 +25,7 @@
   <table class="table table-striped">
       <div>
         <tr>
-          <th>Pet ID</th>
+          <th>Select</th>
           <th>Pet name</th>
           <th>Pet type</th>
           <th>Pet Mood</th>
@@ -74,11 +74,11 @@
   <table class="table table-striped">
       <div>
         <tr>
-          <th>Walk ID</th>
+          <th>Select</th>
+          <th>Pet name</th>
           <th>Walk name</th>
           <th>Distance</th>
           <th>Date & time</th>
-          <th>Pet id</th>
           <th>Walk complete</th>
         </tr>
         <% walks.forEach(function(walk){%>
@@ -90,10 +90,10 @@
                 </label>
             </div>
           </td>
+          <td><%=walk.name %></td>
           <td><%=walk.walk_name %></td>
           <td><%=walk.walk_distance %></td>
           <td><%=walk.walk_datetime.toLocaleString() %></td>
-          <td><%=walk.pet_id %></td>
           <td>
             <% if (walk.walk_complete == 1) {%>
                   &#9989
@@ -116,12 +116,13 @@
   <table class="table table-striped">
       <div>
         <tr>
-          <th>Feed ID</th>
+          <th>Select</th>
+          <th>Pet name</th>
           <th>Food name</th>
           <th>Food type</th>
           <th>Amount</th>
           <th>Date & time</th>
-          <th>Pet id</th>
+          <th>Feed complete</th>
         </tr>
         <% feeds.forEach(function(feed){%>
         <tr>
@@ -132,11 +133,20 @@
                 </label>
             </div>
           </td>
+          <td><%=feed.name%></td>
           <td><%=feed.feed_name %></td>
           <td><%=feed.feed_type %></td>
           <td><%=feed.feed_amount %></td>
-          <td><%=feed.feed_datetime.toLocaleString()%></td>
-          <td><%=feed.pet_id%></td>
+          <td><%=feed.feed_datetime.toLocaleString()%></td>  
+          <td>
+            <% if (feed.feed_complete == 1) {%>
+                  &#9989
+             <%}
+            else if (feed.feed_complete == 0) {%>
+                  &#10060
+            <%}
+            %>
+          </td>
         </tr>
         <%}) %>
       </div>
