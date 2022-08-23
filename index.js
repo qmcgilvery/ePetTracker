@@ -34,6 +34,8 @@ app.use(
   express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
 );
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/js"));
+
 
 const db = mysql.createConnection({
   host: "137.184.191.242",
