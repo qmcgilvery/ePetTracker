@@ -19,8 +19,6 @@
 <body>
 
     <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
-
-    <!--                <span class="textBlue">e</span><span class="textBlack">DogTracker</span>-->
     <nav class="navbar">
         <a class="navbar-brand" href="/"><span class="textBlack fw-bold">e</span><span class="textWhite fw-bold">DogTracker</span></a>
         <a class="navbar-brand" href="/todo">To-do</a>
@@ -68,28 +66,27 @@
                                                     <td data-title="Name"><%=pets.name %></td>
                                                     <td data-title="Mood" class="text-capitalize">
                                                         <% if (pets.mood == 1) {%>
-                                                        <i style="color: #b6404d;" class="fas fa-angry"></i>
+                                                            &#128546
                                                         <%}
                                                         else if (pets.mood == 2) {%>
-                                                        <i style="color: #cea068;" class='far fa-frown'></i>
+                                                            &#128542
                                                         <%}
                                                         else if (pets.mood == 3) {%>
-                                                        <i style="color: #f7c97d;" class="fas fa-meh"></i> <%}
+                                                            &#128529
+                                                        <%}
                                                         else if (pets.mood == 4) {%>
-                                                        <i style="color: #488f7c;" class="fas fa-smile"></i>
+                                                            &#128512
                                                         <%}
                                                         else if (pets.mood == 5) {%>
-                                                        <i style="color:#48716a;" class=' fas fa-laugh'></i>
+                                                            &#128513
                                                         <%}
-                                                    %>
+                                                        %>
                                                     </td> <%=walks.walk_name %></td>
                                                     <td data-title="Breed"><%=pets.type %></td>
                                                 </tr>
-
                                             </tbody>
                                             <!--THIS IS WALKING TABLE==================-->
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -135,10 +132,8 @@
                                 <!--THIS IS WALKING TABLE==================-->
                             </table>
                         </div>
-                        <!-- <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
                         <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newWalkSchedulePopup" onclick="document.getElementById('walkPetID').value = this.value">Add Walk</button>
                         <div class="table-responsive no-more-tables">
-
                             <table class="table table-striped">
                                 <!--THIS IS WALKING TABLE==================-->
                                 <!--                            <div class="tableFeed">-->
@@ -175,7 +170,6 @@
                                 <!--THIS IS WALKING TABLE==================-->
                             </table>
                         </div>
-                        <!-- <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
                         <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newFeedSchedulePopup" onclick="document.getElementById('feedPetID').value = this.value">Add Feed</button>
                     </div>
                 </div>
@@ -207,13 +201,13 @@
                                     <label class="form-check-label" for="pet_name">
                                         Name
                                     </label>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie">
+                                    <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-check-label" for="pet_type">
                                         Breed
                                     </label><br>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Bulldog">
+                                    <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Bulldog" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-check-label" for="pet_mood">
@@ -228,7 +222,7 @@
                                     <label class="form-check-label" for="pet_health">
                                         Health
                                     </label>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong">
+                                    <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong" required>
                                 </div>
                                 <div class="form-group" hidden>
                                     <label class="form-check-label" for="pet_health">
