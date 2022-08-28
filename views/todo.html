@@ -37,7 +37,7 @@
 
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
         <li class="list-group-item list-group-item-primary border-bottom-0">
-          <b> Pet: </b> <%=walks_today.name %>
+          <b> Dog: </b> <%=walks_today.name %>
         </li>
         <!--        Logic to change the list color according to the booloean value of walk_complete -->
         <% if (walks_today.walk_complete == 0) {%>
@@ -90,7 +90,7 @@
 
           <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
           <li class="list-group-item list-group-item-primary border-bottom-0">
-            <b> Pet: </b><%=feeds_today.name %>
+            <b> Dog: </b><%=feeds_today.name %>
           </li>
           <!--        Logic to change the list color according to the booloean value of feed_complete -->
           <% if (feeds_today.feed_complete == 0) {%>
@@ -134,19 +134,18 @@
         </li>
         <% walks_tomorrow.forEach(function(walks_tomorrow){%>
         <li class="list-group-item list-group-item-info border-bottom-0">
-          <b> Name: </b>Name: <%=walks_tomorrow.walk_name %>
+          <b> Name: </b><%=walks_tomorrow.walk_name %>
         </li>
         <li class="list-group-item list-group-item-info border-bottom-0">
           <b>Distance: </b>Distance: <%=walks_tomorrow.walk_distance %> Kilometers
         </li>
         <li class="list-group-item list-group-item-info border-bottom-0">
-          <b>Date: </b>Date: <%=walks_tomorrow.walk_datetime.toLocaleString() %>
+          <b>Date: </b><%=walks_tomorrow.walk_datetime.toLocaleString() %>
         </li>
 
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
         <li class="list-group-item list-group-item-info border-bottom-0">
-          <b> Pet: </b>Pet: <strong><%=walks_tomorrow.name %></strong>
-        </li>
+          <b>Dog: </b><%=walks_tomorrow.name %>        </li>
 
       <!-- Logic to change the list color according to the booloean value of walk_complete -->
       <% if (walks_tomorrow.walk_complete == 0) {%>
@@ -200,7 +199,7 @@
 
         <!-- make this grab pet name via pet_id made <strong> for extra visual impact -->
         <li class="list-group-item list-group-item-info border-bottom-0">
-          <b> Pet: </b><%=feeds_tomorrow.name %>
+          <b> Dog: </b><%=feeds_tomorrow.name %>
         </li>
         <!--        Logic to change the list color according to the booloean value of feed_complete -->
         <% if (feeds_tomorrow.feed_complete == 0) {%>
@@ -252,7 +251,7 @@
           <b>Date: </b><%=walks_upcoming.walk_datetime.toLocaleString() %>
         </li>
         <li class="list-group-item list-group-item-light border-bottom-0">
-          <b> Pet: </b><%=walks_upcoming.name %>
+          <b> Dog: </b><%=walks_upcoming.name %>
         </li>
 
         <!--       IF Logic to change the list color according to the booloean value of walk_complete -->
@@ -304,7 +303,7 @@
             <b>Date: </b><%=feeds_upcoming.feed_datetime.toLocaleString() %>
           </li>  
           <li class="list-group-item list-group-item-light border-bottom-0">
-            <b> Pet: </b><%=feeds_upcoming.name %>
+            <b> Dog: </b><%=feeds_upcoming.name %>
           </li>
           <!--        Logic to change the list color according to the booloean value of walk_complete -->
           <% if (feeds_upcoming.feed_complete == 0) {%>
