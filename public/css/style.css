@@ -59,7 +59,6 @@ img {
     width: 200px;
     height: 200px;
     object-fit: cover;
-
 }
 
 .btn {
@@ -78,7 +77,6 @@ img {
 
 .petSection {
     clear: both;
-
 }
 
 .petAccordionContainer {
@@ -142,6 +140,27 @@ caption {
 }
 
 /*THIS IS STYLING FOR SLIDER==========================================*/
+
+/* THIS IS STYLE FOR FLEXBOX PET PROFILE SETTING======================== */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 50px;
+}
+
+.flex-container>div {
+    margin: 10px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.petContentData {
+    display: block;
+}
+/* THIS IS STYLE FOR FLEXBOX PET PROFILE SETTING======================== */
 /*THIS IS PET.HTML SECTION======================================================================        */
 
 
@@ -195,6 +214,21 @@ caption {
         position: absolute;
         left: 6px;
         font-weight: bold;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        width: 80%;
+    }
+
+
+    .flex-container>div {
+        width: 100%;
+
+    }
+
+    .petContentData {
+        display: inline;
     }
 }
 
