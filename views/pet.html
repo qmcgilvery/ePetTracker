@@ -12,6 +12,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding-right: 50px;
+        }
+
+        .flex-container>div {
+            /* background-color: black; */
+            /* width: 20%; */
+            margin: 10px;
+            text-align: center;
+            line-height: 35px;
+            /* font-size: 30px; */
+        }
+
+        .petContentData {
+            display: block;
+        }
+
+
+        @media only screen and (max-width:767px) {
+            .flex-container {
+                flex-direction: column;
+                width: 80%;
+            }
+
+
+            .flex-container>div {
+                width: 100%;
+
+            }
+
+            .petContentData {
+                display: inline;
+            }
+        }
     </style>
     <title>ePetTracker</title>
 </head>
@@ -19,8 +59,11 @@
 <body>
 
     <!--DONE - THIS IS NAVIGATION MENU SECTION==============================================================-->
+
+    <!--                <span class="textBlue">e</span><span class="textBlack">DogTracker</span>-->
     <nav class="navbar">
-        <a class="navbar-brand" href="/"><span class="textBlack fw-bold">e</span><span class="textWhite fw-bold">DogTracker</span></a>
+        <a class="navbar-brand" href="/"><span class="textBlack fw-bold">e</span><span
+                class="textWhite fw-bold">DogTracker</span></a>
         <a class="navbar-brand" href="/todo">To-do</a>
         <a class="navbar-brand fw-bold" href="/pet">Pet</a>
         <a class="navbar-brand" href="/delete">Delete</a>
@@ -41,62 +84,53 @@
                 <% idAccordion = "id"+pets.pet_id %>
                 <div href="#<%=idAccordion %>" class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<%=idAccordion %>" aria-expanded="true" aria-controls="collapseOne" id="#<%=idAccordion %>">
-                            <div class="petRepetition1">
-                                <div class="row  align-items-center  bgBlack shadow rounded">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#<%=idAccordion %>" aria-expanded="true" aria-controls="collapseOne"
+                            id="#<%=idAccordion %>">
+                            <div class="petAccordionContainer bgBlack shadow rounded">
+                                <!-- <div class="petAccordionContent "> -->
+                                <div class="flex-container text-white pt-2 text-capitalize">
                                     <div class="petImage col-4 circularImage  my-2 py-2">
-                                        <img src="/uploads/pets/pet<%= pets.pet_id %>.jpg" class="image-fluid rounded" alt="this is pet image">
+                                        <img src="/uploads/pets/pet<%= pets.pet_id %>.jpg" class="image-fluid rounded"
+                                            alt="this is pet image">
                                     </div>
-                                    <div class="petProfile col-8 text-white pt-2 text-capitalize no-more-tables">
-                                        <table class="table table-borderless textWhite>
-                                            <!--" THIS IS PET PROFILE TABLE==================-->
-                                            <thead>
-                                                <tr class='align-middle textWhite'>
-                                                    <th scope="col"><img src="/uploads/pets/pet<%= pets.pet_id %>.jpg" hidden class="image-fluid rounded" alt="this is pet image">
-                                                    </th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Mood</th>
-                                                    <th scope="col">Breed</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="align-middle textWhite">
-                                                    <td><img src="/uploads/pets/pet<%= pets.pet_id %>.jpg" class="image-fluid imgPet  rounded" alt="this is pet image">
-                                                    </td>
-                                                    <td data-title="Name"><%=pets.name %></td>
-                                                    <td data-title="Mood" class="text-capitalize">
-                                                        <% if (pets.mood == 1) {%>
-                                                            &#128546
-                                                        <%}
-                                                        else if (pets.mood == 2) {%>
-                                                            &#128542
-                                                        <%}
-                                                        else if (pets.mood == 3) {%>
-                                                            &#128529
-                                                        <%}
-                                                        else if (pets.mood == 4) {%>
-                                                            &#128512
-                                                        <%}
-                                                        else if (pets.mood == 5) {%>
-                                                            &#128513
-                                                        <%}
-                                                        %>
-                                                    </td> <%=walks.walk_name %></td>
-                                                    <td data-title="Breed"><%=pets.type %></td>
-                                                </tr>
-                                            </tbody>
-                                            <!--THIS IS WALKING TABLE==================-->
-                                        </table>
+                                    <div class="petNamePos">
+                                        Name : <span class="petContentData"><%=pets.name %></span>
                                     </div>
+                                    <div>Mood :<span class="petContentData">
+                                            <% if (pets.mood == 1) {%>
+                                            &#128546
+                                            <%}
+                                        else if (pets.mood == 2) {%>
+                                            &#128542
+                                            <%}
+                                        else if (pets.mood == 3) {%>
+                                            &#128529
+                                            <%}
+                                        else if (pets.mood == 4) {%>
+                                            &#128512
+                                            <%}
+                                        else if (pets.mood == 5) {%>
+                                            &#128513
+                                            <%}
+                                        %>
+                                        </span>
+                                    </div>
+                                    <div>Breed : <span class="petContentData"><%=pets.type %></span></div>
                                 </div>
+                                <!-- </div> -->
                             </div>
                         </button>
                     </h2>
-                    <div id="<%=idAccordion %>" class="accordion-collapse collapse btnChangePetImage" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="<%=idAccordion %>" class="accordion-collapse collapse btnChangePetImage"
+                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <form method="post" action="/updateFileName">
-                            <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#changeImagePopup" id="btnFileNameId" onclick="document.getElementById('changePetImageId').value = this.value">Change
+                            <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>"
+                                data-bs-target="#changeImagePopup" id="btnFileNameId"
+                                onclick="document.getElementById('changePetImageId').value = this.value">Change
                                 Image</button>
-                            <input hidden type="text" value="<%= pets.pet_id %>" name="changePetImageId" id="changePetImageId">
+                            <input hidden type="text" value="<%= pets.pet_id %>" name="changePetImageId"
+                                id="changePetImageId">
                         </form>
                         <div class="table-responsive no-more-tables">
                             <table class="table table-striped">
@@ -120,8 +154,10 @@
                                         <td data-title="Distance"><%=walks.walk_distance %></td>
                                         <td data-title="Date"><%=walks.walk_datetime.toLocaleString() %></td>
                                         <td>
-                                            <form method="GET" action="/delete_walk/<%= walks.walk_id %>" onsubmit="return confirm('Are you sure you want to remove walk?');">
-                                                <input class="btn bg-danger textWhite btnDeleteWalk" type="submit" value="Delete" />
+                                            <form method="GET" action="/delete_walk/<%= walks.walk_id %>"
+                                                onsubmit="return confirm('Are you sure you want to remove walk?');">
+                                                <input class="btn bg-danger textWhite btnDeleteWalk" type="submit"
+                                                    value="Delete" />
                                             </form>
                                         </td>
                                     </tr>
@@ -132,8 +168,12 @@
                                 <!--THIS IS WALKING TABLE==================-->
                             </table>
                         </div>
-                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newWalkSchedulePopup" onclick="document.getElementById('walkPetID').value = this.value">Add Walk</button>
+                        <!-- <a href="/add_walk/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
+                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>"
+                            data-bs-target="#newWalkSchedulePopup"
+                            onclick="document.getElementById('walkPetID').value = this.value">Add Walk</button>
                         <div class="table-responsive no-more-tables">
+
                             <table class="table table-striped">
                                 <!--THIS IS WALKING TABLE==================-->
                                 <!--                            <div class="tableFeed">-->
@@ -158,8 +198,10 @@
                                         <td data-title="Amount"><%=feeds.feed_amount %></td>
                                         <td data-title="Date &amp; time"><%=feeds.feed_datetime.toLocaleString() %></td>
                                         <td>
-                                            <form method="GET" action="/delete_feed/<%= feeds.feed_id %>" onsubmit="return confirm('Are you sure you want to remove feed?');">
-                                                <input class="btn bg-danger textWhite btnDeleteWalk" type="submit" value="Delete" />
+                                            <form method="GET" action="/delete_feed/<%= feeds.feed_id %>"
+                                                onsubmit="return confirm('Are you sure you want to remove feed?');">
+                                                <input class="btn bg-danger textWhite btnDeleteWalk" type="submit"
+                                                    value="Delete" />
                                             </form>
                                         </td>
                                     </tr>
@@ -170,7 +212,10 @@
                                 <!--THIS IS WALKING TABLE==================-->
                             </table>
                         </div>
-                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>" data-bs-target="#newFeedSchedulePopup" onclick="document.getElementById('feedPetID').value = this.value">Add Feed</button>
+                        <!-- <a href="/add_feed/<%= pets.pet_id %>" class="btn bgBlue textWhite">Add</a> -->
+                        <button class="btn bgBlue textWhite" data-bs-toggle="modal" value="<%= pets.pet_id %>"
+                            data-bs-target="#newFeedSchedulePopup"
+                            onclick="document.getElementById('feedPetID').value = this.value">Add Feed</button>
                     </div>
                 </div>
                 <!--ACCORDION ITEM 1        -->
@@ -201,34 +246,40 @@
                                     <label class="form-check-label" for="pet_name">
                                         Name
                                     </label>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_name" aria-describedby="nameHelp" placeholder="e.g. Blackie" required>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_name"
+                                        aria-describedby="nameHelp" placeholder="e.g. Blackie">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-check-label" for="pet_type">
                                         Breed
                                     </label><br>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_type" placeholder="e.g. Bulldog" required>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_type"
+                                        placeholder="e.g. Bulldog">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-check-label" for="pet_mood">
                                         Mood
                                     </label><br>
                                     <div class="form-control slidecontainer">
-                                        <input class="slider" name="add_pet" type="range" id="pet_mood" value="3" min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
-                                        <input id="sliderText" type="number" value="3" min="1" max="5" oninput="pet_mood.value=sliderText.value" />
+                                        <input class="slider" name="add_pet" type="range" id="pet_mood" value="3"
+                                            min="1" step="1" max="5" oninput="sliderText.value=pet_mood.value">
+                                        <input id="sliderText" type="number" value="3" min="1" max="5"
+                                            oninput="pet_mood.value=sliderText.value" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-check-label" for="pet_health">
                                         Health
                                     </label>
-                                    <input class="form-control" name="add_pet" type="text" id="pet_health" placeholder="e.g. strong" required>
+                                    <input class="form-control" name="add_pet" type="text" id="pet_health"
+                                        placeholder="e.g. strong">
                                 </div>
                                 <div class="form-group" hidden>
                                     <label class="form-check-label" for="pet_health">
                                         Health
                                     </label>
-                                    <input class="form-control" name="add_pet" type="text" id="walkPet_id" placeholder="e.g. strong">
+                                    <input class="form-control" name="add_pet" type="text" id="walkPet_id"
+                                        placeholder="e.g. strong">
                                 </div>
                             </div>
                         </div>
@@ -278,25 +329,29 @@
                                 <label class="form-check-label" for="walk_name">
                                     Walk Name
                                 </label>
-                                <input class="form-control" name="add_walk" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. long walk" required>
+                                <input class="form-control" name="add_walk" type="text" id="walk_name"
+                                    aria-describedby="nameHelp" placeholder="e.g. long walk" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-check-label" for="walk_distance">
                                     Distance (in KMs)
                                 </label>
-                                <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01" placeholder="e.g. 1.5" required>
+                                <input class="form-control" name="add_walk" type="number" id="walk_distance" step="0.01"
+                                    placeholder="e.g. 1.5" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-check-label" for="walk_datetime">
                                     Date &amp; Time
                                 </label>
-                                <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime" placeholder="" required>
+                                <input class="form-control" name="add_walk" type="datetime-local" id="walk_datetime"
+                                    placeholder="" required>
                             </div>
                             <div class="form-group" hidden>
                                 <label class="form-check-label" for="walkPetID">
                                     Pet ID
                                 </label>
-                                <input class="form-control" name="add_walk" type="text" id="walkPetID" placeholder="this is Pet id">
+                                <input class="form-control" name="add_walk" type="text" id="walkPetID"
+                                    placeholder="this is Pet id">
                             </div>
                         </div>
                         <div class="text-center">
@@ -325,31 +380,36 @@
                                 <label class="form-check-label" for="feed_name">
                                     Food Name
                                 </label>
-                                <input class="form-control" name="add_feed" type="text" id="walk_name" aria-describedby="nameHelp" placeholder="e.g. Snack" required>
+                                <input class="form-control" name="add_feed" type="text" id="walk_name"
+                                    aria-describedby="nameHelp" placeholder="e.g. Snack" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-check-label" for="feed_type">
                                     Food Type
                                 </label>
-                                <input class="form-control" name="add_feed" type="text" id="feed_type" placeholder="e.g. kibbles" required>
+                                <input class="form-control" name="add_feed" type="text" id="feed_type"
+                                    placeholder="e.g. kibbles" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-check-label" for="feed_amount">
                                     Amount (in grams)
                                 </label>
-                                <input class="form-control" name="add_feed" type="number" id="feed_amount" step="0.001" placeholder="e.g. 10" required>
+                                <input class="form-control" name="add_feed" type="number" id="feed_amount" step="0.001"
+                                    placeholder="e.g. 10" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-check-label" for="feed_datetime">
                                     Date &amp; Time
                                 </label>
-                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime" required>
+                                <input class="form-control" name="add_feed" type="datetime-local" id="feed_datetime"
+                                    required>
                             </div>
                             <div class="form-group" hidden>
                                 <label class="form-check-label" for="feedPetID">
                                     Pet ID
                                 </label>
-                                <input class="form-control" name="add_feed" type="text" id="feedPetID" placeholder="this is feed pet id">
+                                <input class="form-control" name="add_feed" type="text" id="feedPetID"
+                                    placeholder="this is feed pet id">
                             </div>
                         </div>
                         <div class="text-center">
@@ -363,7 +423,8 @@
     <!-- THIS IS POP UP MENU NEW FEED SCHEDULE================================================================================== -->
 
     <!--THIS IS LINK TO BOOTSTRAP JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     <script>
     </script>

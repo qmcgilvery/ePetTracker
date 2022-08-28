@@ -1,4 +1,4 @@
-/*        COLOR SETTING=====================================*/
+/* COLOR SETTING=====================================*/
 .textBlue {
     color: #559BE0;
 }
@@ -27,12 +27,11 @@ body {
     background-color: #f8f9fa;
 }
 
-
-.navbar{
+.navbar {
     background-color: #559BE0;
 }
 
-.navbar > .navbar-brand {
+.navbar>.navbar-brand {
     color: cornsilk;
 }
 
@@ -40,16 +39,7 @@ h1 {
     color: #706576;
 }
 
-/*        COLOR SETTING=====================================*/
-
-
-/*GENERAL SETTING*/
-caption {
-    caption-side: top;
-    text-align: center;
-    font-weight: bold;
-}
-
+/* COLOR SETTING=====================================*/
 
 
 /*THIS IS NAVIGATION STYLING======================================================*/
@@ -64,38 +54,12 @@ caption {
 /*THIS IS NAVIGATION STYLING======================================================*/
 
 
-
-/*THIS IS USER PROFILE STYLING====================================================*/
-
-
-/*THIS IS USER PROFILE STYLING====================================================*/
-
-
-/*THIS IS PET SECTION======================================================================        */
-
-
-/*THIS IS PET SECTION======================================================================        */
-.addImage {
-    padding-top: 230px;
-}
-
+/*THIS IS PET.HTML SECTION======================================================================        */
 img {
     width: 200px;
     height: 200px;
-    object-fit: cover;  
+    object-fit: cover;
 
-}
-
-.profileSection {
-    height: 360px;
-}
-
-.profileSection h3 {
-    padding-top: 120px;
-}
-
-.profileButton {
-    padding-top: 120px;
 }
 
 .btn {
@@ -108,40 +72,33 @@ img {
     text-align: center;
 }
 
-.petImage img {
-    /* width: 60%; */
-}
-
 .imgPet {
     display: none;
 }
 
 .petSection {
     clear: both;
-    /*            margin-top: 300px;*/
-    margin-bottom: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+
 }
 
-.petRepetition1 {
-    width: 92%;
+.petAccordionContainer {
+    width: 96%;
     margin: auto;
-    /*    margin-top: 30px;*/
 }
 
-.myPetData {
-    clear: both;
-    display: inline-block;
-    width: 30%;
-    height: 50px;
-    font-size: 18px;
+caption {
+    caption-side: top;
+    text-align: center;
+    font-weight: bold;
 }
+
 
 /*edit bootstrap form control*/
 .myform-control {
     width: 75%;
 }
+
+/*edit bootstrap form control*/
 
 
 /*THIS IS STYLING FOR SLIDER==========================================*/
@@ -181,12 +138,11 @@ img {
 
 #sliderText {
     display: inline;
-    /*    border: 0px hidden;*/
     margin-left: 5px;
-
 }
 
 /*THIS IS STYLING FOR SLIDER==========================================*/
+/*THIS IS PET.HTML SECTION======================================================================        */
 
 
 
@@ -201,10 +157,6 @@ img {
 @media only screen and (max-width:767px) {
     .btnDelete {
         position: block;
-    }
-
-    .petImage {
-        display: none;
     }
 
     .imgPet {
@@ -231,7 +183,6 @@ img {
         position: relative;
         padding-left: 50%;
         border: none;
-        /* border-bottom: 1px solid #eee; */
     }
 
     .btnDeleteWalk {
@@ -245,10 +196,6 @@ img {
         left: 6px;
         font-weight: bold;
     }
-
-    .no-more-tables tr {
-        /* border-bottom: 1px solid #ccc; */
-    }
 }
 
 /* SETTING WHEN MAX WIDTH 767============================================ */
@@ -257,15 +204,16 @@ img {
 /* set global background color for everything in <body></body> */
 body {
     background-color: #f2f3f4;
-  }
+}
 
 /*   CSS for feedback.html
  */
-div, iframe {
+div,
+iframe {
     margin: 0 auto;
 }
+
 iframe {
     display: block;
-    border-style:none;
+    border-style: none;
 }
-
