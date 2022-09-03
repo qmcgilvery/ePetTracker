@@ -1,0 +1,2482 @@
+(base) quentin@MacBook-Pro ePetTracker % git log
+commit 79541620529d8898a6e8bb3259a1165829a04467 (HEAD -> master, origin/master)
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 27 20:58:19 2022 -0700
+
+    externally linked modal.js
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+:
+
+commit 80b7ee7d4212f11d8303b5b60f191ac1425fc5ac
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+
+commit bb1a7eda2f361336403e06896018fe1834fc05dd
+:
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+
+commit bb1a7eda2f361336403e06896018fe1834fc05dd
+:
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+
+commit bb1a7eda2f361336403e06896018fe1834fc05dd
+:
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+
+commit bb1a7eda2f361336403e06896018fe1834fc05dd
+:
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:29:23 2022 -0700
+
+    Update style.css
+
+commit 6a96434bad8fb93b262b41482f6b4e5e1bdf4aff
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:27:44 2022 -0700
+
+    Add files via upload
+
+commit b85c803f94c2c6a8b643ae96a4dfa14110d1a03b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 20:24:54 2022 -0700
+
+    Add files via upload
+
+commit 813997537dd6434deceb9fbc47ebfaace5462f31
+Merge: bb1a7ed 900e053
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 27 10:00:56 2022 -0700
+
+    Merge pull request #30 from ng140780/andy15
+
+    Update pet.html
+
+commit 900e0533da619114d1a00108c3e6f6ef56e7d7aa
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:34:28 2022 +1200
+
+    Delete pet.html
+
+commit 45d0d838949a8d2922ea1405f2e12cef332b4217
+Author: ng140780 <58376530+ng140780@users.noreply.github.com>
+Date:   Sat Aug 27 21:27:22 2022 +1200
+
+    Update pet.html
+
+    pet mood icon works now, cannot fill black input
+
+commit bb1a7eda2f361336403e06896018fe1834fc05dd
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Mon Aug 22 21:48:05 2022 -0700
+
+    index.html
+
+commit 7705ab07e09217808e764c902f53cfbeeafecc6a
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Mon Aug 22 21:42:20 2022 -0700
+
+    index.js
+
+commit c5f81333745dec8d77fd913a2326e541a789b97e
+Merge: de2e896 726a725
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Mon Aug 22 09:28:20 2022 -0700
+
+    Merge pull request #29 from birdmoney11/c_branch13
+
+    General clean up, fixed delete.html
+
+commit 726a725feff89500c489ad6b8fa5728e9e0c3b1a
+y.github.com>
+Date:   Mon Aug 22 12:32:28 2022 +0800
+
+    General clean up, fixed delete.html
+
+    General clean up, fixed delete.html
+
+commit de2e8966c2247cdff2e27a4281cbf0762c913afd
+Merge: dafef19 1bfa77d
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sun Aug 21 09:54:21 2022 -0700
+
+    Merge pull request #28 from ng140780/andy14
+
+    update pet image
+
+commit 1bfa77d15ef75d04163cb44e39c838e28bcd8480
+ub.com>
+Date:   Sun Aug 21 22:04:06 2022 +1200
+
+    update pet image
+
+fit to cover
+
+commit dafef1970068072eb7916456f611c04f2b34d455
+Merge: ba006d6 f73e34f
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 20 23:54:11 2022 -0700
+
+    Merge pull request #27 from ng140780/andy13
+
+    pet update
+
+commit f73e34f45dd402058cc3d069c2355a086ef382ec
+Merge: 4ce2789 ba006d6
+ub.com>
+Date:   Sun Aug 21 18:53:34 2022 +1200
+
+    Merge branch 'master' into andy13
+
+commit 4ce2789c52657adfafd7704ea8d9363cc4a4dfad
+ub.com>
+Date:   Sun Aug 21 18:41:25 2022 +1200
+
+    pet update
+
+    all accordion can accept space, update navbar
+
+commit ba006d645c10c4b832a9ae1845b0211200ef9f28
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 20 22:02:02 2022 -0700
+
+    modal dialogue
+
+commit 5746b3ee3c113f5d570ba7e0812654a598f3c9f6
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 20 20:39:50 2022 -0700
+
+    css button fix
+
+commit 09dd7f06a77f61f88d88eece2f0cd1920624a951
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 20 20:34:23 2022 -0700
+
+    fixed pet.html typo
+
+commit a7343c2bfa5aa08aaeea0f6d78e57c4914179dce
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 20 20:25:29 2022 -0700
+
+    change css
+
+commit 37f79d931b153eae4a3a9f3c349da08125a4b3bb
+Merge: 558681e a1386e1
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 20 10:27:47 2022 -0700
+
+    Merge pull request #26 from ng140780/andy12
+
+    pet.html full function
+
+commit a1386e1b9a38afce12a698ac87d2e43dfdd98d90
+Merge: c3d3228 558681e
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 20 10:27:38 2022 -0700
+
+    Merge branch 'master' into andy12
+
+commit 558681e3ca76463180cc3ec994bf6da76d5cec9d
+Merge: b447266 bfe929d
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 20 10:26:28 2022 -0700
+
+    Merge pull request #25 from birdmoney11/c_branch12
+
+    todo.html updates + feedback page
+
+commit c3d322815e5c508a9ed5a89d45144c45e4386879
+Merge: 65b0f21 b447266
+ub.com>
+Date:   Sun Aug 21 01:14:39 2022 +1200
+
+    Merge branch 'master' into andy12
+
+commit 65b0f21fe9a66116d28d919567073fe8a0d3e65e
+ub.com>
+Date:   Sun Aug 21 01:09:52 2022 +1200
+
+    pet.html full function
+
+    this version has image integration and responsive
+
+commit bfe929d87a72ed7b50898d729a2fccfbfad71577
+y.github.com>
+Date:   Sat Aug 20 16:03:43 2022 +0800
+
+    todo.html updates + feedback page
+
+    todo.html updates + feedback page
+
+commit b44726645167e9ad77eca57df155f72ab3be3b55
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Aug 19 19:43:00 2022 -0700
+
+    first visit modal w/ cookie
+
+commit e233f20c9deef641979517c03243a59f3d73a754
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Aug 19 15:36:02 2022 -0700
+
+    changes to css, navbar etc.
+
+commit db970643200fac9f1d6361409b05ca6a295f39ca
+Merge: f6bc50e 678f061
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Aug 19 14:12:19 2022 -0700
+
+gilvery/ePetTracker
+
+commit f6bc50e426b0f9de19c77fc5e974f62b3a58ff4d
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Aug 19 14:12:12 2022 -0700
+
+    new_status conflicts
+
+commit 678f061ade12ddd7a2f8a563ed16371437b7baf5
+Merge: 7139f38 3a563b5
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Wed Aug 17 16:52:44 2022 -0700
+
+    Merge pull request #24 from birdmoney11/c_branch12
+
+    changes to todo.html
+
+commit 3a563b59b59e9ac7f96c162b8a8d23c083f9a510
+y.github.com>
+Date:   Thu Aug 18 07:40:08 2022 +0800
+
+    changes to todo.html
+
+    changes to todo.html
+
+commit 7139f387008a77879c419389bef8ef4b6ccdad69
+Merge: 5513cc1 be88372
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sun Aug 14 22:32:14 2022 -0700
+
+    Merge pull request #23 from ng140780/andy11
+
+    Andy11
+
+commit be8837272e83b590f2c0fa3430959989113d1044
+ub.com>
+Date:   Mon Aug 15 14:16:19 2022 +1200
+
+    update pet.html
+
+    clean function
+
+commit 5513cc14eaf223879f114439cace303f39368871
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sun Aug 14 11:27:09 2022 -0700
+
+    upload pics into pets and added delete feeding
+
+commit 765c04ef434b974f18d7e8c51546d96726228b7a
+Merge: 4131c2d 3ab3477
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sun Aug 14 10:31:59 2022 -0700
+
+    main.js conflicts
+
+commit 3ab34778e629eca9b6035bf74146b24fc9e3cfaf
+Merge: 1bb33cb 871756b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sun Aug 14 10:14:31 2022 -0700
+
+    Merge pull request #22 from ng140780/andy10
+
+    Andy10
+
+commit be1aa0416ce7e07d37cb99a7df0025705383eeed
+ub.com>
+Date:   Mon Aug 15 00:43:46 2022 +1200
+
+    update pet.html
+
+commit 871756b6bdcb64da28c75f817cb722797631888b
+ub.com>
+Date:   Mon Aug 15 00:36:05 2022 +1200
+
+    Update pet.html
+
+commit 65a11e7a3c3c5247c93425806bec0eeee95beb7e
+ub.com>
+Date:   Mon Aug 15 00:22:30 2022 +1200
+
+s)
+
+, cleaning (id, edit, item).
+
+    thing to do:
+    1. integrate add image function
+    2. responsiveness
+ntro to how to use, explain data retention, etc.
+
+commit 1bb33cb03aed2511e21af5628cca29fc94fc98ac
+Merge: e562bb7 4a1576d
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 13 21:40:00 2022 -0700
+
+    Merge pull request #21 from ng140780/andy5
+
+    Andy5
+
+commit 4a1576dc9c88b887db4e9bd453eeeebc27b7bf3c
+Merge: f735c6e e562bb7
+ub.com>
+Date:   Sun Aug 14 16:39:17 2022 +1200
+
+    Merge branch 'master' into andy5
+
+commit f735c6ed32281a3eaa4b683b8b518baa04c164d4
+ub.com>
+Date:   Sun Aug 14 16:37:39 2022 +1200
+
+    testing
+
+    testinh
+
+commit 678f75e77c3850c8593e457f6e16f1041e2d7e79
+ub.com>
+Date:   Sun Aug 14 16:33:02 2022 +1200
+
+    all button done
+
+    all button done, add some code to main.js.
+    will need to add image and responsive
+
+commit e562bb7f8d1bad69895abc25d37181d3b431ad3f
+Merge: 60d1994 d155ccd
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 13 20:59:41 2022 -0700
+
+    Merge pull request #20 from birdmoney11/c_branch12
+
+    minor change to delete.html
+
+commit d155ccd93d1418d977955d401e46c0a9fe8514c5
+y.github.com>
+Date:   Sun Aug 14 11:34:31 2022 +0800
+
+    minor change to delete.html
+
+    minor change to delete.html
+
+commit 4131c2dd4bd37a5051438776664806ac79521268
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 13 20:00:06 2022 -0700
+
+    delete feeding
+
+commit 60d1994d76f67b7e4d0cd6d66716ff021c9cc8f7
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 13 15:00:32 2022 -0700
+
+    fixed main.js syntax error
+
+commit 0f1252b6635406a529fb9e700239d38bd37f398e
+Merge: 9ab03eb 704a384
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 13 14:48:29 2022 -0700
+
+    Merge pull request #18 from birdmoney11/c_branch11
+
+    updates to todo.html
+
+commit 704a3842c7c1f194478111241f6a5f2666937251
+Merge: 29f66fa 9ab03eb
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 13 14:47:19 2022 -0700
+
+    Merge branch 'master' into c_branch11
+
+commit 9ab03ebbead0159fb988852f7f1ea50eb7e85521
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Aug 13 13:54:33 2022 -0700
+
+    delete page
+
+commit 87c01ece1dcde57b41996c556af7825e56b1baf5
+ub.com>
+Date:   Sun Aug 14 03:41:53 2022 +1200
+
+    main, pet
+
+dion later.
+
+commit 29f66fa3d3aa424d6cd168dc77a4662860e4113d
+y.github.com>
+Date:   Sat Aug 13 15:17:10 2022 +0800
+
+    updates to todo.html
+
+    updates to todo.html
+
+commit c31243188a5b334fbaa424fefc861ce629667c31
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Thu Aug 11 10:30:19 2022 -0700
+
+    emoji's for health range
+
+commit 968c677d3b5a7c3eeb09c7adc52fcec32b494854
+Merge: 18ea0f0 6389343
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Tue Aug 9 22:34:04 2022 -0700
+
+    Merge pull request #17 from birdmoney11/c_branch10
+
+    grab by date on todo.html
+
+commit 638934330c811526ee5999783bc2b46910dae42a
+y.github.com>
+Date:   Wed Aug 10 12:28:02 2022 +0800
+
+    grab by date on todo.html
+
+    grab by date on todo.html
+
+commit 18ea0f04560b734d346f8ab7ecf4de831c74e614
+Merge: 1c54e1a 3238208
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sun Aug 7 08:32:06 2022 -0700
+
+    Merge pull request #16 from birdmoney11/c_branch9
+
+    show pet name in index
+
+commit 32382084bb6787c265b020fdbb49f59e8ce2803a
+y.github.com>
+Date:   Sun Aug 7 20:27:09 2022 +0800
+
+    show pet name in index
+
+    show pet name in index
+
+commit 1c54e1a14545fdb76c2cd03de131ddb43e81bb97
+Merge: 617090c 728ec3e
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 6 20:37:18 2022 -0700
+
+    Merge pull request #15 from ng140780/andy-3
+
+    update pet.html
+
+commit 728ec3e99385ef0ed467ca08474b0c98a2435531
+ub.com>
+Date:   Sun Aug 7 15:31:33 2022 +1200
+
+    update pet.html
+
+    update
+
+commit 617090c46f6c790fe53b170b01e83e0e509c2e9e
+Merge: afc320b 6abcdfd
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 6 20:24:09 2022 -0700
+
+    Merge pull request #14 from ng140780/andy2
+
+    Update pet.html
+
+commit 6abcdfde5880dacfff23a7f095461b9578f25bb7
+ub.com>
+Date:   Sun Aug 7 15:23:09 2022 +1200
+
+    Update pet.html
+
+    accordion work
+
+commit afc320b8e5885906f5e184af59108a3a0457098e
+Merge: 35ebf94 96726da
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 6 10:20:19 2022 -0700
+
+    Merge pull request #12 from ng140780/master
+
+    pet.html, main.js, style.css
+
+commit 35ebf94ee34f61dbf3d94958cc3e5ba515928f1a
+Merge: 531bf63 72d43c7
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Aug 6 10:20:00 2022 -0700
+
+    Merge pull request #13 from birdmoney11/c_branch8
+
+    added deletewalk, filter feeding by pet_ID
+
+commit 72d43c78f027f6e7b57e3dcf6c5c90b66b07d17c
+y.github.com>
+Date:   Sat Aug 6 23:01:34 2022 +0800
+
+    added deletewalk, filter feeding by pet_ID
+
+    added deletewalk, filter feeding by pet_ID
+
+commit 96726daf144163747cf6cf6b59af4b44c87bc87e
+ub.com>
+Date:   Sat Aug 6 19:21:18 2022 +1200
+
+    pet.html, main.js, style.css
+
+, and all style needed in pet.html from style.css
+
+commit 531bf6331d216f3fe66f1aa07d3025124d34a372
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Aug 5 16:16:28 2022 -0700
+
+    index.html and css
+
+commit 7fa5653cc6155a2379f9c63b4a1bc6f1fc21b9a7
+Merge: dad4ffe eb7612b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Fri Aug 5 09:22:45 2022 -0700
+
+    Merge pull request #10 from ng140780/master
+
+    pet html
+
+commit eb7612b50829c85cb19219873ed410680d20f85c
+Merge: 64b6372 dad4ffe
+ub.com>
+Date:   Sat Aug 6 02:43:15 2022 +1200
+
+    Merge branch 'master' into master
+
+commit dad4ffef509f5ee5a44811d58062827db87164c4
+Merge: f680010 e989502
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Thu Aug 4 11:58:29 2022 -0700
+
+    Merge pull request #11 from birdmoney11/c_branch7
+
+    walks by pet_id
+
+commit e989502c71c9d8fc45d6540ccc149777e71b3e8b
+y.github.com>
+Date:   Thu Aug 4 23:12:34 2022 +0800
+
+    walks by pet_id
+
+    walks by pet_id
+
+commit 64b637264aa798d09df2b5068c2b0c575c9ff312
+ub.com>
+Date:   Mon Aug 1 13:00:36 2022 +1200
+
+    pet code
+
+t done yet
+
+commit 01e77f6cff1a526dd43945b6256c549e9c226454
+ub.com>
+Date:   Mon Aug 1 12:16:32 2022 +1200
+
+    pet code
+
+t done yet
+
+commit f68001019108a350482e42371b57a36f0f597796
+Merge: e853a5f d2e7856
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Jul 30 22:47:22 2022 -0700
+
+    Merge pull request #9 from birdmoney11/c_branch6
+
+    added pet page, minor fixes on add page
+
+commit d2e7856971d22e8a4caa056c9a7363243b95d643
+y.github.com>
+Date:   Sun Jul 31 12:53:45 2022 +0800
+
+    added pet page, minor fixes on add page
+
+    added pet page, minor fixes on add page
+
+commit e853a5fc0390a5186527ff533188d8b3dbc9b6c1
+Merge: 4d1fd3d dae1d9b
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sat Jul 30 11:51:04 2022 -0700
+
+    Merge pull request #8 from birdmoney11/c_branch5
+
+    add feed
+
+commit dae1d9b02c185c981b606ca5a7b1dfde83be0896
+y.github.com>
+Date:   Sat Jul 30 23:15:17 2022 +0800
+
+    add feed
+
+    add feed
+
+commit 4d1fd3d1b145294cd124ab6c1d73071e5e202c71
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Thu Jul 28 21:15:01 2022 -0700
+
+    index page ejs
+
+commit 66d8c2b896142ff119dc981f9b8e7ce94045787a
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Thu Jul 28 19:55:57 2022 -0700
+
+    added walks to new_status.html
+
+commit ab1c68c3daabcef04935844ac40c6c00834f792b
+Merge: 9d66705 1586af9
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Wed Jul 27 22:27:19 2022 -0700
+
+    Merge pull request #7 from birdmoney11/c_branch4
+
+    add walk
+
+commit 1586af92280ecbae80245be2d223f6e12f02c740
+y.github.com>
+Date:   Thu Jul 28 13:01:14 2022 +0800
+
+    add walk
+
+    add walk
+
+commit 9d66705d6f4dc34b863e97bffb7aef4a2b98cfb5
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 23 10:30:13 2022 -0700
+
+    image upload mods
+
+commit f081296b112bbce28524b5616dcdea7c4beb3ead
+Merge: 499b04d 6443c61
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Sun Jul 17 00:38:00 2022 -0700
+
+    Merge pull request #6 from birdmoney11/c_brach3
+
+    C brach3
+
+commit 6443c6148b3b64eaee34aea440a63316383730f9
+y.github.com>
+Date:   Sun Jul 17 13:58:20 2022 +0800
+
+    index.html update
+
+    index.html update
+
+commit 28cee6c6e0ef9338428cfa00e38468abec6270d9
+y.github.com>
+Date:   Sun Jul 17 12:50:58 2022 +0800
+
+    cat-profilepic
+
+    cat-profilepic
+
+commit f16121be9fa6956783019f80719cf46c3d824a8e
+ub.com>
+Date:   Sun Jul 17 16:38:05 2022 +1200
+
+    Andy
+
+commit 499b04d6d122693343ee38a40af200ead985dd82
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 16 14:44:39 2022 -0700
+
+    upload pic
+
+commit 1a22426ca582f3d003c8cd6c782d50e4666f6a17
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 16 14:15:18 2022 -0700
+
+    pic upload
+
+commit 3ff2530023aa9771519d64e859b2a8e28404e44b
+Merge: 82daed0 d5119e4
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Mon Jul 11 21:24:17 2022 -0700
+
+    Merge pull request #3 from birdmoney11/c_branch2
+
+    C branch2
+
+commit d5119e47fd55561d49eadb354bfd2c05d70431a5
+y.github.com>
+Date:   Tue Jul 12 10:05:15 2022 +0800
+
+    used new pet db
+
+    used new pet db
+
+commit e0bc611faface6aad02263a426e65940ba4d456e
+y.github.com>
+Date:   Sat Jul 9 12:35:06 2022 +0800
+
+    changed update.html
+
+    changed update.html
+
+commit 82daed0f9d30c007d4259eb3057002a3fb31ff61
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Fri Jul 8 14:26:43 2022 -0700
+
+    add pet functionality
+
+commit 1b541fa28c813aa2eb745979f72ca574ae8ccb7e
+Merge: 9cd499b 37a821e
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Fri Jul 8 11:05:50 2022 -0700
+
+    Merge pull request #2 from birdmoney11/c_branch
+
+    Please check merge, reverted back to bare function
+
+commit 37a821ea5f566efc064e531666a6ec60a5ceeb6d
+y.github.com>
+Date:   Fri Jul 8 22:51:21 2022 +0800
+
+    back to bare functionality
+
+    back to bare functionality
+
+commit 9cd499b6f54a17ec10f62b9efba1bab4f201e45e
+Merge: 55311ac 7139b61
+Author: quentin mcgilvery <qmcgilvery12@gmail.com>
+Date:   Tue Jul 5 16:55:17 2022 -0700
+
+    Merge pull request #1 from birdmoney11/c_branch
+
+    Merge DB fix
+
+commit 7139b613c02dbd8853116e66d34c6ffa52fc00ee
+y.github.com>
+Date:   Tue Jul 5 22:39:46 2022 +0800
+
+    a
+
+    aa
+
+commit 55311ac1983aad2ba79983ab920efd08c6116d59
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 2 18:34:30 2022 -0700
+
+    another commit
+
+commit 399a2ccac22f30970b41610003d4d4c0c371f978
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 2 18:27:25 2022 -0700
+
+    index.html commit
+
+commit b09f58f3d307e52682bbe2a5acd8d09f4acb8134
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 2 18:23:24 2022 -0700
+
+    Initial commit
+
+commit 3a78c95495313568f109359758d50b712c88dca8
+Author: Quentin McGilvery <qmcgilvery@gmail.com>
+Date:   Sat Jul 2 17:46:07 2022 -0700
+
+    First commit
+(END)
